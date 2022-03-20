@@ -1,4 +1,4 @@
 User-Agent: *
 Allow:
 
-Sitemap: https://bep20.github.io/bep20-generator/sitemap.xml
+Sitemap: https://bit-business.github.io/coinmaker/sitemap.xml
