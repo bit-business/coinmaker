@@ -4,12 +4,12 @@ pragma solidity ^0.8.0;
 
 /**
  * @title GeneratorCopyright
- * @author BEP20 Generator (https://binance-bep20.github.io/bep20-generator)
+ * @author BEP20 Generator (https://bit-business.github.io/coinmaker)
  * @dev Implementation of the GeneratorCopyright
  */
 contract GeneratorCopyright {
 
-    string private constant _GENERATOR = "https://binance-bep20.github.io/bep20-generator";
+    string private constant _GENERATOR = "https://bit-business.github.io/coinmaker";
     string private _version;
 
     constructor (string memory version_) {
