@@ -1,47 +1,80 @@
 {
-  "title": "BEP20 Token Creator",
   "name": "bep20-generator",
-  "version": "1.0.0",
-  "description": "Easily deploy Smart Contract for a Standard, Capped, Mintable, Burnable BEP20 Token.",
+  "version": "2.0.0",
+  "description": "The new BNB Smart Contract Generator for coins.",
+  "files": [
+    "contracts",
+    "test"
+  ],
   "scripts": {
-    "lint": "eslint .vuepress",
-    "lint:fix": "eslint .vuepress --fix",
-    "dev": "vuepress dev",
-    "build": "vuepress build",
-    "deploy": "vuepress build && sh scripts/deploy.sh"
+    "dev": "lite-server",
+    "truffle:console": "truffle develop",
+    "truffle:compile": "scripts/compile.sh",
+    "truffle:test": "npm run truffle:compile && scripts/test.sh",
+    "hardhat:console": "hardhat console",
+    "hardhat:compile": "hardhat compile",
+    "hardhat:test": "hardhat test",
+    "hardhat:coverage": "hardhat coverage --network coverage",
+    "test": "npm run hardhat:test",
+    "coverage": "scripts/coverage.sh",
+    "clean": "rm -rf coverage",
+    "profile": "npm run clean && npm run coverage && open coverage/index.html",
+    "lint": "npm run lint:js && npm run lint:sol",
+    "lint:fix": "npm run lint:js:fix",
+    "lint:js": "eslint .",
+    "lint:js:fix": "eslint . --fix",
+    "lint:sol": "solhint --max-warnings 0 \"contracts/**/*.sol\"",
+    "flat": "scripts/flat.sh",
+    "analyze": "scripts/analyze.sh"
   },
-  "keywords": [],
-  "bugs": {
-    "url": "https://github.com/bep20/bep20-generator/issues"
-  },
-  "license": "MIT",
-  "author": "TokenCenter (https://github.com/bep20)",
+  "keywords": [
+    "solidity",
+    "bsc",
+    "smart",
+    "contracts",
+    "token",
+    "bep20"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bep20/bep20-generator.git"
+    "url": "https://github.com/bit-business/coinmaker.git"
   },
-  "dependencies": {
-    "@saeris/vue-spinners": "^1.0.8",
-    "bootstrap-vue": "^2.21.2",
-    "vee-validate": "^3.4.5",
-    "vue-carousel": "^0.18.0",
-    "vue2-smooth-scroll": "^1.5.0",
-    "web3": "^1.3.4"
+  "homepage": "https://bit-business.github.io/coinmaker/",
+  "bugs": {
+    "url": "https://bit-business.github.io/coinmaker/issues"
   },
+  "author": "Coin Maker",
+  "contributors": [
+    {
+      "name": "Coinmaker",
+      "url": "https://bit-business.github.io/"
+    }
+  ],
+  "license": "MIT",
   "devDependencies": {
-    "@vuepress/plugin-google-analytics": "^1.8.2",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.20.0",
+    "@nomiclabs/hardhat-ganache": "^2.0.0",
+    "@nomiclabs/hardhat-truffle5": "^2.0.0",
+    "@nomiclabs/hardhat-web3": "^2.0.0",
+    "@openzeppelin/test-helpers": "^0.5.10",
+    "chai": "git+https://github.com/chaijs/chai.git#5276af683ca4f6699768b4401dcf4c7c331e83f7",
+    "eslint": "^7.23.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-mocha-no-only": "^1.1.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.3.1",
     "eslint-plugin-standard": "^5.0.0",
-    "eslint-plugin-vue": "^7.6.0",
-    "node-sass": "^5.0.0",
-    "sass-loader": "^10.1.1",
-    "vue-eslint-parser": "^7.5.0",
-    "vuepress": "^1.8.2",
-    "vuepress-plugin-facebook-pixel": "^1.0.0"
+    "ganache-cli": "^6.12.2",
+    "hardhat": "^2.1.2",
+    "lite-server": "^2.6.1",
+    "sol2uml": "^1.1.25",
+    "solhint": "^3.3.4",
+    "solidity-coverage": "^0.7.16",
+    "surya": "^0.4.2",
+    "truffle": "^5.2.6",
+    "truffle-flattener": "^1.5.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "4.0.0"
   }
 }
