@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for token/BEP20/lib/BEP20Operable.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">token/BEP20/lib/</a> BEP20Operable.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>21/21</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>10/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>9/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>21/21</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+&nbsp;
+pragma solidity ^0.8.0;
+&nbsp;
+import "./BEP20.sol";
+&nbsp;
+import "./IBEP20Operable.sol";
+import "./IBEP20OperableReceiver.sol";
+import "./IBEP20OperableSpender.sol";
+&nbsp;
+import "@openzeppelin/contracts/utils/Address.sol";
+import "@openzeppelin/contracts/utils/introspection/ERC165Checker.sol";
+&nbsp;
+import "@openzeppelin/contracts/utils/introspection/ERC165.sol";
+&nbsp;
+/**
+ * @title BEP20Operable
+ * @dev Implementation of the {IBEP20Operable} interface
+ */
+abstract contract BEP20Operable is BEP20, IBEP20Operable, ERC165 {
+    using Address for address;
+&nbsp;
+    /**
+     * @dev See {IERC165-supportsInterface}.
+     */
+    function supportsInterface(bytes4 interfaceId) public view virtual override(ERC165, IERC165) returns (bool) {
+        return interfaceId == type(IBEP20Operable).interfaceId || super.supportsInterface(interfaceId);
+    }
+&nbsp;
+    /**
+     * @dev Transfer tokens to a specified address and then execute a callback on recipient.
+     * @param recipient The address to transfer to.
+     * @param amount The amount to be transferred.
+     * @return A boolean that indicates if the operation was successful.
+     */
+    function transferAndCall(address recipient, uint256 amount) public virtual override returns (bool) {
+        return transferAndCall(recipient, amount, "");
+    }
+&nbsp;
+    /**
+     * @dev Transfer tokens to a specified address and then execute a callback on recipient.
+     * @param recipient The address to transfer to
+     * @param amount The amount to be transferred
+     * @param data Additional data with no specified format
+     * @return A boolean that indicates if the operation was successful.
+     */
+    function transferAndCall(address recipient, uint256 amount, bytes memory data) public virtual override returns (bool) {
+        transfer(recipient, amount);
+        require(_checkAndCallTransfer(_msgSender(), recipient, amount, data), "BEP20Operable: _checkAndCallTransfer reverts");
+        return true;
+    }
+&nbsp;
+    /**
+     * @dev Transfer tokens from one address to another and then execute a callback on recipient.
+     * @param sender The address which you want to send tokens from
+     * @param recipient The address which you want to transfer to
+     * @param amount The amount of tokens to be transferred
+     * @return A boolean that indicates if the operation was successful.
+     */
+    function transferFromAndCall(address sender, address recipient, uint256 amount) public virtual override returns (bool) {
+        return transferFromAndCall(sender, recipient, amount, "");
+    }
+&nbsp;
+    /**
+     * @dev Transfer tokens from one address to another and then execute a callback on recipient.
+     * @param sender The address which you want to send tokens from
+     * @param recipient The address which you want to transfer to
+     * @param amount The amount of tokens to be transferred
+     * @param data Additional data with no specified format
+     * @return A boolean that indicates if the operation was successful.
+     */
+    function transferFromAndCall(address sender, address recipient, uint256 amount, bytes memory data) public virtual override returns (bool) {
+        transferFrom(sender, recipient, amount);
+        require(_checkAndCallTransfer(sender, recipient, amount, data), "BEP20Operable: _checkAndCallTransfer reverts");
+        return true;
+    }
+&nbsp;
+    /**
+     * @dev Approve spender to transfer tokens and then execute a callback on recipient.
+     * @param spender The address allowed to transfer to
+     * @param amount The amount allowed to be transferred
+     * @return A boolean that indicates if the operation was successful.
+     */
+    function approveAndCall(address spender, uint256 amount) public virtual override returns (bool) {
+        return approveAndCall(spender, amount, "");
+    }
+&nbsp;
+    /**
+     * @dev Approve spender to transfer tokens and then execute a callback on recipient.
+     * @param spender The address allowed to transfer to.
+     * @param amount The amount allowed to be transferred.
+     * @param data Additional data with no specified format.
+     * @return A boolean that indicates if the operation was successful.
+     */
+    function approveAndCall(address spender, uint256 amount, bytes memory data) public virtual override returns (bool) {
+        approve(spender, amount);
+        require(_checkAndCallApprove(spender, amount, data), "BEP20Operable: _checkAndCallApprove reverts");
+        return true;
+    }
+&nbsp;
+    /**
+     * @dev Internal function to invoke `onTransferReceived` on a target address
+     *  The call is not executed if the target address is not a contract
+     * @param sender address Representing the previous owner of the given token value
+     * @param recipient address Target address that will receive the tokens
+     * @param amount uint256 The amount mount of tokens to be transferred
+     * @param data bytes Optional data to send along with the call
+     * @return whether the call correctly returned the expected magic value
+     */
+    function _checkAndCallTransfer(address sender, address recipient, uint256 amount, bytes memory data) internal virtual returns (bool) {
+        if (!recipient.isContract()) {
+            return false;
+        }
+        bytes4 retval = IBEP20OperableReceiver(recipient).onTransferReceived(
+            _msgSender(), sender, amount, data
+        );
+        return (retval == IBEP20OperableReceiver(recipient).onTransferReceived.selector);
+    }
+&nbsp;
+    /**
+     * @dev Internal function to invoke `onApprovalReceived` on a target address
+     *  The call is not executed if the target address is not a contract
+     * @param spender address The address which will spend the funds
+     * @param amount uint256 The amount of tokens to be spent
+     * @param data bytes Optional data to send along with the call
+     * @return whether the call correctly returned the expected magic value
+     */
+    function _checkAndCallApprove(address spender, uint256 amount, bytes memory data) internal virtual returns (bool) {
+        if (!spender.isContract()) {
+            return false;
+        }
+        bytes4 retval = IBEP20OperableSpender(spender).onApprovalReceived(
+            _msgSender(), amount, data
+        );
+        return (retval == IBEP20OperableSpender(spender).onApprovalReceived.selector);
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Mar 21 2022 01:19:43 GMT+0100 (Central European Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

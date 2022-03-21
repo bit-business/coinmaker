@@ -1,23 +1,6 @@
-// SPDX-License-Identifier: MIT
-
-/*
- * Token has been generated for FREE using https://vittominacori.github.io/coinmaker/
- *
- * NOTE: "Contract Source Code Verified (Similar Match)" means that this Token is similar to other tokens deployed
- *  using the same generator. It is not an issue. It means that you won't need to verify your source code because of
- *  it is already verified.
- *
- * DISCLAIMER: GENERATOR'S AUTHOR IS FREE OF ANY LIABILITY REGARDING THE TOKEN AND THE USE THAT IS MADE OF IT.
- *  The following code is provided under MIT License. Anyone can use it as per their needs.
- *  The generator's purpose is to make people able to tokenize their ideas without coding or paying for it.
- *  Source code is well tested and continuously updated to reduce risk of bugs and to introduce language optimizations.
- *  Anyway the purchase of tokens involves a high degree of risk. Before acquiring tokens, it is recommended to
- *  carefully weighs all the information and risks detailed in Token owner's Conditions.
- */
-
 // File: @openzeppelin/contracts/utils/Context.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -44,7 +27,7 @@ abstract contract Context {
 
 // File: @openzeppelin/contracts/access/Ownable.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -114,7 +97,7 @@ abstract contract Ownable is Context {
 
 // File: contracts/token/BEP20/lib/IBEP20.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -215,11 +198,9 @@ interface IBEP20 {
 
 // File: contracts/token/BEP20/lib/BEP20.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
-
-
 
 /**
  * @dev Implementation of the {IBEP20} interface.
@@ -535,7 +516,7 @@ contract BEP20 is Ownable, IBEP20 {
 
 // File: contracts/service/ServicePayer.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -556,18 +537,18 @@ abstract contract ServicePayer {
 
 // File: contracts/utils/GeneratorCopyright.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
 /**
  * @title GeneratorCopyright
- * @author BEP20 Generator (https://vittominacori.github.io/coinmaker)
+ * @author BEP20 Generator (https://bit-business.github.io/coinmaker)
  * @dev Implementation of the GeneratorCopyright
  */
 contract GeneratorCopyright {
 
-    string private constant _GENERATOR = "https://vittominacori.github.io/coinmaker";
+    string private constant _GENERATOR = "https://bit-business.github.io/coinmaker";
     string private _version;
 
     constructor (string memory version_) {
@@ -591,16 +572,14 @@ contract GeneratorCopyright {
 
 // File: contracts/token/BEP20/HelloBEP20.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
 
-
-
 /**
  * @title HelloBEP20
- * @author BEP20 Generator (https://vittominacori.github.io/coinmaker)
+ * @author BEP20 Generator (https://bit-business.github.io/coinmaker)
  * @dev Implementation of the HelloBEP20
  */
 contract HelloBEP20 is BEP20, ServicePayer, GeneratorCopyright("v2.0.0") {

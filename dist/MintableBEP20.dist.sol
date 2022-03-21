@@ -1,8 +1,6 @@
-// SPDX-License-Identifier: MIT
-
 // File: @openzeppelin/contracts/utils/Context.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -29,7 +27,7 @@ abstract contract Context {
 
 // File: @openzeppelin/contracts/access/Ownable.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -99,7 +97,7 @@ abstract contract Ownable is Context {
 
 // File: contracts/token/BEP20/lib/IBEP20.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -200,11 +198,9 @@ interface IBEP20 {
 
 // File: contracts/token/BEP20/lib/BEP20.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
-
-
 
 /**
  * @dev Implementation of the {IBEP20} interface.
@@ -520,10 +516,9 @@ contract BEP20 is Ownable, IBEP20 {
 
 // File: contracts/token/BEP20/lib/BEP20Capped.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
-
 
 /**
  * @dev Extension of {BEP20} that adds a cap to the supply of tokens.
@@ -558,10 +553,9 @@ abstract contract BEP20Capped is BEP20 {
 
 // File: contracts/token/BEP20/lib/BEP20Mintable.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
-
 
 /**
  * @title BEP20Mintable
@@ -625,7 +619,7 @@ abstract contract BEP20Mintable is BEP20 {
 
 // File: contracts/service/ServicePayer.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -646,11 +640,9 @@ abstract contract ServicePayer {
 
 // File: contracts/token/BEP20/MintableBEP20.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
-
-
 
 
 /**

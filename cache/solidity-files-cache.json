@@ -1,0 +1,1257 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/marioterek/github/coinmaker/contracts/mocks/BEP20Mock.sol": {
+      "lastModificationDate": 1647819573147,
+      "contentHash": "ca51cdb6cbf95af68559dfb6e75d64bf",
+      "sourceName": "contracts/mocks/BEP20Mock.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../token/BEP20/lib/BEP20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "BEP20Mock"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/contracts/token/BEP20/lib/BEP20.sol": {
+      "lastModificationDate": 1647819573151,
+      "contentHash": "78a89dd2e11da33d0ce9d6bb02150d84",
+      "sourceName": "contracts/token/BEP20/lib/BEP20.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/access/Ownable.sol",
+        "./IBEP20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "BEP20"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
+      "lastModificationDate": 1647820851599,
+      "contentHash": "17d9f40220b0ab370db2c77e7c92c4ef",
+      "sourceName": "@openzeppelin/contracts/access/Ownable.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/contracts/token/BEP20/lib/IBEP20.sol": {
+      "lastModificationDate": 1647819573152,
+      "contentHash": "fb011f5d0f9f37fab0cfe68a043e959a",
+      "sourceName": "contracts/token/BEP20/lib/IBEP20.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IBEP20"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/node_modules/@openzeppelin/contracts/utils/Context.sol": {
+      "lastModificationDate": 1647820848896,
+      "contentHash": "bc047f55d4e6dcc5a9c7ee096f530312",
+      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/contracts/token/BEP20/StandardBEP20.sol": {
+      "lastModificationDate": 1647819573150,
+      "contentHash": "d6425cbe2d587531c8edec43aded3421",
+      "sourceName": "contracts/token/BEP20/StandardBEP20.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./lib/BEP20.sol",
+        "../../service/ServicePayer.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "StandardBEP20"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/contracts/service/ServicePayer.sol": {
+      "lastModificationDate": 1647819573148,
+      "contentHash": "3c33176a0f93d504d24dc7c71f2aca1c",
+      "sourceName": "contracts/service/ServicePayer.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IPayable",
+        "ServicePayer"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/contracts/token/BEP20/UnlimitedBEP20.sol": {
+      "lastModificationDate": 1647821206343,
+      "contentHash": "c22c336ba13653f1de807665f211dde5",
+      "sourceName": "contracts/token/BEP20/UnlimitedBEP20.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./lib/BEP20Mintable.sol",
+        "./lib/BEP20Burnable.sol",
+        "../../service/ServicePayer.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "UnlimitedBEP20"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/contracts/token/BEP20/lib/BEP20Mintable.sol": {
+      "lastModificationDate": 1647819573151,
+      "contentHash": "b7d4702c7727dd81a791d8832d17544a",
+      "sourceName": "contracts/token/BEP20/lib/BEP20Mintable.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../lib/BEP20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "BEP20Mintable"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/contracts/token/BEP20/lib/BEP20Burnable.sol": {
+      "lastModificationDate": 1647819573151,
+      "contentHash": "34c5b5e87fd9a7eb90153b4af5019817",
+      "sourceName": "contracts/token/BEP20/lib/BEP20Burnable.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./BEP20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "BEP20Burnable"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/contracts/token/BEP20/CommonBEP20.sol": {
+      "lastModificationDate": 1647819573150,
+      "contentHash": "d9b8dfe67ac220665dbe3ee70a6401b8",
+      "sourceName": "contracts/token/BEP20/CommonBEP20.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/access/Ownable.sol",
+        "./lib/BEP20Capped.sol",
+        "./lib/BEP20Mintable.sol",
+        "./lib/BEP20Burnable.sol",
+        "../../service/ServicePayer.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "CommonBEP20"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/contracts/token/BEP20/lib/BEP20Capped.sol": {
+      "lastModificationDate": 1647819573151,
+      "contentHash": "882f98a943a133adea8235eeb696db32",
+      "sourceName": "contracts/token/BEP20/lib/BEP20Capped.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./BEP20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "BEP20Capped"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/contracts/token/BEP20/MintableBEP20.sol": {
+      "lastModificationDate": 1647819573150,
+      "contentHash": "20526df9308878f545f9277f6a605d63",
+      "sourceName": "contracts/token/BEP20/MintableBEP20.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./lib/BEP20Capped.sol",
+        "./lib/BEP20Mintable.sol",
+        "../../service/ServicePayer.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "MintableBEP20"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/contracts/token/BEP20/AmazingBEP20.sol": {
+      "lastModificationDate": 1647819573149,
+      "contentHash": "aacad78d92f76a7bbb1153b21bd1dfe1",
+      "sourceName": "contracts/token/BEP20/AmazingBEP20.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./lib/BEP20Mintable.sol",
+        "./lib/BEP20Burnable.sol",
+        "./lib/BEP20Operable.sol",
+        "../../utils/TokenRecover.sol",
+        "../../service/ServicePayer.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "AmazingBEP20"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/contracts/token/BEP20/lib/BEP20Operable.sol": {
+      "lastModificationDate": 1647819573152,
+      "contentHash": "5af96f1838ce2764d62a2dcd44778d87",
+      "sourceName": "contracts/token/BEP20/lib/BEP20Operable.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./BEP20.sol",
+        "./IBEP20Operable.sol",
+        "./IBEP20OperableReceiver.sol",
+        "./IBEP20OperableSpender.sol",
+        "@openzeppelin/contracts/utils/Address.sol",
+        "@openzeppelin/contracts/utils/introspection/ERC165Checker.sol",
+        "@openzeppelin/contracts/utils/introspection/ERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "BEP20Operable"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/contracts/utils/TokenRecover.sol": {
+      "lastModificationDate": 1647819573153,
+      "contentHash": "bdb8a6109832bf50e1c776f78df5065d",
+      "sourceName": "contracts/utils/TokenRecover.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../token/BEP20/lib/IBEP20.sol",
+        "@openzeppelin/contracts/access/Ownable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "TokenRecover"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/contracts/token/BEP20/lib/IBEP20Operable.sol": {
+      "lastModificationDate": 1647819573152,
+      "contentHash": "b51e1c7b57644d252effe34f4002df8d",
+      "sourceName": "contracts/token/BEP20/lib/IBEP20Operable.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./IBEP20.sol",
+        "@openzeppelin/contracts/utils/introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IBEP20Operable"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/contracts/token/BEP20/lib/IBEP20OperableReceiver.sol": {
+      "lastModificationDate": 1647819573152,
+      "contentHash": "b8a23d64a005066472e06a284dc5ac00",
+      "sourceName": "contracts/token/BEP20/lib/IBEP20OperableReceiver.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IBEP20OperableReceiver"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/contracts/token/BEP20/lib/IBEP20OperableSpender.sol": {
+      "lastModificationDate": 1647819573153,
+      "contentHash": "19e6bc68adbc755139a415c31c8dbf9d",
+      "sourceName": "contracts/token/BEP20/lib/IBEP20OperableSpender.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IBEP20OperableSpender"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/node_modules/@openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1647820848648,
+      "contentHash": "37103cdc416efc2601c6f6734044b559",
+      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/node_modules/@openzeppelin/contracts/utils/introspection/ERC165Checker.sol": {
+      "lastModificationDate": 1647820849927,
+      "contentHash": "a65c606ba9eda6f9d0135c28683d1595",
+      "sourceName": "@openzeppelin/contracts/utils/introspection/ERC165Checker.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC165Checker"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
+      "lastModificationDate": 1647820849913,
+      "contentHash": "a9a5319dff9088c6ffe757ea1c2a6729",
+      "sourceName": "@openzeppelin/contracts/utils/introspection/ERC165.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC165"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+      "lastModificationDate": 1647820851272,
+      "contentHash": "9a04322bb8f6b8f2767d8358d1d2537b",
+      "sourceName": "@openzeppelin/contracts/utils/introspection/IERC165.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC165"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/contracts/service/ServiceReceiver.sol": {
+      "lastModificationDate": 1647819573149,
+      "contentHash": "e08de09114b3613b21752a6243bfc591",
+      "sourceName": "contracts/service/ServiceReceiver.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/access/Ownable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ServiceReceiver"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/contracts/mocks/BEP20OperableSpenderMock.sol": {
+      "lastModificationDate": 1647819573148,
+      "contentHash": "73f1934a1361390a6b6dd8c1c50c01dd",
+      "sourceName": "contracts/mocks/BEP20OperableSpenderMock.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../token/BEP20/lib/IBEP20OperableSpender.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "BEP20OperableSpenderMock"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/contracts/mocks/BEP20OperableReceiverMock.sol": {
+      "lastModificationDate": 1647819573148,
+      "contentHash": "7e55190ada034e23375bf6807777f804",
+      "sourceName": "contracts/mocks/BEP20OperableReceiverMock.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../token/BEP20/lib/IBEP20OperableReceiver.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "BEP20OperableReceiverMock"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/contracts/token/BEP20/BurnableBEP20.sol": {
+      "lastModificationDate": 1647819573150,
+      "contentHash": "f51bfe03dd265b9e67db49aefcfd6575",
+      "sourceName": "contracts/token/BEP20/BurnableBEP20.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./lib/BEP20Burnable.sol",
+        "../../service/ServicePayer.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "BurnableBEP20"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/contracts/token/BEP20/SimpleBEP20.sol": {
+      "lastModificationDate": 1647820171973,
+      "contentHash": "75e537036095be727fb21e9b6c58fb3f",
+      "sourceName": "contracts/token/BEP20/SimpleBEP20.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./lib/BEP20.sol",
+        "../../service/ServicePayer.sol",
+        "../../utils/GeneratorCopyright.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SimpleBEP20"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/contracts/utils/GeneratorCopyright.sol": {
+      "lastModificationDate": 1647820171973,
+      "contentHash": "fd757509ab9c73a68ba0370a1d3d5279",
+      "sourceName": "contracts/utils/GeneratorCopyright.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "GeneratorCopyright"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/contracts/token/BEP20/HelloBEP20.sol": {
+      "lastModificationDate": 1647820171972,
+      "contentHash": "ad50d0f37e411a65b812d7100c453070",
+      "sourceName": "contracts/token/BEP20/HelloBEP20.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "./lib/BEP20.sol",
+        "../../service/ServicePayer.sol",
+        "../../utils/GeneratorCopyright.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "HelloBEP20"
+      ]
+    },
+    "/Users/marioterek/github/coinmaker/contracts/mocks/ServicePayerMock.sol": {
+      "lastModificationDate": 1647819573148,
+      "contentHash": "c83e898f707db95362b581b3ca6483f8",
+      "sourceName": "contracts/mocks/ServicePayerMock.sol",
+      "solcConfig": {
+        "version": "0.8.3",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": false
+          }
+        }
+      },
+      "imports": [
+        "../service/ServicePayer.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ServicePayerMock"
+      ]
+    }
+  }
+}

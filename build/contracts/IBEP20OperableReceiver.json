@@ -1,0 +1,527 @@
+{
+  "contractName": "IBEP20OperableReceiver",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "onTransferReceived",
+      "outputs": [
+        {
+          "internalType": "bytes4",
+          "name": "",
+          "type": "bytes4"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.3+commit.8d00100c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"onTransferReceived\",\"outputs\":[{\"internalType\":\"bytes4\",\"name\":\"\",\"type\":\"bytes4\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Interface for any contract that wants to support transferAndCall or transferFromAndCall  from BEP20Operable token contracts as defined in  https://eips.ethereum.org/EIPS/eip-1363\",\"kind\":\"dev\",\"methods\":{\"onTransferReceived(address,address,uint256,bytes)\":{\"details\":\"Any BEP20Operable smart contract calls this function on the recipient after a `transfer` or a `transferFrom`. This function MAY throw to revert and reject the transfer. Return of other than the magic value MUST result in the transaction being reverted. Note: the token contract address is always the message sender.\",\"params\":{\"amount\":\"uint256 The amount of tokens transferred\",\"data\":\"bytes Additional data with no specified format\",\"operator\":\"address The address which called `transferAndCall` or `transferFromAndCall` function\",\"sender\":\"address The address which are token transferred from\"},\"returns\":{\"_0\":\"`bytes4(keccak256(\\\"onTransferReceived(address,address,uint256,bytes)\\\"))` unless throwing\"}}},\"title\":\"IBEP20OperableReceiver Interface\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"onTransferReceived(address,address,uint256,bytes)\":{\"notice\":\"Handle the receipt of BEP20Operable tokens\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/token/BEP20/lib/IBEP20OperableReceiver.sol\":\"IBEP20OperableReceiver\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/token/BEP20/lib/IBEP20OperableReceiver.sol\":{\"keccak256\":\"0xf1538663b839ab7a83b52c84158d85b1210a61ec8a3f6e7eb96e9909507815ab\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e49920fab3439cf16665300af628ea2525679df31448a1cded058735f810e72e\",\"dweb:/ipfs/QmchjqqacHBKme4HXR7x4VB3PJsRbKFbBV5ApEcaooEEjy\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.0;\n\n/**\n * @title IBEP20OperableReceiver Interface\n * @dev Interface for any contract that wants to support transferAndCall or transferFromAndCall\n *  from BEP20Operable token contracts as defined in\n *  https://eips.ethereum.org/EIPS/eip-1363\n */\ninterface IBEP20OperableReceiver {\n\n    /**\n     * @notice Handle the receipt of BEP20Operable tokens\n     * @dev Any BEP20Operable smart contract calls this function on the recipient\n     * after a `transfer` or a `transferFrom`. This function MAY throw to revert and reject the\n     * transfer. Return of other than the magic value MUST result in the\n     * transaction being reverted.\n     * Note: the token contract address is always the message sender.\n     * @param operator address The address which called `transferAndCall` or `transferFromAndCall` function\n     * @param sender address The address which are token transferred from\n     * @param amount uint256 The amount of tokens transferred\n     * @param data bytes Additional data with no specified format\n     * @return `bytes4(keccak256(\"onTransferReceived(address,address,uint256,bytes)\"))` unless throwing\n     */\n    function onTransferReceived(address operator, address sender, uint256 amount, bytes calldata data) external returns (bytes4);\n}\n",
+  "sourcePath": "/Users/marioterek/github/coinmaker/contracts/token/BEP20/lib/IBEP20OperableReceiver.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/token/BEP20/lib/IBEP20OperableReceiver.sol",
+    "exportedSymbols": {
+      "IBEP20OperableReceiver": [
+        2703
+      ]
+    },
+    "id": 2704,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2687,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:27"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 2688,
+          "nodeType": "StructuredDocumentation",
+          "src": "58:243:27",
+          "text": " @title IBEP20OperableReceiver Interface\n @dev Interface for any contract that wants to support transferAndCall or transferFromAndCall\n  from BEP20Operable token contracts as defined in\n  https://eips.ethereum.org/EIPS/eip-1363"
+        },
+        "fullyImplemented": false,
+        "id": 2703,
+        "linearizedBaseContracts": [
+          2703
+        ],
+        "name": "IBEP20OperableReceiver",
+        "nameLocation": "312:22:27",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 2689,
+              "nodeType": "StructuredDocumentation",
+              "src": "342:839:27",
+              "text": " @notice Handle the receipt of BEP20Operable tokens\n @dev Any BEP20Operable smart contract calls this function on the recipient\n after a `transfer` or a `transferFrom`. This function MAY throw to revert and reject the\n transfer. Return of other than the magic value MUST result in the\n transaction being reverted.\n Note: the token contract address is always the message sender.\n @param operator address The address which called `transferAndCall` or `transferFromAndCall` function\n @param sender address The address which are token transferred from\n @param amount uint256 The amount of tokens transferred\n @param data bytes Additional data with no specified format\n @return `bytes4(keccak256(\"onTransferReceived(address,address,uint256,bytes)\"))` unless throwing"
+            },
+            "functionSelector": "88a7ca5c",
+            "id": 2702,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "onTransferReceived",
+            "nameLocation": "1195:18:27",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2698,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2691,
+                  "mutability": "mutable",
+                  "name": "operator",
+                  "nameLocation": "1222:8:27",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2702,
+                  "src": "1214:16:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2690,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1214:7:27",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2693,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "1240:6:27",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2702,
+                  "src": "1232:14:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2692,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1232:7:27",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2695,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "1256:6:27",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2702,
+                  "src": "1248:14:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2694,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1248:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2697,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nameLocation": "1279:4:27",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2702,
+                  "src": "1264:19:27",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 2696,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1264:5:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1213:71:27"
+            },
+            "returnParameters": {
+              "id": 2701,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2700,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2702,
+                  "src": "1303:6:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 2699,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1303:6:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1302:8:27"
+            },
+            "scope": 2703,
+            "src": "1186:125:27",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2704,
+        "src": "302:1011:27"
+      }
+    ],
+    "src": "33:1281:27"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/token/BEP20/lib/IBEP20OperableReceiver.sol",
+    "exportedSymbols": {
+      "IBEP20OperableReceiver": [
+        2703
+      ]
+    },
+    "id": 2704,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2687,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:27"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 2688,
+          "nodeType": "StructuredDocumentation",
+          "src": "58:243:27",
+          "text": " @title IBEP20OperableReceiver Interface\n @dev Interface for any contract that wants to support transferAndCall or transferFromAndCall\n  from BEP20Operable token contracts as defined in\n  https://eips.ethereum.org/EIPS/eip-1363"
+        },
+        "fullyImplemented": false,
+        "id": 2703,
+        "linearizedBaseContracts": [
+          2703
+        ],
+        "name": "IBEP20OperableReceiver",
+        "nameLocation": "312:22:27",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 2689,
+              "nodeType": "StructuredDocumentation",
+              "src": "342:839:27",
+              "text": " @notice Handle the receipt of BEP20Operable tokens\n @dev Any BEP20Operable smart contract calls this function on the recipient\n after a `transfer` or a `transferFrom`. This function MAY throw to revert and reject the\n transfer. Return of other than the magic value MUST result in the\n transaction being reverted.\n Note: the token contract address is always the message sender.\n @param operator address The address which called `transferAndCall` or `transferFromAndCall` function\n @param sender address The address which are token transferred from\n @param amount uint256 The amount of tokens transferred\n @param data bytes Additional data with no specified format\n @return `bytes4(keccak256(\"onTransferReceived(address,address,uint256,bytes)\"))` unless throwing"
+            },
+            "functionSelector": "88a7ca5c",
+            "id": 2702,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "onTransferReceived",
+            "nameLocation": "1195:18:27",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2698,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2691,
+                  "mutability": "mutable",
+                  "name": "operator",
+                  "nameLocation": "1222:8:27",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2702,
+                  "src": "1214:16:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2690,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1214:7:27",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2693,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "1240:6:27",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2702,
+                  "src": "1232:14:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2692,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1232:7:27",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2695,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "1256:6:27",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2702,
+                  "src": "1248:14:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2694,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1248:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2697,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nameLocation": "1279:4:27",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2702,
+                  "src": "1264:19:27",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 2696,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1264:5:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1213:71:27"
+            },
+            "returnParameters": {
+              "id": 2701,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2700,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2702,
+                  "src": "1303:6:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 2699,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1303:6:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1302:8:27"
+            },
+            "scope": 2703,
+            "src": "1186:125:27",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2704,
+        "src": "302:1011:27"
+      }
+    ],
+    "src": "33:1281:27"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.3+commit.8d00100c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.6",
+  "updatedAt": "2022-03-21T00:23:03.209Z",
+  "devdoc": {
+    "details": "Interface for any contract that wants to support transferAndCall or transferFromAndCall  from BEP20Operable token contracts as defined in  https://eips.ethereum.org/EIPS/eip-1363",
+    "kind": "dev",
+    "methods": {
+      "onTransferReceived(address,address,uint256,bytes)": {
+        "details": "Any BEP20Operable smart contract calls this function on the recipient after a `transfer` or a `transferFrom`. This function MAY throw to revert and reject the transfer. Return of other than the magic value MUST result in the transaction being reverted. Note: the token contract address is always the message sender.",
+        "params": {
+          "amount": "uint256 The amount of tokens transferred",
+          "data": "bytes Additional data with no specified format",
+          "operator": "address The address which called `transferAndCall` or `transferFromAndCall` function",
+          "sender": "address The address which are token transferred from"
+        },
+        "returns": {
+          "_0": "`bytes4(keccak256(\"onTransferReceived(address,address,uint256,bytes)\"))` unless throwing"
+        }
+      }
+    },
+    "title": "IBEP20OperableReceiver Interface",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "onTransferReceived(address,address,uint256,bytes)": {
+        "notice": "Handle the receipt of BEP20Operable tokens"
+      }
+    },
+    "version": 1
+  }
+}

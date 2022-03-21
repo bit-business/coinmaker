@@ -1,0 +1,1993 @@
+{
+  "contractName": "BEP20Mintable",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Approval",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "MintFinished",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        }
+      ],
+      "name": "allowance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "approve",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "decimals",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "subtractedValue",
+          "type": "uint256"
+        }
+      ],
+      "name": "decreaseAllowance",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getOwner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "addedValue",
+          "type": "uint256"
+        }
+      ],
+      "name": "increaseAllowance",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "name",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "symbol",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalSupply",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "transfer",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferFrom",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "mintingFinished",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "mint",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "finishMinting",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.3+commit.8d00100c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[],\"name\":\"MintFinished\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"subtractedValue\",\"type\":\"uint256\"}],\"name\":\"decreaseAllowance\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"finishMinting\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"addedValue\",\"type\":\"uint256\"}],\"name\":\"increaseAllowance\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"mint\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"mintingFinished\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Implementation of the BEP20Mintable. Extension of {BEP20} that adds a minting behaviour.\",\"events\":{\"MintFinished()\":{\"details\":\"Emitted during finish minting\"}},\"kind\":\"dev\",\"methods\":{\"allowance(address,address)\":{\"details\":\"See {IBEP20-allowance}.\"},\"approve(address,uint256)\":{\"details\":\"See {IBEP20-approve}. Requirements: - `spender` cannot be the zero address.\"},\"balanceOf(address)\":{\"details\":\"See {IBEP20-balanceOf}.\"},\"decimals()\":{\"details\":\"Returns the number of decimals used to get its user representation. For example, if `decimals` equals `2`, a balance of `505` tokens should be displayed to a user as `5,05` (`505 / 10 ** 2`). Tokens usually opt for a value of 18, imitating the relationship between Ether and Wei. This is the value {BEP20} uses, unless {_setupDecimals} is called. NOTE: This information is only used for _display_ purposes: it in no way affects any of the arithmetic of the contract, including {IBEP20-balanceOf} and {IBEP20-transfer}.\"},\"decreaseAllowance(address,uint256)\":{\"details\":\"Atomically decreases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IBEP20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address. - `spender` must have allowance for the caller of at least `subtractedValue`.\"},\"finishMinting()\":{\"details\":\"Function to stop minting new tokens. WARNING: it allows everyone to finish minting. Access controls MUST be defined in derived contracts.\"},\"getOwner()\":{\"details\":\"See {IBEP20-getOwner}.\"},\"increaseAllowance(address,uint256)\":{\"details\":\"Atomically increases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IBEP20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address.\"},\"mint(address,uint256)\":{\"details\":\"Function to mint tokens. WARNING: it allows everyone to mint new tokens. Access controls MUST be defined in derived contracts.\",\"params\":{\"account\":\"The address that will receive the minted tokens\",\"amount\":\"The amount of tokens to mint\"}},\"mintingFinished()\":{\"returns\":{\"_0\":\"if minting is finished or not.\"}},\"name()\":{\"details\":\"Returns the name of the token.\"},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"symbol()\":{\"details\":\"Returns the symbol of the token, usually a shorter version of the name.\"},\"totalSupply()\":{\"details\":\"See {IBEP20-totalSupply}.\"},\"transfer(address,uint256)\":{\"details\":\"See {IBEP20-transfer}. Requirements: - `recipient` cannot be the zero address. - the caller must have a balance of at least `amount`.\"},\"transferFrom(address,address,uint256)\":{\"details\":\"See {IBEP20-transferFrom}. Emits an {Approval} event indicating the updated allowance. This is not required by the EIP. See the note at the beginning of {BEP20}. Requirements: - `sender` and `recipient` cannot be the zero address. - `sender` must have a balance of at least `amount`. - the caller must have allowance for ``sender``'s tokens of at least `amount`.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"title\":\"BEP20Mintable\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/token/BEP20/lib/BEP20Mintable.sol\":\"BEP20Mintable\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0x1cae4f85f114ff17b90414f5da67365b1d00337abb5bce9bf944eb78a2c0673c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d5ff16b336ce8f906478d5f2eecc6435e00833bdc0b92f6b209cf9e92cb5b2b7\",\"dweb:/ipfs/QmRD1rAZEqQ73C33cdA3QoUyBDMEWnNKNMc6PNkAZWHeQQ\"]},\"@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xf930d2df426bfcfc1f7415be724f04081c96f4fb9ec8d0e3a521c07692dface0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fc2bfdea0d2562c76fb3c4cf70a86c6ba25c5a30e8f8515c95aafdf8383f8395\",\"dweb:/ipfs/QmTbFya18786ckJfLYUoWau9jBTKfmWnWm5XSViWvB7PXN\"]},\"project:/contracts/token/BEP20/lib/BEP20.sol\":{\"keccak256\":\"0xb38d0fcafebda7522da83242bd0db765cdf55fd6fc827cb612ba272b7995d01c\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://220ceb8a9c8d9a80fe50607491961b49277f43d0f7994b1a125d25e0c1252ca0\",\"dweb:/ipfs/QmdGRGx5K18hN5dBHYyrdkaMtauJgr1qti4o7tAW6GKxww\"]},\"project:/contracts/token/BEP20/lib/BEP20Mintable.sol\":{\"keccak256\":\"0xb907f91d544907380e42c7b0d65d83ce0a76dc691eb8afacab52b5802aa0d0e7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://562c7c5e6a31221871a0a4b641b67ac12c476575015956177ec132d282d16d94\",\"dweb:/ipfs/QmTn85P9ghevDL5tpXfGGAicA6MNksUmCa8SUFUUXmwGrb\"]},\"project:/contracts/token/BEP20/lib/IBEP20.sol\":{\"keccak256\":\"0xb41b134e68914ac892a057781ccd4a0b3030fa0e8f53a04d935244b794ab8849\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d4d559111ac45c1ddc9f3057d6cdd8e2091b1783c805298050ffc71692ffd926\",\"dweb:/ipfs/QmVZg8bzYJUfnFy36BU6u4UzzkTuSn3RaMEtW96RXqSBGW\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.0;\n\nimport \"../lib/BEP20.sol\";\n\n/**\n * @title BEP20Mintable\n * @dev Implementation of the BEP20Mintable. Extension of {BEP20} that adds a minting behaviour.\n */\nabstract contract BEP20Mintable is BEP20 {\n\n    // indicates if minting is finished\n    bool private _mintingFinished = false;\n\n    /**\n     * @dev Emitted during finish minting\n     */\n    event MintFinished();\n\n    /**\n     * @dev Tokens can be minted only before minting finished.\n     */\n    modifier canMint() {\n        require(!_mintingFinished, \"BEP20Mintable: minting is finished\");\n        _;\n    }\n\n    /**\n     * @return if minting is finished or not.\n     */\n    function mintingFinished() public view returns (bool) {\n        return _mintingFinished;\n    }\n\n    /**\n     * @dev Function to mint tokens.\n     *\n     * WARNING: it allows everyone to mint new tokens. Access controls MUST be defined in derived contracts.\n     *\n     * @param account The address that will receive the minted tokens\n     * @param amount The amount of tokens to mint\n     */\n    function mint(address account, uint256 amount) public canMint {\n        _mint(account, amount);\n    }\n\n    /**\n     * @dev Function to stop minting new tokens.\n     *\n     * WARNING: it allows everyone to finish minting. Access controls MUST be defined in derived contracts.\n     */\n    function finishMinting() public canMint {\n        _finishMinting();\n    }\n\n    /**\n     * @dev Function to stop minting new tokens.\n     */\n    function _finishMinting() internal virtual {\n        _mintingFinished = true;\n\n        emit MintFinished();\n    }\n}\n",
+  "sourcePath": "/Users/marioterek/github/coinmaker/contracts/token/BEP20/lib/BEP20Mintable.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/token/BEP20/lib/BEP20Mintable.sol",
+    "exportedSymbols": {
+      "BEP20": [
+        2026
+      ],
+      "BEP20Mintable": [
+        2219
+      ],
+      "Context": [
+        428
+      ],
+      "IBEP20": [
+        2605
+      ],
+      "Ownable": [
+        109
+      ]
+    },
+    "id": 2220,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2150,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:23"
+      },
+      {
+        "absolutePath": "project:/contracts/token/BEP20/lib/BEP20.sol",
+        "file": "../lib/BEP20.sol",
+        "id": 2151,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2220,
+        "sourceUnit": 2027,
+        "src": "58:26:23",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 2153,
+              "name": "BEP20",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 2026,
+              "src": "250:5:23"
+            },
+            "id": 2154,
+            "nodeType": "InheritanceSpecifier",
+            "src": "250:5:23"
+          }
+        ],
+        "contractDependencies": [
+          109,
+          428,
+          2026,
+          2605
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 2152,
+          "nodeType": "StructuredDocumentation",
+          "src": "86:128:23",
+          "text": " @title BEP20Mintable\n @dev Implementation of the BEP20Mintable. Extension of {BEP20} that adds a minting behaviour."
+        },
+        "fullyImplemented": false,
+        "id": 2219,
+        "linearizedBaseContracts": [
+          2219,
+          2026,
+          2605,
+          109,
+          428
+        ],
+        "name": "BEP20Mintable",
+        "nameLocation": "233:13:23",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 2157,
+            "mutability": "mutable",
+            "name": "_mintingFinished",
+            "nameLocation": "316:16:23",
+            "nodeType": "VariableDeclaration",
+            "scope": 2219,
+            "src": "303:37:23",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 2155,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "303:4:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": {
+              "hexValue": "66616c7365",
+              "id": 2156,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "bool",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "335:5:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              },
+              "value": "false"
+            },
+            "visibility": "private"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 2158,
+              "nodeType": "StructuredDocumentation",
+              "src": "347:53:23",
+              "text": " @dev Emitted during finish minting"
+            },
+            "id": 2160,
+            "name": "MintFinished",
+            "nameLocation": "411:12:23",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2159,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "423:2:23"
+            },
+            "src": "405:21:23"
+          },
+          {
+            "body": {
+              "id": 2170,
+              "nodeType": "Block",
+              "src": "530:92:23",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 2165,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "UnaryOperation",
+                        "operator": "!",
+                        "prefix": true,
+                        "src": "548:17:23",
+                        "subExpression": {
+                          "id": 2164,
+                          "name": "_mintingFinished",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2157,
+                          "src": "549:16:23",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "42455032304d696e7461626c653a206d696e74696e672069732066696e6973686564",
+                        "id": 2166,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "567:36:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_34a2ac0f812e9b1477a97c313afe881d5155266f0fe34fae0fa6912efb9ea746",
+                          "typeString": "literal_string \"BEP20Mintable: minting is finished\""
+                        },
+                        "value": "BEP20Mintable: minting is finished"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_34a2ac0f812e9b1477a97c313afe881d5155266f0fe34fae0fa6912efb9ea746",
+                          "typeString": "literal_string \"BEP20Mintable: minting is finished\""
+                        }
+                      ],
+                      "id": 2163,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "540:7:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 2167,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "540:64:23",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2168,
+                  "nodeType": "ExpressionStatement",
+                  "src": "540:64:23"
+                },
+                {
+                  "id": 2169,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "614:1:23"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 2161,
+              "nodeType": "StructuredDocumentation",
+              "src": "432:74:23",
+              "text": " @dev Tokens can be minted only before minting finished."
+            },
+            "id": 2171,
+            "name": "canMint",
+            "nameLocation": "520:7:23",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 2162,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "527:2:23"
+            },
+            "src": "511:111:23",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 2179,
+              "nodeType": "Block",
+              "src": "744:40:23",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 2177,
+                    "name": "_mintingFinished",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 2157,
+                    "src": "761:16:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 2176,
+                  "id": 2178,
+                  "nodeType": "Return",
+                  "src": "754:23:23"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 2172,
+              "nodeType": "StructuredDocumentation",
+              "src": "628:57:23",
+              "text": " @return if minting is finished or not."
+            },
+            "functionSelector": "05d2035b",
+            "id": 2180,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mintingFinished",
+            "nameLocation": "699:15:23",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2173,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "714:2:23"
+            },
+            "returnParameters": {
+              "id": 2176,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2175,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2180,
+                  "src": "738:4:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2174,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "738:4:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "737:6:23"
+            },
+            "scope": 2219,
+            "src": "690:94:23",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 2195,
+              "nodeType": "Block",
+              "src": "1148:39:23",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 2191,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2183,
+                        "src": "1164:7:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 2192,
+                        "name": "amount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2185,
+                        "src": "1173:6:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 2190,
+                      "name": "_mint",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1896,
+                      "src": "1158:5:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256)"
+                      }
+                    },
+                    "id": 2193,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1158:22:23",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2194,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1158:22:23"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 2181,
+              "nodeType": "StructuredDocumentation",
+              "src": "790:291:23",
+              "text": " @dev Function to mint tokens.\n WARNING: it allows everyone to mint new tokens. Access controls MUST be defined in derived contracts.\n @param account The address that will receive the minted tokens\n @param amount The amount of tokens to mint"
+            },
+            "functionSelector": "40c10f19",
+            "id": 2196,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 2188,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 2187,
+                  "name": "canMint",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 2171,
+                  "src": "1140:7:23"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1140:7:23"
+              }
+            ],
+            "name": "mint",
+            "nameLocation": "1095:4:23",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2186,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2183,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "1108:7:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2196,
+                  "src": "1100:15:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2182,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1100:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2185,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "1125:6:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2196,
+                  "src": "1117:14:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2184,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1117:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1099:33:23"
+            },
+            "returnParameters": {
+              "id": 2189,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1148:0:23"
+            },
+            "scope": 2219,
+            "src": "1086:101:23",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 2205,
+              "nodeType": "Block",
+              "src": "1413:33:23",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 2202,
+                      "name": "_finishMinting",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2218,
+                      "src": "1423:14:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 2203,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1423:16:23",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2204,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1423:16:23"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 2197,
+              "nodeType": "StructuredDocumentation",
+              "src": "1193:175:23",
+              "text": " @dev Function to stop minting new tokens.\n WARNING: it allows everyone to finish minting. Access controls MUST be defined in derived contracts."
+            },
+            "functionSelector": "7d64bcb4",
+            "id": 2206,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 2200,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 2199,
+                  "name": "canMint",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 2171,
+                  "src": "1405:7:23"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1405:7:23"
+              }
+            ],
+            "name": "finishMinting",
+            "nameLocation": "1382:13:23",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2198,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1395:2:23"
+            },
+            "returnParameters": {
+              "id": 2201,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1413:0:23"
+            },
+            "scope": 2219,
+            "src": "1373:73:23",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 2217,
+              "nodeType": "Block",
+              "src": "1560:70:23",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 2212,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 2210,
+                      "name": "_mintingFinished",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2157,
+                      "src": "1570:16:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "hexValue": "74727565",
+                      "id": 2211,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1589:4:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "1570:23:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 2213,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1570:23:23"
+                },
+                {
+                  "eventCall": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 2214,
+                      "name": "MintFinished",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2160,
+                      "src": "1609:12:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 2215,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1609:14:23",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2216,
+                  "nodeType": "EmitStatement",
+                  "src": "1604:19:23"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 2207,
+              "nodeType": "StructuredDocumentation",
+              "src": "1452:60:23",
+              "text": " @dev Function to stop minting new tokens."
+            },
+            "id": 2218,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_finishMinting",
+            "nameLocation": "1526:14:23",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2208,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1540:2:23"
+            },
+            "returnParameters": {
+              "id": 2209,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1560:0:23"
+            },
+            "scope": 2219,
+            "src": "1517:113:23",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 2220,
+        "src": "215:1417:23"
+      }
+    ],
+    "src": "33:1600:23"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/token/BEP20/lib/BEP20Mintable.sol",
+    "exportedSymbols": {
+      "BEP20": [
+        2026
+      ],
+      "BEP20Mintable": [
+        2219
+      ],
+      "Context": [
+        428
+      ],
+      "IBEP20": [
+        2605
+      ],
+      "Ownable": [
+        109
+      ]
+    },
+    "id": 2220,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2150,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:23"
+      },
+      {
+        "absolutePath": "project:/contracts/token/BEP20/lib/BEP20.sol",
+        "file": "../lib/BEP20.sol",
+        "id": 2151,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 2220,
+        "sourceUnit": 2027,
+        "src": "58:26:23",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 2153,
+              "name": "BEP20",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 2026,
+              "src": "250:5:23"
+            },
+            "id": 2154,
+            "nodeType": "InheritanceSpecifier",
+            "src": "250:5:23"
+          }
+        ],
+        "contractDependencies": [
+          109,
+          428,
+          2026,
+          2605
+        ],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 2152,
+          "nodeType": "StructuredDocumentation",
+          "src": "86:128:23",
+          "text": " @title BEP20Mintable\n @dev Implementation of the BEP20Mintable. Extension of {BEP20} that adds a minting behaviour."
+        },
+        "fullyImplemented": false,
+        "id": 2219,
+        "linearizedBaseContracts": [
+          2219,
+          2026,
+          2605,
+          109,
+          428
+        ],
+        "name": "BEP20Mintable",
+        "nameLocation": "233:13:23",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 2157,
+            "mutability": "mutable",
+            "name": "_mintingFinished",
+            "nameLocation": "316:16:23",
+            "nodeType": "VariableDeclaration",
+            "scope": 2219,
+            "src": "303:37:23",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 2155,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "303:4:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": {
+              "hexValue": "66616c7365",
+              "id": 2156,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "bool",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "335:5:23",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              },
+              "value": "false"
+            },
+            "visibility": "private"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 2158,
+              "nodeType": "StructuredDocumentation",
+              "src": "347:53:23",
+              "text": " @dev Emitted during finish minting"
+            },
+            "id": 2160,
+            "name": "MintFinished",
+            "nameLocation": "411:12:23",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2159,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "423:2:23"
+            },
+            "src": "405:21:23"
+          },
+          {
+            "body": {
+              "id": 2170,
+              "nodeType": "Block",
+              "src": "530:92:23",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 2165,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "UnaryOperation",
+                        "operator": "!",
+                        "prefix": true,
+                        "src": "548:17:23",
+                        "subExpression": {
+                          "id": 2164,
+                          "name": "_mintingFinished",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2157,
+                          "src": "549:16:23",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "hexValue": "42455032304d696e7461626c653a206d696e74696e672069732066696e6973686564",
+                        "id": 2166,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "567:36:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_34a2ac0f812e9b1477a97c313afe881d5155266f0fe34fae0fa6912efb9ea746",
+                          "typeString": "literal_string \"BEP20Mintable: minting is finished\""
+                        },
+                        "value": "BEP20Mintable: minting is finished"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_34a2ac0f812e9b1477a97c313afe881d5155266f0fe34fae0fa6912efb9ea746",
+                          "typeString": "literal_string \"BEP20Mintable: minting is finished\""
+                        }
+                      ],
+                      "id": 2163,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "540:7:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 2167,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "540:64:23",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2168,
+                  "nodeType": "ExpressionStatement",
+                  "src": "540:64:23"
+                },
+                {
+                  "id": 2169,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "614:1:23"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 2161,
+              "nodeType": "StructuredDocumentation",
+              "src": "432:74:23",
+              "text": " @dev Tokens can be minted only before minting finished."
+            },
+            "id": 2171,
+            "name": "canMint",
+            "nameLocation": "520:7:23",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 2162,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "527:2:23"
+            },
+            "src": "511:111:23",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 2179,
+              "nodeType": "Block",
+              "src": "744:40:23",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 2177,
+                    "name": "_mintingFinished",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 2157,
+                    "src": "761:16:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 2176,
+                  "id": 2178,
+                  "nodeType": "Return",
+                  "src": "754:23:23"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 2172,
+              "nodeType": "StructuredDocumentation",
+              "src": "628:57:23",
+              "text": " @return if minting is finished or not."
+            },
+            "functionSelector": "05d2035b",
+            "id": 2180,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mintingFinished",
+            "nameLocation": "699:15:23",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2173,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "714:2:23"
+            },
+            "returnParameters": {
+              "id": 2176,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2175,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2180,
+                  "src": "738:4:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2174,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "738:4:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "737:6:23"
+            },
+            "scope": 2219,
+            "src": "690:94:23",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 2195,
+              "nodeType": "Block",
+              "src": "1148:39:23",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 2191,
+                        "name": "account",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2183,
+                        "src": "1164:7:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "id": 2192,
+                        "name": "amount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2185,
+                        "src": "1173:6:23",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 2190,
+                      "name": "_mint",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1896,
+                      "src": "1158:5:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256)"
+                      }
+                    },
+                    "id": 2193,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1158:22:23",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2194,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1158:22:23"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 2181,
+              "nodeType": "StructuredDocumentation",
+              "src": "790:291:23",
+              "text": " @dev Function to mint tokens.\n WARNING: it allows everyone to mint new tokens. Access controls MUST be defined in derived contracts.\n @param account The address that will receive the minted tokens\n @param amount The amount of tokens to mint"
+            },
+            "functionSelector": "40c10f19",
+            "id": 2196,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 2188,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 2187,
+                  "name": "canMint",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 2171,
+                  "src": "1140:7:23"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1140:7:23"
+              }
+            ],
+            "name": "mint",
+            "nameLocation": "1095:4:23",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2186,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2183,
+                  "mutability": "mutable",
+                  "name": "account",
+                  "nameLocation": "1108:7:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2196,
+                  "src": "1100:15:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2182,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1100:7:23",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2185,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "1125:6:23",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2196,
+                  "src": "1117:14:23",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2184,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1117:7:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1099:33:23"
+            },
+            "returnParameters": {
+              "id": 2189,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1148:0:23"
+            },
+            "scope": 2219,
+            "src": "1086:101:23",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 2205,
+              "nodeType": "Block",
+              "src": "1413:33:23",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 2202,
+                      "name": "_finishMinting",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2218,
+                      "src": "1423:14:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 2203,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1423:16:23",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2204,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1423:16:23"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 2197,
+              "nodeType": "StructuredDocumentation",
+              "src": "1193:175:23",
+              "text": " @dev Function to stop minting new tokens.\n WARNING: it allows everyone to finish minting. Access controls MUST be defined in derived contracts."
+            },
+            "functionSelector": "7d64bcb4",
+            "id": 2206,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 2200,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 2199,
+                  "name": "canMint",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 2171,
+                  "src": "1405:7:23"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1405:7:23"
+              }
+            ],
+            "name": "finishMinting",
+            "nameLocation": "1382:13:23",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2198,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1395:2:23"
+            },
+            "returnParameters": {
+              "id": 2201,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1413:0:23"
+            },
+            "scope": 2219,
+            "src": "1373:73:23",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 2217,
+              "nodeType": "Block",
+              "src": "1560:70:23",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 2212,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 2210,
+                      "name": "_mintingFinished",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2157,
+                      "src": "1570:16:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "hexValue": "74727565",
+                      "id": 2211,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1589:4:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "1570:23:23",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 2213,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1570:23:23"
+                },
+                {
+                  "eventCall": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 2214,
+                      "name": "MintFinished",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2160,
+                      "src": "1609:12:23",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 2215,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1609:14:23",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2216,
+                  "nodeType": "EmitStatement",
+                  "src": "1604:19:23"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 2207,
+              "nodeType": "StructuredDocumentation",
+              "src": "1452:60:23",
+              "text": " @dev Function to stop minting new tokens."
+            },
+            "id": 2218,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_finishMinting",
+            "nameLocation": "1526:14:23",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2208,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1540:2:23"
+            },
+            "returnParameters": {
+              "id": 2209,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1560:0:23"
+            },
+            "scope": 2219,
+            "src": "1517:113:23",
+            "stateMutability": "nonpayable",
+            "virtual": true,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 2220,
+        "src": "215:1417:23"
+      }
+    ],
+    "src": "33:1600:23"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.3+commit.8d00100c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.6",
+  "updatedAt": "2022-03-21T00:23:03.193Z",
+  "devdoc": {
+    "details": "Implementation of the BEP20Mintable. Extension of {BEP20} that adds a minting behaviour.",
+    "events": {
+      "MintFinished()": {
+        "details": "Emitted during finish minting"
+      }
+    },
+    "kind": "dev",
+    "methods": {
+      "allowance(address,address)": {
+        "details": "See {IBEP20-allowance}."
+      },
+      "approve(address,uint256)": {
+        "details": "See {IBEP20-approve}. Requirements: - `spender` cannot be the zero address."
+      },
+      "balanceOf(address)": {
+        "details": "See {IBEP20-balanceOf}."
+      },
+      "decimals()": {
+        "details": "Returns the number of decimals used to get its user representation. For example, if `decimals` equals `2`, a balance of `505` tokens should be displayed to a user as `5,05` (`505 / 10 ** 2`). Tokens usually opt for a value of 18, imitating the relationship between Ether and Wei. This is the value {BEP20} uses, unless {_setupDecimals} is called. NOTE: This information is only used for _display_ purposes: it in no way affects any of the arithmetic of the contract, including {IBEP20-balanceOf} and {IBEP20-transfer}."
+      },
+      "decreaseAllowance(address,uint256)": {
+        "details": "Atomically decreases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IBEP20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address. - `spender` must have allowance for the caller of at least `subtractedValue`."
+      },
+      "finishMinting()": {
+        "details": "Function to stop minting new tokens. WARNING: it allows everyone to finish minting. Access controls MUST be defined in derived contracts."
+      },
+      "getOwner()": {
+        "details": "See {IBEP20-getOwner}."
+      },
+      "increaseAllowance(address,uint256)": {
+        "details": "Atomically increases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IBEP20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address."
+      },
+      "mint(address,uint256)": {
+        "details": "Function to mint tokens. WARNING: it allows everyone to mint new tokens. Access controls MUST be defined in derived contracts.",
+        "params": {
+          "account": "The address that will receive the minted tokens",
+          "amount": "The amount of tokens to mint"
+        }
+      },
+      "mintingFinished()": {
+        "returns": {
+          "_0": "if minting is finished or not."
+        }
+      },
+      "name()": {
+        "details": "Returns the name of the token."
+      },
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+      },
+      "symbol()": {
+        "details": "Returns the symbol of the token, usually a shorter version of the name."
+      },
+      "totalSupply()": {
+        "details": "See {IBEP20-totalSupply}."
+      },
+      "transfer(address,uint256)": {
+        "details": "See {IBEP20-transfer}. Requirements: - `recipient` cannot be the zero address. - the caller must have a balance of at least `amount`."
+      },
+      "transferFrom(address,address,uint256)": {
+        "details": "See {IBEP20-transferFrom}. Emits an {Approval} event indicating the updated allowance. This is not required by the EIP. See the note at the beginning of {BEP20}. Requirements: - `sender` and `recipient` cannot be the zero address. - `sender` must have a balance of at least `amount`. - the caller must have allowance for ``sender``'s tokens of at least `amount`."
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      }
+    },
+    "title": "BEP20Mintable",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

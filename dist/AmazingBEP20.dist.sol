@@ -1,8 +1,6 @@
-// SPDX-License-Identifier: MIT
-
 // File: @openzeppelin/contracts/utils/Context.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -29,7 +27,7 @@ abstract contract Context {
 
 // File: @openzeppelin/contracts/access/Ownable.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -99,7 +97,7 @@ abstract contract Ownable is Context {
 
 // File: contracts/token/BEP20/lib/IBEP20.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -200,11 +198,9 @@ interface IBEP20 {
 
 // File: contracts/token/BEP20/lib/BEP20.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
-
-
 
 /**
  * @dev Implementation of the {IBEP20} interface.
@@ -520,10 +516,9 @@ contract BEP20 is Ownable, IBEP20 {
 
 // File: contracts/token/BEP20/lib/BEP20Mintable.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
-
 
 /**
  * @title BEP20Mintable
@@ -587,10 +582,9 @@ abstract contract BEP20Mintable is BEP20 {
 
 // File: contracts/token/BEP20/lib/BEP20Burnable.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
-
 
 /**
  * @dev Extension of {BEP20} that allows token holders to destroy both their own
@@ -628,7 +622,7 @@ abstract contract BEP20Burnable is BEP20 {
 
 // File: @openzeppelin/contracts/utils/introspection/IERC165.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -655,11 +649,9 @@ interface IERC165 {
 
 // File: contracts/token/BEP20/lib/IBEP20Operable.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
-
-
 
 /**
  * @title IBEP20Operable Interface
@@ -732,7 +724,7 @@ interface IBEP20Operable is IBEP20, IERC165 {
 
 // File: contracts/token/BEP20/lib/IBEP20OperableReceiver.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -762,7 +754,7 @@ interface IBEP20OperableReceiver {
 
 // File: contracts/token/BEP20/lib/IBEP20OperableSpender.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -791,7 +783,7 @@ interface IBEP20OperableSpender {
 
 // File: @openzeppelin/contracts/utils/Address.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -983,10 +975,9 @@ library Address {
 
 // File: @openzeppelin/contracts/utils/introspection/ERC165Checker.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
-
 
 /**
  * @dev Library used to query support of an interface declared via {IERC165}.
@@ -1093,10 +1084,9 @@ library ERC165Checker {
 
 // File: @openzeppelin/contracts/utils/introspection/ERC165.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
-
 
 /**
  * @dev Implementation of the {IERC165} interface.
@@ -1123,13 +1113,9 @@ abstract contract ERC165 is IERC165 {
 
 // File: contracts/token/BEP20/lib/BEP20Operable.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
-
-
-
-
 
 
 
@@ -1259,11 +1245,9 @@ abstract contract BEP20Operable is BEP20, IBEP20Operable, ERC165 {
 
 // File: contracts/utils/TokenRecover.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
-
-
 
 /**
  * @title TokenRecover
@@ -1283,7 +1267,7 @@ contract TokenRecover is Ownable {
 
 // File: contracts/service/ServicePayer.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -1304,12 +1288,9 @@ abstract contract ServicePayer {
 
 // File: contracts/token/BEP20/AmazingBEP20.sol
 
-
+// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
-
-
-
 
 
 

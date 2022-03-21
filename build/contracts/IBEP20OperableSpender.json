@@ -1,0 +1,465 @@
+{
+  "contractName": "IBEP20OperableSpender",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "onApprovalReceived",
+      "outputs": [
+        {
+          "internalType": "bytes4",
+          "name": "",
+          "type": "bytes4"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.3+commit.8d00100c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"onApprovalReceived\",\"outputs\":[{\"internalType\":\"bytes4\",\"name\":\"\",\"type\":\"bytes4\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Interface for any contract that wants to support approveAndCall  from BEP20Operable token contracts as defined in  https://eips.ethereum.org/EIPS/eip-1363\",\"kind\":\"dev\",\"methods\":{\"onApprovalReceived(address,uint256,bytes)\":{\"details\":\"Any BEP20Operable smart contract calls this function on the recipient after an `approve`. This function MAY throw to revert and reject the approval. Return of other than the magic value MUST result in the transaction being reverted. Note: the token contract address is always the message sender.\",\"params\":{\"amount\":\"uint256 The amount of tokens to be spent\",\"data\":\"bytes Additional data with no specified format\",\"sender\":\"address The address which called `approveAndCall` function\"},\"returns\":{\"_0\":\"`bytes4(keccak256(\\\"onApprovalReceived(address,uint256,bytes)\\\"))` unless throwing\"}}},\"title\":\"IBEP20OperableSpender Interface\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"onApprovalReceived(address,uint256,bytes)\":{\"notice\":\"Handle the approval of BEP20Operable tokens\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/token/BEP20/lib/IBEP20OperableSpender.sol\":\"IBEP20OperableSpender\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/token/BEP20/lib/IBEP20OperableSpender.sol\":{\"keccak256\":\"0xdcf7d0000b1ca27b157d1826c5f34973f6663f5489adbdca71aaa159cd0a9d56\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://9237c63596364bebf3ac3c8811527bdfcea4cb9dc37c5a5197aea748120cb872\",\"dweb:/ipfs/QmQUabNdSadxgGwpBCekSjxa77wzPYRMmwMCcQVrMBiTsX\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.0;\n\n/**\n * @title IBEP20OperableSpender Interface\n * @dev Interface for any contract that wants to support approveAndCall\n *  from BEP20Operable token contracts as defined in\n *  https://eips.ethereum.org/EIPS/eip-1363\n */\ninterface IBEP20OperableSpender {\n\n    /**\n     * @notice Handle the approval of BEP20Operable tokens\n     * @dev Any BEP20Operable smart contract calls this function on the recipient\n     * after an `approve`. This function MAY throw to revert and reject the\n     * approval. Return of other than the magic value MUST result in the\n     * transaction being reverted.\n     * Note: the token contract address is always the message sender.\n     * @param sender address The address which called `approveAndCall` function\n     * @param amount uint256 The amount of tokens to be spent\n     * @param data bytes Additional data with no specified format\n     * @return `bytes4(keccak256(\"onApprovalReceived(address,uint256,bytes)\"))` unless throwing\n     */\n    function onApprovalReceived(address sender, uint256 amount, bytes calldata data) external returns (bytes4);\n}\n",
+  "sourcePath": "/Users/marioterek/github/coinmaker/contracts/token/BEP20/lib/IBEP20OperableSpender.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/token/BEP20/lib/IBEP20OperableSpender.sol",
+    "exportedSymbols": {
+      "IBEP20OperableSpender": [
+        2719
+      ]
+    },
+    "id": 2720,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2705,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:28"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 2706,
+          "nodeType": "StructuredDocumentation",
+          "src": "58:218:28",
+          "text": " @title IBEP20OperableSpender Interface\n @dev Interface for any contract that wants to support approveAndCall\n  from BEP20Operable token contracts as defined in\n  https://eips.ethereum.org/EIPS/eip-1363"
+        },
+        "fullyImplemented": false,
+        "id": 2719,
+        "linearizedBaseContracts": [
+          2719
+        ],
+        "name": "IBEP20OperableSpender",
+        "nameLocation": "287:21:28",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 2707,
+              "nodeType": "StructuredDocumentation",
+              "src": "316:710:28",
+              "text": " @notice Handle the approval of BEP20Operable tokens\n @dev Any BEP20Operable smart contract calls this function on the recipient\n after an `approve`. This function MAY throw to revert and reject the\n approval. Return of other than the magic value MUST result in the\n transaction being reverted.\n Note: the token contract address is always the message sender.\n @param sender address The address which called `approveAndCall` function\n @param amount uint256 The amount of tokens to be spent\n @param data bytes Additional data with no specified format\n @return `bytes4(keccak256(\"onApprovalReceived(address,uint256,bytes)\"))` unless throwing"
+            },
+            "functionSelector": "7b04a2d0",
+            "id": 2718,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "onApprovalReceived",
+            "nameLocation": "1040:18:28",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2714,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2709,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "1067:6:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2718,
+                  "src": "1059:14:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2708,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1059:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2711,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "1083:6:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2718,
+                  "src": "1075:14:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2710,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1075:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2713,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nameLocation": "1106:4:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2718,
+                  "src": "1091:19:28",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 2712,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1091:5:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1058:53:28"
+            },
+            "returnParameters": {
+              "id": 2717,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2716,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2718,
+                  "src": "1130:6:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 2715,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1130:6:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1129:8:28"
+            },
+            "scope": 2719,
+            "src": "1031:107:28",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2720,
+        "src": "277:863:28"
+      }
+    ],
+    "src": "33:1108:28"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/token/BEP20/lib/IBEP20OperableSpender.sol",
+    "exportedSymbols": {
+      "IBEP20OperableSpender": [
+        2719
+      ]
+    },
+    "id": 2720,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2705,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:28"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 2706,
+          "nodeType": "StructuredDocumentation",
+          "src": "58:218:28",
+          "text": " @title IBEP20OperableSpender Interface\n @dev Interface for any contract that wants to support approveAndCall\n  from BEP20Operable token contracts as defined in\n  https://eips.ethereum.org/EIPS/eip-1363"
+        },
+        "fullyImplemented": false,
+        "id": 2719,
+        "linearizedBaseContracts": [
+          2719
+        ],
+        "name": "IBEP20OperableSpender",
+        "nameLocation": "287:21:28",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 2707,
+              "nodeType": "StructuredDocumentation",
+              "src": "316:710:28",
+              "text": " @notice Handle the approval of BEP20Operable tokens\n @dev Any BEP20Operable smart contract calls this function on the recipient\n after an `approve`. This function MAY throw to revert and reject the\n approval. Return of other than the magic value MUST result in the\n transaction being reverted.\n Note: the token contract address is always the message sender.\n @param sender address The address which called `approveAndCall` function\n @param amount uint256 The amount of tokens to be spent\n @param data bytes Additional data with no specified format\n @return `bytes4(keccak256(\"onApprovalReceived(address,uint256,bytes)\"))` unless throwing"
+            },
+            "functionSelector": "7b04a2d0",
+            "id": 2718,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "onApprovalReceived",
+            "nameLocation": "1040:18:28",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2714,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2709,
+                  "mutability": "mutable",
+                  "name": "sender",
+                  "nameLocation": "1067:6:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2718,
+                  "src": "1059:14:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2708,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1059:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2711,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "1083:6:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2718,
+                  "src": "1075:14:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2710,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1075:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2713,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nameLocation": "1106:4:28",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2718,
+                  "src": "1091:19:28",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 2712,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1091:5:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1058:53:28"
+            },
+            "returnParameters": {
+              "id": 2717,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2716,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2718,
+                  "src": "1130:6:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 2715,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1130:6:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1129:8:28"
+            },
+            "scope": 2719,
+            "src": "1031:107:28",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2720,
+        "src": "277:863:28"
+      }
+    ],
+    "src": "33:1108:28"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.3+commit.8d00100c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.6",
+  "updatedAt": "2022-03-21T00:23:03.210Z",
+  "devdoc": {
+    "details": "Interface for any contract that wants to support approveAndCall  from BEP20Operable token contracts as defined in  https://eips.ethereum.org/EIPS/eip-1363",
+    "kind": "dev",
+    "methods": {
+      "onApprovalReceived(address,uint256,bytes)": {
+        "details": "Any BEP20Operable smart contract calls this function on the recipient after an `approve`. This function MAY throw to revert and reject the approval. Return of other than the magic value MUST result in the transaction being reverted. Note: the token contract address is always the message sender.",
+        "params": {
+          "amount": "uint256 The amount of tokens to be spent",
+          "data": "bytes Additional data with no specified format",
+          "sender": "address The address which called `approveAndCall` function"
+        },
+        "returns": {
+          "_0": "`bytes4(keccak256(\"onApprovalReceived(address,uint256,bytes)\"))` unless throwing"
+        }
+      }
+    },
+    "title": "IBEP20OperableSpender Interface",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "onApprovalReceived(address,uint256,bytes)": {
+        "notice": "Handle the approval of BEP20Operable tokens"
+      }
+    },
+    "version": 1
+  }
+}
