@@ -27,7 +27,6 @@ abstract contract Context {
 
 // File: @openzeppelin/contracts/access/Ownable.sol
 
-// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -97,7 +96,6 @@ abstract contract Ownable is Context {
 
 // File: contracts/service/ServiceReceiver.sol
 
-// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 

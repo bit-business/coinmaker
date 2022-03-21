@@ -1930,7 +1930,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.6",
-  "updatedAt": "2022-03-21T00:23:03.189Z",
+  "updatedAt": "2022-03-21T00:43:22.569Z",
   "devdoc": {
     "details": "Extension of {BEP20} that allows token holders to destroy both their own tokens and those that they have an allowance for, in a way that can be recognized off-chain (via event analysis).",
     "kind": "dev",

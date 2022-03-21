@@ -8699,7 +8699,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.6",
-  "updatedAt": "2022-03-21T00:23:03.132Z",
+  "updatedAt": "2022-03-21T00:43:22.504Z",
   "devdoc": {
     "author": "BEP20 Generator (https://bit-business.github.io/coinmaker)",
     "details": "Implementation of the HelloBEP20",

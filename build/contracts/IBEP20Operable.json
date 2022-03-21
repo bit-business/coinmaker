@@ -2337,7 +2337,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.6",
-  "updatedAt": "2022-03-21T00:23:03.206Z",
+  "updatedAt": "2022-03-21T00:43:22.582Z",
   "devdoc": {
     "details": "Interface for a Operable Token contract as defined in  https://eips.ethereum.org/EIPS/eip-1363",
     "kind": "dev",
