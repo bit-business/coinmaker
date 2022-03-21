@@ -18,7 +18,7 @@
                             <b-list-group-item to="/create-token/" class="text-light">
                                 Create BEP20 Token
                             </b-list-group-item>
-                            <b-list-group-item href="https://tokencenter.github.io/erc20-generator/" target="_blank" class="text-warning">
+                            <b-list-group-item href="https://bit-business.github.io/erc20-generator/" target="_blank" class="text-warning">
                                 Create ERC20 Token
                             </b-list-group-item>
                         </b-list-group>
@@ -54,7 +54,7 @@
             <b-embed
                     type="iframe"
                     aspect="4by3"
-                    src="https://tokencenter.github.io/bep20-generator-terms/"
+                    src="https://bit-business.github.io/coinmaker-terms/"
                     allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture"
                     allowfullscreen
             ></b-embed>
