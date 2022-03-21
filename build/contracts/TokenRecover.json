@@ -2282,7 +2282,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.6",
-  "updatedAt": "2022-03-21T00:43:22.590Z",
+  "updatedAt": "2022-03-21T01:39:36.163Z",
   "devdoc": {
     "details": "Allow to recover any BEP20 sent into the contract for error",
     "kind": "dev",

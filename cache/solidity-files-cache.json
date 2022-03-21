@@ -2,14 +2,14 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/Users/marioterek/github/coinmaker/contracts/mocks/BEP20Mock.sol": {
-      "lastModificationDate": 1647819573147,
+      "lastModificationDate": 1647825717260,
       "contentHash": "ca51cdb6cbf95af68559dfb6e75d64bf",
       "sourceName": "contracts/mocks/BEP20Mock.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -25,9 +25,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -42,14 +39,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/contracts/token/BEP20/lib/BEP20.sol": {
-      "lastModificationDate": 1647819573151,
+      "lastModificationDate": 1647825717265,
       "contentHash": "78a89dd2e11da33d0ce9d6bb02150d84",
       "sourceName": "contracts/token/BEP20/lib/BEP20.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -65,9 +62,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -83,14 +77,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
-      "lastModificationDate": 1647820851599,
+      "lastModificationDate": 1647826345345,
       "contentHash": "17d9f40220b0ab370db2c77e7c92c4ef",
       "sourceName": "@openzeppelin/contracts/access/Ownable.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -106,9 +100,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -123,14 +114,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/contracts/token/BEP20/lib/IBEP20.sol": {
-      "lastModificationDate": 1647819573152,
+      "lastModificationDate": 1647825717267,
       "contentHash": "fb011f5d0f9f37fab0cfe68a043e959a",
       "sourceName": "contracts/token/BEP20/lib/IBEP20.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -146,9 +137,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -161,14 +149,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/node_modules/@openzeppelin/contracts/utils/Context.sol": {
-      "lastModificationDate": 1647820848896,
+      "lastModificationDate": 1647826343432,
       "contentHash": "bc047f55d4e6dcc5a9c7ee096f530312",
       "sourceName": "@openzeppelin/contracts/utils/Context.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -184,9 +172,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -199,14 +184,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/contracts/token/BEP20/StandardBEP20.sol": {
-      "lastModificationDate": 1647819573150,
+      "lastModificationDate": 1647825717265,
       "contentHash": "d6425cbe2d587531c8edec43aded3421",
       "sourceName": "contracts/token/BEP20/StandardBEP20.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -222,9 +207,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -240,14 +222,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/contracts/service/ServicePayer.sol": {
-      "lastModificationDate": 1647819573148,
+      "lastModificationDate": 1647825717261,
       "contentHash": "3c33176a0f93d504d24dc7c71f2aca1c",
       "sourceName": "contracts/service/ServicePayer.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -263,9 +245,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -279,14 +258,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/contracts/token/BEP20/UnlimitedBEP20.sol": {
-      "lastModificationDate": 1647821206343,
+      "lastModificationDate": 1647825717265,
       "contentHash": "c22c336ba13653f1de807665f211dde5",
       "sourceName": "contracts/token/BEP20/UnlimitedBEP20.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -302,9 +281,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -321,14 +297,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/contracts/token/BEP20/lib/BEP20Mintable.sol": {
-      "lastModificationDate": 1647819573151,
+      "lastModificationDate": 1647825717266,
       "contentHash": "b7d4702c7727dd81a791d8832d17544a",
       "sourceName": "contracts/token/BEP20/lib/BEP20Mintable.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -344,9 +320,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -361,14 +334,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/contracts/token/BEP20/lib/BEP20Burnable.sol": {
-      "lastModificationDate": 1647819573151,
+      "lastModificationDate": 1647825717266,
       "contentHash": "34c5b5e87fd9a7eb90153b4af5019817",
       "sourceName": "contracts/token/BEP20/lib/BEP20Burnable.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -384,9 +357,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -401,14 +371,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/contracts/token/BEP20/CommonBEP20.sol": {
-      "lastModificationDate": 1647819573150,
+      "lastModificationDate": 1647825717263,
       "contentHash": "d9b8dfe67ac220665dbe3ee70a6401b8",
       "sourceName": "contracts/token/BEP20/CommonBEP20.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -424,9 +394,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -445,14 +412,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/contracts/token/BEP20/lib/BEP20Capped.sol": {
-      "lastModificationDate": 1647819573151,
+      "lastModificationDate": 1647825717266,
       "contentHash": "882f98a943a133adea8235eeb696db32",
       "sourceName": "contracts/token/BEP20/lib/BEP20Capped.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -468,9 +435,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -485,14 +449,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/contracts/token/BEP20/MintableBEP20.sol": {
-      "lastModificationDate": 1647819573150,
+      "lastModificationDate": 1647825717264,
       "contentHash": "20526df9308878f545f9277f6a605d63",
       "sourceName": "contracts/token/BEP20/MintableBEP20.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -508,9 +472,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -527,14 +488,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/contracts/token/BEP20/AmazingBEP20.sol": {
-      "lastModificationDate": 1647819573149,
+      "lastModificationDate": 1647825717262,
       "contentHash": "aacad78d92f76a7bbb1153b21bd1dfe1",
       "sourceName": "contracts/token/BEP20/AmazingBEP20.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -550,9 +511,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -571,14 +529,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/contracts/token/BEP20/lib/BEP20Operable.sol": {
-      "lastModificationDate": 1647819573152,
+      "lastModificationDate": 1647825717267,
       "contentHash": "5af96f1838ce2764d62a2dcd44778d87",
       "sourceName": "contracts/token/BEP20/lib/BEP20Operable.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -594,9 +552,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -617,14 +572,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/contracts/utils/TokenRecover.sol": {
-      "lastModificationDate": 1647819573153,
+      "lastModificationDate": 1647825717269,
       "contentHash": "bdb8a6109832bf50e1c776f78df5065d",
       "sourceName": "contracts/utils/TokenRecover.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -640,9 +595,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -658,14 +610,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/contracts/token/BEP20/lib/IBEP20Operable.sol": {
-      "lastModificationDate": 1647819573152,
+      "lastModificationDate": 1647825717267,
       "contentHash": "b51e1c7b57644d252effe34f4002df8d",
       "sourceName": "contracts/token/BEP20/lib/IBEP20Operable.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -681,9 +633,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -699,14 +648,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/contracts/token/BEP20/lib/IBEP20OperableReceiver.sol": {
-      "lastModificationDate": 1647819573152,
+      "lastModificationDate": 1647825717268,
       "contentHash": "b8a23d64a005066472e06a284dc5ac00",
       "sourceName": "contracts/token/BEP20/lib/IBEP20OperableReceiver.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -722,9 +671,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -737,14 +683,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/contracts/token/BEP20/lib/IBEP20OperableSpender.sol": {
-      "lastModificationDate": 1647819573153,
+      "lastModificationDate": 1647825717268,
       "contentHash": "19e6bc68adbc755139a415c31c8dbf9d",
       "sourceName": "contracts/token/BEP20/lib/IBEP20OperableSpender.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -760,9 +706,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -775,14 +718,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/node_modules/@openzeppelin/contracts/utils/Address.sol": {
-      "lastModificationDate": 1647820848648,
+      "lastModificationDate": 1647826343271,
       "contentHash": "37103cdc416efc2601c6f6734044b559",
       "sourceName": "@openzeppelin/contracts/utils/Address.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -798,9 +741,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -813,14 +753,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/node_modules/@openzeppelin/contracts/utils/introspection/ERC165Checker.sol": {
-      "lastModificationDate": 1647820849927,
+      "lastModificationDate": 1647826344242,
       "contentHash": "a65c606ba9eda6f9d0135c28683d1595",
       "sourceName": "@openzeppelin/contracts/utils/introspection/ERC165Checker.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -836,9 +776,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -853,14 +790,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
-      "lastModificationDate": 1647820849913,
+      "lastModificationDate": 1647826344225,
       "contentHash": "a9a5319dff9088c6ffe757ea1c2a6729",
       "sourceName": "@openzeppelin/contracts/utils/introspection/ERC165.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -876,9 +813,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -893,14 +827,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
-      "lastModificationDate": 1647820851272,
+      "lastModificationDate": 1647826345126,
       "contentHash": "9a04322bb8f6b8f2767d8358d1d2537b",
       "sourceName": "@openzeppelin/contracts/utils/introspection/IERC165.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -916,9 +850,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -931,14 +862,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/contracts/service/ServiceReceiver.sol": {
-      "lastModificationDate": 1647819573149,
+      "lastModificationDate": 1647825717262,
       "contentHash": "e08de09114b3613b21752a6243bfc591",
       "sourceName": "contracts/service/ServiceReceiver.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -954,9 +885,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -971,14 +899,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/contracts/mocks/BEP20OperableSpenderMock.sol": {
-      "lastModificationDate": 1647819573148,
+      "lastModificationDate": 1647825717261,
       "contentHash": "73f1934a1361390a6b6dd8c1c50c01dd",
       "sourceName": "contracts/mocks/BEP20OperableSpenderMock.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -994,9 +922,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -1011,14 +936,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/contracts/mocks/BEP20OperableReceiverMock.sol": {
-      "lastModificationDate": 1647819573148,
+      "lastModificationDate": 1647825717261,
       "contentHash": "7e55190ada034e23375bf6807777f804",
       "sourceName": "contracts/mocks/BEP20OperableReceiverMock.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -1034,9 +959,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -1051,14 +973,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/contracts/token/BEP20/BurnableBEP20.sol": {
-      "lastModificationDate": 1647819573150,
+      "lastModificationDate": 1647825717263,
       "contentHash": "f51bfe03dd265b9e67db49aefcfd6575",
       "sourceName": "contracts/token/BEP20/BurnableBEP20.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -1074,9 +996,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -1092,14 +1011,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/contracts/token/BEP20/SimpleBEP20.sol": {
-      "lastModificationDate": 1647820171973,
+      "lastModificationDate": 1647825717264,
       "contentHash": "75e537036095be727fb21e9b6c58fb3f",
       "sourceName": "contracts/token/BEP20/SimpleBEP20.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -1115,9 +1034,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -1134,14 +1050,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/contracts/utils/GeneratorCopyright.sol": {
-      "lastModificationDate": 1647820171973,
+      "lastModificationDate": 1647825717269,
       "contentHash": "fd757509ab9c73a68ba0370a1d3d5279",
       "sourceName": "contracts/utils/GeneratorCopyright.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -1157,9 +1073,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -1172,14 +1085,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/contracts/token/BEP20/HelloBEP20.sol": {
-      "lastModificationDate": 1647820171972,
+      "lastModificationDate": 1647825717264,
       "contentHash": "ad50d0f37e411a65b812d7100c453070",
       "sourceName": "contracts/token/BEP20/HelloBEP20.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -1195,9 +1108,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },
@@ -1214,14 +1124,14 @@
       ]
     },
     "/Users/marioterek/github/coinmaker/contracts/mocks/ServicePayerMock.sol": {
-      "lastModificationDate": 1647819573148,
+      "lastModificationDate": 1647825717261,
       "contentHash": "c83e898f707db95362b581b3ca6483f8",
       "sourceName": "contracts/mocks/ServicePayerMock.sol",
       "solcConfig": {
         "version": "0.8.3",
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 200
           },
           "outputSelection": {
@@ -1237,9 +1147,6 @@
                 "ast"
               ]
             }
-          },
-          "metadata": {
-            "useLiteralContent": false
           }
         }
       },

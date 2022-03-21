@@ -1942,7 +1942,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.6",
-  "updatedAt": "2022-03-21T00:43:22.571Z",
+  "updatedAt": "2022-03-21T01:39:36.095Z",
   "devdoc": {
     "details": "Extension of {BEP20} that adds a cap to the supply of tokens.",
     "kind": "dev",

@@ -9442,7 +9442,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.6",
-  "updatedAt": "2022-03-21T00:43:22.535Z",
+  "updatedAt": "2022-03-21T01:39:36.047Z",
   "devdoc": {
     "details": "Implementation of the StandardBEP20",
     "kind": "dev",

@@ -1911,7 +1911,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.6",
-  "updatedAt": "2022-03-21T00:43:22.573Z",
+  "updatedAt": "2022-03-21T01:39:36.128Z",
   "devdoc": {
     "details": "Implementation of the BEP20Mintable. Extension of {BEP20} that adds a minting behaviour.",
     "events": {

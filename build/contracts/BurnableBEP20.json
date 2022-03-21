@@ -10286,7 +10286,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.6",
-  "updatedAt": "2022-03-21T00:43:22.475Z",
+  "updatedAt": "2022-03-21T01:39:36.003Z",
   "devdoc": {
     "details": "Implementation of the BurnableBEP20",
     "kind": "dev",
