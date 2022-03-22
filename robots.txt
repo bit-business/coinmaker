@@ -1,4 +1,4 @@
 User-Agent: *
 Allow:
 
-Sitemap: https://bit-business.github.io/coinmaker/sitemap.xml
+Sitemap: https://crypto-studio.com/coinmaker/sitemap.xml
