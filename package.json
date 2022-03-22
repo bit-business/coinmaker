@@ -1,5 +1,5 @@
 {
-  "title": "BEP20 Token Generator",
+  "title": "BSC Token Generator",
   "name": "coinmaker",
   "version": "1.0.0",
   "description": "Easily deploy BNB Smart Contract for a Standard, Capped, Mintable, Burnable BEP20 Token.",
@@ -15,7 +15,7 @@
     "url": "https://github.com/bit-business/coinmaker/issues"
   },
   "license": "MIT",
-  "author": "Coinmaker",
+  "author": "Crypto Studio",
   "repository": {
     "type": "git",
     "url": "https://github.com/bit-business/coinmaker.git"

@@ -12,7 +12,7 @@ meta:
     - property: og:description
       content: Create your own BEP20 Smart Contract without coding. BEP20 Generator is the easiest and fastest way to create your own BEP20 token on the Binance Smart Chain network. No coding skills are required.
     - property: og:url
-      content: https://bit-business.github.io/coinmaker/
+      content: https://crypto-studio.net/
 ---
 
 # BEP20 Token Generator - DAPP
@@ -21,7 +21,7 @@ Easily deploy Smart Contract for a Standard, Capped, Mintable, Burnable BEP20 To
 
 ## Try it
 
-https://bit-business.github.io/coinmaker/
+https://crypto-studio.net/
 
 ## License
 

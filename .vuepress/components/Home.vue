@@ -5,7 +5,7 @@
                      class="mb-0 wiretap-gradient"
                      fluid>
             <template #lead>
-                Create your own CRYPTO COIN.  In seconds. 
+                Create your own CRYPTO COIN. In seconds.
                 <br>
                 BEP20 Generator is the easiest and fastest way to create your own BEP20 token on the Binance Smart Chain network. No coding skills are required.
             </template>

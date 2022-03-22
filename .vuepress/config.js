@@ -2,14 +2,14 @@ const vars = require('./.env.json');
 
 module.exports = {
   description: 'Create your own crypto coin. BNB Smart Contracts in minutes. The easiest and fastest way to create your own BEP20 token on the Binance Smart Chain network. No coding skills are required.',
-  base: '/coinmaker/',
+  base: '/',
   head: [
     ['link', { rel: 'shortcut icon', href: '/favicon.ico' }],
     ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=no' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:image', content: 'https://bit-business.github.io/coinmaker/assets/images/bep20-token-generator.png' }], // eslint-disable-line max-len
+    ['meta', { property: 'og:image', content: 'https://crypto-studio.net/assets/images/bep20-token-generator.png' }], // eslint-disable-line max-len
     ['meta', { property: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { property: 'twitter:image', content: 'https://bit-business.github.io/coinmaker/assets/images/bep20-token-generator.png' }], // eslint-disable-line max-len
+    ['meta', { property: 'twitter:image', content: 'https://crypto-studio.net/assets/images/bep20-token-generator.png' }], // eslint-disable-line max-len
     ['script', { src: '/assets/js/web3.min.js' }],
     ['script',
       {
