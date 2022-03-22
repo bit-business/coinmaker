@@ -1,18 +1,18 @@
 <template>
     <div>
         <b-jumbotron text-variant="white"
-                     header="BEP20 Token Generator"
+                     header="CRYPTO COIN MAKER"
                      class="mb-0 wiretap-gradient"
                      fluid>
             <template #lead>
-                Create your own BEP20 Smart Contract without coding.
+                Create your own CRYPTO COIN.  In seconds. 
                 <br>
                 BEP20 Generator is the easiest and fastest way to create your own BEP20 token on the Binance Smart Chain network. No coding skills are required.
             </template>
             <hr class="my-5">
             <p>
                 <b-button to="/create-token/" size="lg" variant="success" class="my-2 py-3 px-5 text-uppercase">
-                    Create BEP20 Token
+                    Create NEW TOKEN
                 </b-button>
                 <a class="btn btn-lg btn-outline-light py-3 px-5 text-uppercase"
                    href="#pricing"
@@ -25,12 +25,12 @@
             <b-col lg="8" offset-lg="2" class="mb-3">
                 <h2 class="p-5 font-weight-lighter text-center text-dark">How it works</h2>
                 <h4 class="text-center font-weight-light">
-                    Create a BEP20 Token in less than a minute.
+                    Create your new BNB Crypto Token in less than a minute.
                 </h4>
                 <p class="text-center font-weight-light">
                     Easily deploy Smart Contract for a Standard, Capped, Mintable, Burnable BEP20 Token.
                     <br>
-                    BEP20 Generator is the easiest and fastest way to create your own BEP20 token on the Binance Smart Chain network. No coding skills are required.
+                    Crypto Studio Generator is the easiest and fastest way to create your own Binance token on the Binance Smart Chain network. No coding skills are required.
                 </p>
                 <ui--how-it-works></ui--how-it-works>
             </b-col>
@@ -43,12 +43,12 @@
         </b-row>
         <b-row class="bg-dark text-white mx-0">
             <b-col lg="10" offset-lg="1" class="mb-3 text-center">
-                <h2 class="pt-5 mb-4 font-weight-lighter text-light">Ready to deploy your BEP20 Token?</h2>
+                <h2 class="pt-5 mb-4 font-weight-lighter text-light">Ready to deploy your own Altcoin?</h2>
                 <p class="font-weight-light">
-                    Try building your BEP20 Token in less than a minute. You can try on Test Network before to go live.
+                    Try building your BSC Token in less than a minute. You can try it on the Test Network before you go live on mainnet.
                 </p>
                 <b-button to="/create-token/" size="lg" variant="success" class="my-5 py-3 px-5 text-uppercase">
-                    Create BEP20 Token
+                    Create Token
                 </b-button>
             </b-col>
         </b-row>

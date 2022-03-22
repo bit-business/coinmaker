@@ -6,7 +6,7 @@
                     <b-col lg="4">
                         <b-list-group flush>
                             <b-list-group-item to="/" class="text-light">
-                                BEP20 Token Generator
+                                Crypto Studio
                             </b-list-group-item>
                             <b-list-group-item to="/docs/" class="text-light">
                                 Documentation
@@ -39,7 +39,7 @@
                         <small>
                             by
                             <b-link class="text-warning" href="#" target="_blank">
-                                Token Center
+                                Crypto Studio
                             </b-link>
                         </small>
                     </b-list-group-item>

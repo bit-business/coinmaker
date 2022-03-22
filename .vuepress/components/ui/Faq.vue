@@ -3,7 +3,7 @@
         <b-row>
             <b-col>
                 <b-card bg-variant="light" class="mb-4">
-                    <h3 class="font-weight-light">BEP20 Token Generator</h3>
+                    <h3 class="font-weight-light">BNB Token Creator</h3>
                     <p class="font-weight-light">
                         Create your own BEP20 Smart Contract without coding. BEP20 Generator is the easiest and fastest way to create your own BEP20 token on the Binance Smart Chain network. No coding skills are required.
                     </p>
