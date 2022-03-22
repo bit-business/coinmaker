@@ -5,17 +5,17 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
-        <loc>https://crypto-studio.com/coinmaker/</loc>
+        <loc>https://crypto-studio.net/coinmaker/</loc>
         <changefreq>weekly</changefreq>
         <priority>1.00</priority>
     </url>
     <url>
-        <loc>https://crypto-studio.com/coinmaker/create-token/</loc>
+        <loc>https://crypto-studio.net/coinmaker/create-token/</loc>
         <changefreq>weekly</changefreq>
         <priority>1.00</priority>
     </url>
     <url>
-        <loc>https://crypto-studio.com/coinmaker/docs/</loc>
+        <loc>https://crypto-studio.net/coinmaker/docs/</loc>
         <changefreq>weekly</changefreq>
         <priority>1.00</priority>
     </url>
