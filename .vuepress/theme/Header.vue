@@ -9,7 +9,7 @@
 
         <b-collapse is-nav id="nav_collapse">
             <b-navbar-nav>
-                <b-nav-item to="/create-token/" :active="page === 'Generator'">Start Generator</b-nav-item>
+                <b-nav-item to="/create-token/" :active="page === 'Generator'">Start builder</b-nav-item>
             </b-navbar-nav>
 
             <b-navbar-nav class="ml-auto">

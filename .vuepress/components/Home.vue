@@ -1,14 +1,16 @@
 <template>
     <div>
         <b-jumbotron text-variant="white"
-                     header="CRYPTO COIN MAKER"
+                     header="Launch your own Crypto"
                      class="mb-0 wiretap-gradient"
                      fluid>
             <template #lead>
-                Create your own CRYPTO COIN. In seconds.
+                Create your own BSC crypto coin. In seconds. 
                 <br>
-                BEP20 Generator is the easiest and fastest way to create your own BEP20 token on the Binance Smart Chain network. No coding skills are required.
+                This s the easiest and fastest way to create your own BEP20 token on the Binance Smart Chain network. No coding is required. You own it!
+           <!-- <img alt="Vue logo" height="250" width="250" src="/assets/images/home.jpg">  -->
             </template>
+          
             <hr class="my-5">
             <p>
                 <b-button to="/create-token/" size="lg" variant="success" class="my-2 py-3 px-5 text-uppercase">
@@ -78,7 +80,7 @@
                     <b-embed
                             type="iframe"
                             aspect="16by9"
-                            src="https://docs.google.com/forms/d/e/1FAIpQLSeaaoppSnX-0CtPa9sf8qFB9efW9axSDLZBYDuXVF9GloyCGA/viewform?usp=sf_link"
+                            src="https://docs.google.com/forms/d/e/1FAIpQLSc3a6-B2mgfH7i_BhdR2sbJh800zEK3SlXZdK0IeTWNCtqMCw/viewform?usp=sf_link"
                             allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture"
                             allowfullscreen
                     ></b-embed>
