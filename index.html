@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crypto Studio - Token Generator</title>
+
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+
+    <div id="pageloader" class="pageloader"></div>
+    <div id="infraloader" class="infraloader is-active"></div>    
+    <section class="hero is-fullheight is-default is-bold">
+    
+        <nav x-data="initNavbar()" class="navbar is-fresh is-transparent no-shadow" role="navigation"
+            aria-label="main navigation">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="https://crypto-studio.net">
+                        <img src="img/logo/fresh-alt.svg" alt="" width="112" height="28">
+                    </a>
+        
+                    <a @click="openSidebar()" class="navbar-item is-hidden-desktop is-hidden-tablet">
+                        <div id="menu-icon-wrapper" class="menu-icon-wrapper" style="visibility: visible;" :class="{
+                                'open': $store.app.isSiderbarOpen,
+                                '': !$store.app.isSiderbarOpen
+                            }">
+                            <svg width="1000px" height="1000px">
+                                <path class="path1"
+                                    d="M 300 400 L 700 400 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800"></path>
+                                <path class="path2" d="M 300 500 L 700 500"></path>
+                                <path class="path3"
+                                    d="M 700 600 L 300 600 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200"></path>
+                            </svg>
+                            <button id="menu-icon-trigger" class="menu-icon-trigger"></button>
+                        </div>
+                    </a>
+        
+                    <div class="navbar-burger" @click="openMobileMenu()">
+                        <span class="menu-toggle">
+                            <span class="icon-box-toggle" :class="{
+                                    'active': mobileOpen,
+                                    '': !mobileOpen
+                                }">
+                                <span class="rotate">
+                                    <i class="icon-line-top"></i>
+                                    <i class="icon-line-center"></i>
+                                    <i class="icon-line-bottom"></i>
+                                </span>
+                            </span>
+                    </div>
+                </div>
+        
+                <div id="navbar-menu" class="navbar-menu is-static" :class="{
+                        'is-active': mobileOpen,
+                        '': !mobileOpen
+                    }">
+        
+                    <div class="navbar-start">
+                        <a @click="openSidebar()" class="navbar-item is-hidden-mobile">
+                            <div id="menu-icon-wrapper" class="menu-icon-wrapper" style="visibility: visible;" :class="{
+                                    'open': $store.app.isSiderbarOpen,
+                                    '': !$store.app.isSiderbarOpen
+                                }">
+                                <svg width="1000px" height="1000px">
+                                    <path class="path1"
+                                        d="M 300 400 L 700 400 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800">
+                                    </path>
+                                    <path class="path2" d="M 300 500 L 700 500"></path>
+                                    <path class="path3"
+                                        d="M 700 600 L 300 600 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200">
+                                    </path>
+                                </svg>
+                                <button id="menu-icon-trigger" class="menu-icon-trigger"></button>
+                            </div>
+                        </a>
+                    </div>
+        
+                    <div class="navbar-end">
+                        <a href="#features" class="navbar-item is-secondary">
+                            Features
+                        </a>
+                        <a href="#pricing" class="navbar-item is-secondary">
+                            Pricing
+                        </a>
+                        <a href="#docs" class="navbar-item is-secondary modal-trigger" data-modal="auth-modal">
+                            Docs
+                        </a>
+                        <a href="https://crypto-studio.net/create-token/" class="navbar-item">
+                            <span class="button signup-button rounded secondary-btn raised">
+                                Create Token
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <nav x-data="initNavbar()"  x-on:scroll.window="scroll()" id="navbar-clone" class="navbar is-fresh is-transparent" role="navigation" aria-label="main navigation" :class="{
+                'is-active': scrolled,
+                '': !scrolled
+            }">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="https://crypto-studio.net/">
+                        <img src="img/logo/fresh-alt.svg" alt="" width="112" height="28">
+                    </a>
+        
+                    <a @click="openSidebar()" class="navbar-item is-hidden-desktop is-hidden-tablet">
+                        <div id="menu-icon-wrapper" class="menu-icon-wrapper" style="visibility: visible;" :class="{
+                                'open': $store.app.isSiderbarOpen,
+                                '': !$store.app.isSiderbarOpen
+                            }">
+                            <svg width="1000px" height="1000px">
+                                <path class="path1" d="M 300 400 L 700 400 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800"></path>
+                                <path class="path2" d="M 300 500 L 700 500"></path>
+                                <path class="path3" d="M 700 600 L 300 600 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200"></path>
+                            </svg>
+                            <button id="menu-icon-trigger" class="menu-icon-trigger"></button>
+                        </div>
+                    </a>
+        
+                    <div class="navbar-burger" @click="openMobileMenu()">
+                        <span class="menu-toggle">
+                            <span class="icon-box-toggle" :class="{
+                                    'active': mobileOpen,
+                                    '': !mobileOpen
+                                }">
+                                <span class="rotate">
+                                    <i class="icon-line-top"></i>
+                                    <i class="icon-line-center"></i>
+                                    <i class="icon-line-bottom"></i>
+                                </span>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+        
+                <div id="cloned-navbar-menu" class="navbar-menu is-fixed" :class="{
+                        'is-active': mobileOpen,
+                        '': !mobileOpen
+                    }">
+        
+                    <div class="navbar-start">
+                        <a @click="openSidebar()" class="navbar-item is-hidden-mobile">
+                            <div id="cloned-menu-icon-wrapper" class="menu-icon-wrapper" style="visibility: visible;" :class="{
+                                    'open': $store.app.isSiderbarOpen,
+                                    '': !$store.app.isSiderbarOpen
+                                }">
+                                <svg width="1000px" height="1000px">
+                                    <path class="path1" d="M 300 400 L 700 400 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800"></path>
+                                    <path class="path2" d="M 300 500 L 700 500"></path>
+                                    <path class="path3" d="M 700 600 L 300 600 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200"></path>
+                                </svg>
+                                <button id="cloned-menu-icon-trigger" class="menu-icon-trigger"></button>
+                            </div>
+                        </a>
+                    </div>
+        
+                    <div class="navbar-end">
+                        <a href="#features" class="navbar-item is-secondary">
+                            Features
+                        </a>
+                        <a href="#pricing" class="navbar-item is-secondary">
+                            Pricing
+                        </a>
+                        <a href="#docs" class="navbar-item is-secondary modal-trigger" data-modal="auth-modal">
+                            Docs
+                        </a>
+                        <a href="https://crypto-studio.net/create-token/" class="navbar-item">
+                            <span class="button signup-button rounded secondary-btn raised">
+                                Create Token
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-vcentered">
+                    <div class="column is-5 is-offset-1 landing-caption">
+                        <h1 class="title is-1 is-bold is-spaced">
+                            Build your own crypto coin.
+                        </h1>
+                        <h2 class="subtitle is-5 is-muted">Build, deploy your own crypto token in seconds! No coding! No login! You own it! </h2>
+                        <div class="button-wrap">
+                            <a href="https://crypto-studio.net/create-token/" class="button cta is-rounded primary-btn raised">
+                                Create Token
+                            </a>
+                            <a href="#pricing" class="button cta is-rounded">
+                                Pricing
+                            </a>
+                        </div>
+                    </div>
+                    <div class="column is-5">
+                        <figure class="image is-4by3">
+                            <img src="img/illustrations/worker.svg" alt="Description">
+                        </figure>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    
+        <div class="hero-foot mb-20">
+            <div class="container">
+                <div class="tabs is-centered">
+                    <ul>
+                        <li><a><img class="partner-logo" src="img/logo/clients/systek.svg"></a></li>
+                        <li><a><img class="partner-logo" src="img/logo/clients/tribe.svg"></a></li>
+                        <li><a><img class="partner-logo" src="img/logo/clients/kromo.svg"></a></li>
+                        <li><a><img class="partner-logo" src="img/logo/clients/infinite.svg"></a></li>
+                        <li><a><img class="partner-logo" src="img/logo/clients/gutwork.svg"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section section-feature-grey is-medium">
+        <div class="container">
+            <div class="title-wrapper has-text-centered">
+                <h2 class="title is-2">How it works </h2>
+                <h3 class="subtitle is-5 is-muted">No login. No setup. No coding required..</h3>
+                <div class="divider is-centered"></div>
+            </div>
+    
+            <div class="content-wrapper">
+                <div class="columns">
+                    <div class="column is-one-third">
+                        <div class="feature-card is-bordered has-text-centered is-feature-reveal">
+                            <div class="card-title">
+                                <h4>1. Start Builder</h4>
+                            </div>
+                            <div class="card-icon">
+                                <img src="img/icons/light-bulb.svg">
+                            </div>
+                            <div class="card-text">
+                                <p>Type in token name, amount and type. Launch token on Mainnet or Testnet first.</p>
+                            </div>
+                        
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="feature-card is-bordered has-text-centered is-feature-reveal">
+                            <div class="card-title">
+                                <h4>2. Make sure you have Metamask wallet</h4>
+                            </div>
+                            <div class="card-icon">
+                                <img src="img/icons/web.svg">
+                            </div>
+                            <div class="card-text">
+                                <p>Sign contracts for your new tokens with metamask.</p>
+                            </div>
+                            <div class="card-action">
+                                <a href="#" class="button btn-align-md primary-btn raised">Start</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="feature-card is-bordered has-text-centered is-feature-reveal">
+                            <div class="card-title">
+                                <h4>3. Your new token is live</h4>
+                            </div>
+                            <div class="card-icon">
+                                <img src="img/icons/rocket.svg">
+                            </div>
+                            <div class="card-text">
+                                <p>You now have your new token, contract and all ownership. We collect no data.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section is-medium">
+        <div class="container">
+            <div class="title-wrapper has-text-centered">
+                <h2 class="title is-2">Build your own Token</h2>
+                <h3 class="subtitle is-5 is-muted">To make you super happy choose any token feature you want</h3>
+                <div class="divider is-centered"></div>
+            </div>
+    
+            <div class="columns is-vcentered side-feature mt-60">
+                <div class="column is-4 is-offset-2">
+                    <h3 class="title is-3 mb-10 is-title-reveal">Verified Contracts</h3>
+                    <p class="subtitle is-5 is-muted">Your Token will be fully compliant with the ERC20 definition and compatible with any ERC20 wallet all around the world. It will have a name, a symbol and a decimals amount.</p>
+                </div>
+                <div class="column is-5">
+                    <img src="img/illustrations/features/feature-1.png" alt="">
+                </div>
+            </div>
+    
+            <div class="columns is-vcentered side-feature mt-60">
+                <div class="column is-5 is-offset-1">
+                    <img src="img/illustrations/features/feature-2.png" alt="">
+                </div>
+                <div class="column is-4 is-offset-1">
+                    <h3 class="title is-3 mb-10 is-title-reveal">Launch on Mainnet or Testnet</h3>
+                    <p class="subtitle is-5 is-muted">Choose network on what you want your token to go live!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section section-feature-grey is-medium">
+        <div class="container">
+    
+            <div class="columns is-vcentered app-side">
+                <div class="column is-5 is-offset-1">
+                    <h3 class="title is-3 is-spaced is-title-reveal">Easy and simple Generator</h3>
+                    <p class="subtitle is-5 is-muted">Your token will be ready in seconds. Just choose token name, total supply and what features should it have.</p>
+                </div>
+                <div class="column is-10">
+                    <div class="has-text-centered">
+                        <img class="pushed-image" src="img/illustrations/mockups/app-mockup.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section is-medium" id="features">
+        <div class="container">
+            <div class="title-wrapper has-text-centered">
+                <h2 class="title is-2">Wait, there's more</h2>
+                <h3 class="subtitle is-5 is-muted">To make you super happy</h3>
+                <div class="divider is-centered"></div>
+            </div>
+    
+            <div class="content-wrapper">
+                <div class="columns is-multiline icon-list">
+                    <div class="column is-3">
+                        <div class="feature-icon has-text-centered">
+                            <div class="icon-wrap is-icon-reveal">
+                                <ion-icon name="cube" size="large"></ion-icon>
+                            </div>
+                            <h4>Full control</h4>
+                            <p>You decide token properties and control token.</p>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="feature-icon has-text-centered">
+                            <div class="icon-wrap is-icon-reveal">
+                                <ion-icon name="flame" size="large"></ion-icon>
+                            </div>
+                            <h4>Burnable</h4>
+                            <p>Your Token can be burnt. It means that you can choose to reduce the circulating supply by destroying some of your tokens.</p>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="feature-icon has-text-centered">
+                            <div class="icon-wrap is-icon-reveal">
+                                <ion-icon name="flash" size="large"></ion-icon>
+                            </div>
+                            <h4>Powerfull customization</h4>
+                            <p>You decide what will your token have. You create your smart contract by clicking on features and control that you want.</p>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="feature-icon has-text-centered">
+                            <div class="icon-wrap is-icon-reveal">
+                                <ion-icon name="infinite" size="large"></ion-icon>
+                            </div>
+                            <h4>Supply Control</h4>
+                            <p>You won't be able to generate more tokens than the defined token cap. This ensure people that you will not generate more tokens than declared.</p>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="feature-icon has-text-centered">
+                            <div class="icon-wrap is-icon-reveal">
+                                <ion-icon name="code" size="large"></ion-icon>
+                            </div>
+                            <h4>No Coding</h4>
+                            <p>Smart contracts are generated without any need for coding.</p>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="feature-icon has-text-centered">
+                            <div class="icon-wrap is-icon-reveal">
+                                <ion-icon name="person" size="large"></ion-icon>
+                            </div>
+                            <h4>Owner control</h4>
+                            <p>Your Token will have an Owner. Token owner will be able to mint new tokens or to call the finish minting function.</p>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="feature-icon has-text-centered">
+                            <div class="icon-wrap is-icon-reveal">
+                                <ion-icon name="git-network" size="large"></ion-icon>
+                            </div>
+                            <h4>ERC1363 Payable Token</h4>
+                            <p>The ERC1363 is an ERC20 compatible Token that can make a callback on the receiver contract to notify token transfers or token approvals.</p>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="feature-icon has-text-centered">
+                            <div class="icon-wrap is-icon-reveal">
+                                <ion-icon name="globe" size="large"></ion-icon>
+                            </div>
+                            <h4>Metamask integration</h4>
+                            <p>After launching your token, easily add your new token to your metamask account with a push of a button.</p>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="feature-icon has-text-centered">
+                            <div class="icon-wrap is-icon-reveal">
+                                <ion-icon name="document" size="large"></ion-icon>
+                            </div>
+                            <h4>Verified Contracts</h4>
+                            <p>Your Token will be fully compliant with the ERC20 definition and compatible with any ERC20 wallet all around the world. It will have a name, a symbol and a decimals amount.</p>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="feature-icon has-text-centered">
+                            <div class="icon-wrap is-icon-reveal">
+                                <ion-icon name="albums" size="large"></ion-icon>
+                            </div>
+                            <h4>Mintable</h4>
+                            <p>You will be able to generate tokens by minting them. Only token owner will be able to mint. You can also disable minting if you don’t want to generate tokens anymore.</p>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="feature-icon has-text-centered">
+                            <div class="icon-wrap is-icon-reveal">
+                                <ion-icon name="build" size="large"></ion-icon>
+                            </div>
+                            <h4>Token Recovery</h4>
+                            <p>There are lots of tokens lost forever into Smart Contracts. It allows the contract owner to recover any ERC20 token sent into the contract for error.</p>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="feature-icon has-text-centered">
+                            <div class="icon-wrap is-icon-reveal">
+                                <ion-icon name="browsers" size="large"></ion-icon>
+                            </div>
+                            <h4>Full owner</h4>
+                            <p>You have all the rights and the contract is published with your own wallet on Mainnet or Testnet.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    <section class="secprice" id="pricing">
+    
+        <main class="min-h-3/4">
+            <div class="bg-white">
+                <div class="">
+                    <div class="sm:flex sm:flex-col sm:align-center">
+                        <h1 class="text-5xl font-extrabold text-gray-900 sm:text-center"> Pricing </h1>
+                        <p class="mt-5 text-xl text-gray-500 sm:text-center"> Choose from 8 different Token types for your requirements. </p>
+                    </div>
+                    <div class="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-8 lg:max-w-4xl  xl:max-w-none xl:mx-0 xl:grid-cols-3">
+                        <div class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
+                            <div class="p-5 text-center">
+                                <h2 class="text-xl leading-6 font-normal text-gray-900"> HelloBEP20 </h2>
+                                <p class="mt-8 flex items-center justify-center">
+                                    <!---->
+                                    <span class="text-3xl font-normal text-green-600">FREE</span>
+                                </p>
+                            </div>
+                            <div class="text-base ">
+                                <ul class="divide-y">
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">BEP20 Compliant</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Verified Source Code</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Customizable Decimals</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Supply Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-red-500"> 10k </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Access Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-yellow-500"> None </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Burnable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Mintable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Operable (ERC1363)</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Recover</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Owner</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-green-500"> You </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Remove Copyright</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                    </li>
+    
+                                </ul>
+                                <a href="create-token/?tokenType=HelloBEP20" class="mt-1 block w-full bg-green-700 border border-green-800 rounded-b-sm py-4 text-sm font-semibold text-white text-center button ctaprice primary-btn raised"> Create HelloBEP20 </a>
+                            </div>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
+                            <div class="p-5 text-center">
+                                <h2 class="text-xl leading-6 font-normal text-gray-900"> SimpleBEP20 </h2>
+                                <p class="mt-8 flex items-center justify-center">
+                                    <span class="line-through px-3 rounded text-base font-normal text-white mr-2 bg-red-500 strikethrough">0.5 BNB</span>
+                                    <span class="text-3xl font-normal text-green-600">0.015 <span class='text-base'>BNB</span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="text-base ">
+                                <ul class="divide-y">
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">BEP20 Compliant</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Verified Source Code</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Customizable Decimals</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Supply Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-yellow-500"> Fixed </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Access Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-yellow-500"> None </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Burnable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Mintable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Operable (ERC1363)</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Recover</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Owner</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-green-500"> You </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Remove Copyright</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                    </li>
+                                </ul>
+                                <a href="create-token/?tokenType=SimpleBEP20" class="mt-1 block w-full bg-green-700 border border-green-800 rounded-b-sm py-4 text-sm font-semibold text-white text-center button ctaprice primary-btn raised"> Create SimpleBEP20 </a>
+                            </div>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
+                            <div class="p-5 text-center">
+                                <h2 class="text-xl leading-6 font-normal text-gray-900"> StandardBEP20 </h2>
+                                <p class="mt-8 flex items-center justify-center">
+                                    <span class="line-through px-3 rounded text-base font-normal text-white mr-2 bg-red-500 strikethrough">0.75 BNB</span>
+                                    <span class="text-3xl font-normal text-green-600">0.05 <span class='text-base'>BNB</span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="text-base ">
+                                <ul class="divide-y">
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">BEP20 Compliant</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Verified Source Code</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Customizable Decimals</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Supply Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-yellow-500"> Fixed </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Access Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-yellow-500"> None </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Burnable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Mintable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Operable (ERC1363)</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Recover</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Owner</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-green-500"> You </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Remove Copyright</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                    </li>
+                                </ul>
+                                <a href="create-token/?tokenType=StandardBEP20" class="mt-1 block w-full bg-green-700 border border-green-800 rounded-b-sm py-4 text-sm font-semibold text-white text-center button ctaprice primary-btn raised"> Create StandardBEP20 </a>
+                            </div>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
+                            <div class="p-5 text-center">
+                                <h2 class="text-xl leading-6 font-normal text-gray-900"> BurnableBEP20 </h2>
+                                <p class="mt-8 flex items-center justify-center">
+                                    <span class="text-3xl font-normal text-green-600">0.1 <span class='text-base'>BNB</span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="text-base ">
+                                <ul class="divide-y">
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">BEP20 Compliant</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Verified Source Code</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Customizable Decimals</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Supply Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-yellow-500"> Fixed </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Access Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-yellow-500"> None </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Burnable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Mintable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Operable (ERC1363)</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Recover</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Owner</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-green-500"> You </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Remove Copyright</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                    </li>
+                                </ul>
+                                <a href="create-token/?tokenType=BurnableBEP20" class="mt-1 block w-full bg-green-700 border border-green-800 rounded-b-sm py-4 text-sm font-semibold text-white text-center button ctaprice primary-btn raised"> Create BurnableBEP20 </a>
+                            </div>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
+                            <div class="p-5 text-center">
+                                <h2 class="text-xl leading-6 font-normal text-gray-900"> MintableBEP20 </h2>
+                                <p class="mt-8 flex items-center justify-center">
+                                    <span class="line-through px-3 rounded text-base font-normal text-white mr-2 bg-red-500 strikethrough">1 BNB</span>
+                                    <span class="text-3xl font-normal text-green-600">0.1 <span class='text-base'>BNB</span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="text-base ">
+                                <ul class="divide-y">
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">BEP20 Compliant</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Verified Source Code</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Customizable Decimals</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Supply Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-green-500"> Capped </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Access Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-pink-500"> Ownable </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Burnable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Mintable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Operable (ERC1363)</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Recover</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Owner</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-green-500"> You </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Remove Copyright</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                    </li>
+    
+                                </ul>
+                                <a href="create-token/?tokenType=MintableBEP20" class="mt-1 block w-full bg-green-700 border border-green-800 rounded-b-sm py-4 text-sm font-semibold text-white text-center button ctaprice primary-btn raised"> Create MintableBEP20 </a>
+                            </div>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
+                            <div class="p-5 text-center">
+                                <h2 class="text-xl leading-6 font-normal text-gray-900"> CommonBEP20 </h2>
+                                <p class="mt-8 flex items-center justify-center">
+                                    <span class="line-through px-3 rounded text-base font-normal text-white mr-2 bg-red-500 strikethrough">1.25 BNB</span>
+                                    <span class="text-3xl font-normal text-green-600">0.15 <span class='text-base'>BNB</span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="text-base ">
+                                <ul class="divide-y">
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">BEP20 Compliant</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Verified Source Code</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Customizable Decimals</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Supply Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-green-500"> Capped </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Access Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-pink-500"> Ownable </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Burnable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Mintable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Operable (ERC1363)</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Recover</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Owner</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-green-500"> You </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Remove Copyright</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                    </li>
+                                </ul>
+                                <a href="create-token/?tokenType=CommonBEP20" class="mt-1 block w-full bg-green-700 border border-green-800 rounded-b-sm py-4 text-sm font-semibold text-white text-center button ctaprice primary-btn raised"> Create CommonBEP20 </a>
+                            </div>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
+                            <div class="p-5 text-center">
+                                <h2 class="text-xl leading-6 font-normal text-gray-900"> UnlimitedBEP20 </h2>
+                                <p class="mt-8 flex items-center justify-center">
+                                    <span class="line-through px-3 rounded text-base font-normal text-white mr-2 bg-red-500 strikethrough">1.5 BNB</span>
+                                    <span class="text-3xl font-normal text-green-600">0.3 <span class='text-base'>BNB</span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="text-base ">
+                                <ul class="divide-y">
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">BEP20 Compliant</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Verified Source Code</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Customizable Decimals</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Supply Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-pink-500"> Unlimited </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Access Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-green-500"> Role Based </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Burnable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Mintable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Operable (ERC1363)</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Recover</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Owner</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-green-500"> You </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Remove Copyright</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                    </li>
+                                </ul>
+                                <a href="create-token/?tokenType=UnlimitedBEP20" class="mt-1 block w-full bg-green-700 border border-green-800 rounded-b-sm py-4 text-sm font-semibold text-white text-center button ctaprice primary-btn raised"> Create UnlimitedBEP20 </a>
+                            </div>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
+                            <div class="p-5 text-center">
+                                <h2 class="text-xl leading-6 font-normal text-gray-900"> AmazingBEP20 </h2>
+                                <p class="mt-8 flex items-center justify-center">
+                                    <span class="line-through px-3 rounded text-base font-normal text-white mr-2 bg-red-500 strikethrough">2 BNB</span>
+                                    <span class="text-3xl font-normal text-green-600">0.5 <span class='text-base'>BNB</span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="text-base ">
+                                <ul class="divide-y">
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">BEP20 Compliant</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Verified Source Code</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Customizable Decimals</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Supply Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-pink-500"> Unlimited </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Access Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-pink-500"> Ownable </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Burnable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Mintable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Operable (ERC1363)</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Recover</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Owner</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-green-500"> You </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Remove Copyright</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                    </li>
+                                </ul>
+                                <a href="create-token/?tokenType=AmazingBEP20" class="mt-1 w-full border border-green-800 text-sm font-semibold text-white text-center button ctaprice primary-btn raised"> Create AmazingBEP20 </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    
+    </section>
+    <!--
+    <section class="section is-medium"  id="pricing" >
+        <div class="container">
+            <div class="title-wrapper has-text-centered">
+                <h2 class="title is-2">Get Started</h2>
+                <h3 class="subtitle is-5 is-muted">Choose one of our plans</h3>
+                <div class="divider is-centered"></div>
+            </div>
+    
+            <div class="pricing-wrap">
+                <div class="feature-card is-pricing has-text-centered">
+                    <h3 class="plan-name">HelloBEP20</h3>
+                    <img src="img/illustrations/pricing/1.svg" alt=""/>
+                    <div class="price">
+                        0
+                    </div>
+                    <p>Sign up, get some awesome features and get started now</p>
+                    <a class="button is-fullwidth is-bold">Get Started</a>
+                </div>
+                <div class="feature-card is-pricing has-text-centered">
+                    <h3 class="plan-name">Pro</h3>
+                    <img src="img/illustrations/pricing/2.svg" alt=""/>
+                    <div class="price">
+                        15
+                    </div>
+    
+                              <svg width="30px" height="30px" float: "left" fill="none" stroke="#10b981" aria-hidden="true" class="h-6 w-6 text-green-500"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <pp>BEP20 Compliant</pp>
+                       <svg width="30px" height="30px" float: "left" fill="none" stroke="#10b981" aria-hidden="true" class="h-6 w-6 text-green-500"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <pp>Verified Source Code</pp>
+                        <svg width="30px" height="30px" float: "left" fill="none" stroke="#10b981" aria-hidden="true" class="h-6 w-6 text-green-500"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <pp>Detailed</pp><br>
+    
+    
+    
+    
+                    </div>
+    
+                    <a class="button is-fullwidth is-bold">Create</a>
+                </div>
+                <div class="feature-card is-pricing has-text-centered">
+                    <h3 class="plan-name">Business</h3>
+                    <img src="img/illustrations/pricing/3.svg" alt=""/>
+                    <div class="price">
+                        30
+                    </div>
+                    <p>Sign up, get some awesome features and get started now</p>
+                    <a class="button is-fullwidth is-bold">Get Started</a>
+                </div>
+            </div>
+            
+    
+    
+            <div class="pricing-wrap">
+                <div class="feature-card is-pricing has-text-centered">
+                    <h3 class="plan-name">Starter</h3>
+                    <img src="img/illustrations/pricing/1.svg" alt=""/>
+                    <div class="price">
+                        0
+                    </div>
+                    <p>Sign up, get some awesome features and get started now</p>
+                    <a class="button is-fullwidth is-bold">Get Started</a>
+                </div>
+                <div class="feature-card is-pricing has-text-centered">
+                    <h3 class="plan-name">Pro</h3>
+                    <img src="img/illustrations/pricing/2.svg" alt=""/>
+                    <div class="price">
+                        15
+                    </div>
+                    <p>Sign up, get some awesome features and get started now</p>
+                    <a class="button is-fullwidth primary-btn raised is-bold">Get Started</a>
+                </div>
+                <div class="feature-card is-pricing has-text-centered">
+                    <h3 class="plan-name">Business</h3>
+                    <img src="img/illustrations/pricing/3.svg" alt=""/>
+                    <div class="price">
+                        30
+                    </div>
+                    <p>Sign up, get some awesome features and get started now</p>
+                    <a class="button is-fullwidth is-bold">Get Started</a>
+                </div>
+            </div>
+    
+    
+    
+        </div>
+    </section>
+    
+    -->
+    
+    
+    
+    <section class="section section-light-grey is-medium">
+        <div class="container">
+            <div class="title-wrapper has-text-centered">
+                <h2 class="title is-2 is-spaced">Need a custom development?</h2>
+                <h3 class="subtitle is-5 is-muted">Open to getting in touch with awesome people and projects.</h3>
+                <div class="divider is-centered"></div>
+            </div>
+    
+            <div class="content-wrapper">
+                <div class="columns">
+                    <div class="column is-6 is-offset-3">
+                        <div class="column is-12">
+                            <div class="form-footer has-text-centered mt-10">
+                                <button class="button cta is-large primary-btn form-button raised is-clear">Let us know</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer footer-dark">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="footer-logo">
+                        <img src="img/logo/fresh-white-alt.svg">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="footer-column">
+                        <div class="footer-header">
+                            <h3>Crypto Studio</h3>
+                        </div>
+                        <ul class="link-list">
+                            <li><a href="create-token/?tokenType=MintableBEP20">Mintable Token Maker</a></li>
+                            <li><a href="create-token/?tokenType=BurnableBEP20">Burnable Token Maker</a></li>
+                            <li><a href="create-token/?tokenType=StandardBEP20">Standard Token Maker</a></li>
+                            <li><a href="create-token/?tokenType=UnlimitedBEP20">Unlimited Token Maker</a></li>
+                            <li><a href="create-token/?tokenType=AmazingBEP20">Amazing Token Maker</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="footer-column">
+                        <div class="footer-header">
+                            <h3>Documentation</h3>
+                        </div>
+                        <ul class="link-list">
+                            <li><a href="https://bscscan.freshdesk.com/support/solutions/articles/67000221190-how-to-update-token-information-on-bscscan-">How to change Contract</a></li>
+                            <li><a href="#features">Feature List</a></li>
+                            <li><a href="https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain">Metamask Guide</a></li>
+                            <li><a href="https://crypto-studio.net/docs/">Token Documentation</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="footer-column">
+                        <div class="footer-header">
+                            <h3>Menu</h3>
+                        </div>
+                        <ul class="link-list">
+                            <li><a href="https://crypto-studio.net/docs/">Docs</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                            <li><a href="https://crypto-studio.net/coinmaker/">Crypto Generator</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="footer-column">
+                        <div class="footer-header">
+                        
+                            <img src="img/logo/fresh-white-alt.svg" alt="Copyright Crypto-Studio.net" width="148" height="24"><br>
+                            <a href="https://crypto-studio.net" target="_blank">
+                              <div>All rights reserved © 2022 Crypto-Studio.net </div> 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Back To Top Button -->
+    <div x-data="initBackToTop()" x-on:scroll.window="scroll($event)" @click="goTop($event)" id="backtotop"><a href="javascript:" :class="{
+        'visible': scrolled,
+        '': !scrolled
+    }"></a></div>    <div x-data="initSidebar()" class="sidebar" :class="{
+            'is-active': $store.app.isSiderbarOpen,
+            '': !$store.app.isSiderbarOpen
+        }">
+        <div class="sidebar-header">
+            <img src="img/logo/fresh-square.svg">
+            <a @click="closeSidebar()" class="sidebar-close" href="javascript:void(0);"><i data-feather="x"></i></a>
+        </div>
+        <div class="inner">
+            <ul class="sidebar-menu">
+                <li><span class="nav-section-title"></span></li>
+                <li @click="openSidebarMenu($event)" data-menu="sidebar-menu-1" class="have-children" :class="{
+                        'active': openedMenu === 'sidebar-menu-1',
+                        '': openedMenu != 'sidebar-menu-1'
+                    }">
+                <a href="#">
+                    <span class="material-icons">add_circle</span>
+                    <span>Create Token</span>
+                </a>
+                    <ul x-show.transition="openedMenu === 'sidebar-menu-1'">
+                        <li><a href="https://crypto-studio.net/create-token/">BSC Token</a></li>
+                        <li><a href="#">Ethereum Token (comming soon)</a></li>
+                        <li><a href="#">Polygon Token (comming soon)</a></li>
+                    </ul>
+                </li>
+                <li @click="openSidebarMenu($event)" data-menu="sidebar-menu-2"  :class="{
+                        'active': openedMenu === 'sidebar-menu-2',
+                        '': openedMenu != 'sidebar-menu-2'
+                    }">
+                    <a href="#pricing">
+                        <span class="material-icons">price_change</span>
+                        <span>Pricing</span>
+                    </a>
+                   
+                </li>
+                <li @click="openSidebarMenu($event)" data-menu="sidebar-menu-3"  :class="{
+                        'active': openedMenu === 'sidebar-menu-3',
+                        '': openedMenu != 'sidebar-menu-3'
+                    }">
+                    
+                    <a href="#features">
+                        <span class="material-icons">fact_check</span>
+                        <span>Features</span>
+                    </a>
+                   
+                </li>
+                <li @click="openSidebarMenu($event)" data-menu="sidebar-menu-4"  :class="{
+                        'active': openedMenu === 'sidebar-menu-4',
+                        '': openedMenu != 'sidebar-menu-4'
+                    }">
+                    <a href="#docs">
+                        <span class="material-icons">article</span>
+                        <span>Docs</span>
+                    </a>
+                 
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="js/bundle.js"></script>
+
+</body>
+
+</html>
