@@ -54,7 +54,7 @@
             <b-embed
                     type="iframe"
                     aspect="4by3"
-                    src="https://crypto-studio.net/coinmaker-terms/"
+                    src="https://crypto-studio.net/termsofuse"
                     allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture"
                     allowfullscreen
             ></b-embed>
