@@ -1,13 +1,13 @@
 <template>
     <div>
         <b-jumbotron text-variant="white"
-                     header="Create your BEP20 Token"
-                     class="mb-0 kingyna-gradient"
+                     header="Build your own crypto coin"
+                     class="mb-0 wiretap-gradient"
                      fluid>
             <template #lead>
-                Easily deploy Smart Contract for a Standard, Capped, Mintable, Burnable BEP20 Token.
+                Build, deploy your own crypto token. Ready to create your new BSC (Binance Smart Contract) crypto token?
                 <br>
-                BEP20 Generator is the easiest and fastest way to create your own BEP20 token on the Binance Smart Chain network. No coding skills are required.
+                 This is the easiest and fastest way to create your own BEP20 token on the Binance Smart Chain network. No coding! No login! You own and control it!
             </template>
         </b-jumbotron>
         <b-row id="token-generator" class="mx-0">
@@ -21,7 +21,7 @@
                         <p>
                             To use this app please install
                             <b-link href="https://metamask.io/" target="_blank">MetaMask</b-link>.
-                            Use any other wallet at your own risk.
+                            Use any other wallet at your own risk. Wallet is needed to transfer ownership of your new token and to control your new token.
                         </p>
                     </b-alert>
 
