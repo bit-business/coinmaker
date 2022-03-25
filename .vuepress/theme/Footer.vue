@@ -37,8 +37,8 @@
                 <b-list-group flush>
                     <b-list-group-item>
                         <small>
-                            by
-                            <b-link class="text-warning" href="#" target="_blank">
+                            All rights reserved © 2022
+                            <b-link class="text-warning text-center" href="https://crypto-studio.net/" target="_blank">
                                 Crypto Studio
                             </b-link>
                         </small>

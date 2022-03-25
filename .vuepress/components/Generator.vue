@@ -1,14 +1,17 @@
 <template>
     <div>
-        <b-jumbotron text-variant="white"
-                     header="Build your own crypto coin"
-                     class="mb-0 wiretap-gradient"
+
+    
+        <b-jumbotron text-variant="white text-center wiretap-padding"
+                     header=""
+                     class="bg-gradient-to-r from-purple-400 via-pink-500 to-red-400"
                      fluid>
-            <template #lead>
-                Build, deploy your own crypto token. Ready to create your new BSC (Binance Smart Contract) crypto token?
+            <template #lead>  <h1 class="mt-1 text-center text-4xl font-bold text-white sm:text-5xl sm:tracking-tight lg:text-6xl">
+               <br>Create your own Token
+      </h1><br><br>Ready to create your new token? Type in token name, supply and features you want below!
                 <br>
-                 This is the easiest and fastest way to create your own BEP20 token on the Binance Smart Chain network. No coding! No login! You own and control it!
-            </template>
+                 This is the easiest and fastest way to create your own BEP20 token on the Binance Smart Chain network.<br><br> No coding! No login! You own and control it!
+          <br>  </template>
         </b-jumbotron>
         <b-row id="token-generator" class="mx-0">
             <b-col lg="12" xl="10" offset-xl="1" class="mb-3 p-0">
@@ -16,12 +19,12 @@
                     <ui--loader :loading="true"></ui--loader>
                 </div>
                 <b-card v-if="!loading" bg-variant="transparent" border-variant="0">
-                    <b-alert show variant="danger" v-if="!metamask.installed">
-                        <h4 class="alert-heading">Alert</h4>
+                    <b-alert show variant="warning" v-if="!metamask.installed">
+                        <h3 class="alert-heading">Alert</h3>
                         <p>
                             To use this app please install
                             <b-link href="https://metamask.io/" target="_blank">MetaMask</b-link>.
-                            Use any other wallet at your own risk. Wallet is needed to transfer ownership of your new token and to control your new token.
+                            Use any other wallet at your own risk. Wallet is needed to transfer ownership and to control your new token.
                         </p>
                     </b-alert>
 
