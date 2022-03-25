@@ -5,12 +5,12 @@
                      class="mb-0 wiretap-gradient"
                      fluid>
             <template #lead>
-                Create your own BSC crypto coin. In seconds. 
+                Create your own BSC crypto coin. In seconds.
                 <br>
                 This s the easiest and fastest way to create your own BEP20 token on the Binance Smart Chain network. No coding is required. You own it!
            <!-- <img alt="Vue logo" height="250" width="250" src="/assets/images/home.jpg">  -->
             </template>
-          
+
             <hr class="my-5">
             <p>
                 <b-button to="/create-token/" size="lg" variant="success" class="my-2 py-3 px-5 text-uppercase">

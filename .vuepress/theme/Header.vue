@@ -15,7 +15,7 @@
             <b-navbar-nav class="bg-gray-700">
                 <!--    <b-nav-item to="/" :active="page === 'Home'">Home</b-nav-item>  -->
                 <b-nav-item to="/docs/" :active="page === 'Docs'">Docs</b-nav-item>
-            <!--    <b-nav-item target="_blank" href="https://crypto-studio.net/">Blog</b-nav-item>  
+            <!--    <b-nav-item target="_blank" href="https://crypto-studio.net/">Blog</b-nav-item>
             </b-navbar-nav>
 
         </b-collapse>
