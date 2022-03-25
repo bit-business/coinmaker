@@ -7,7 +7,7 @@
                         <b-card class="shadow-lg" bg-variant="light">
                             <h1>404</h1>
                             <blockquote>{{ getMsg() }}</blockquote>
-                            <router-link href="https://crypto-studio.net/">Take me home</router-link>.
+                            <router-link to="https://crypto-studio.net/">Take me home</router-link>.
                         </b-card>
                     </transition>
                 </b-col>
