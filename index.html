@@ -95,7 +95,7 @@
                         <a href="#pricing" class="navbar-item is-secondary">
                             Pricing
                         </a>
-                        <a href="https://crypto-studio.net/docs/" class="navbar-item is-secondary modal-trigger" data-modal="auth-modal">
+                        <a href="docs" class="navbar-item is-secondary modal-trigger" data-modal="auth-modal">
                             Docs
                         </a>
                         <a href="https://crypto-studio.net/create-token/" class="navbar-item">
@@ -132,18 +132,18 @@
                     </a>
         
                     <div class="navbar-burger" @click="openMobileMenu()">
-                        <span class="menu-toggle">
-                            <span class="icon-box-toggle" :class="{
+                        <div class="menu-toggle">
+                            <div class="icon-box-toggle" :class="{
                                     'active': mobileOpen,
                                     '': !mobileOpen
                                 }">
-                                <span class="rotate">
+                                <div class="rotate">
                                     <i class="icon-line-top"></i>
                                     <i class="icon-line-center"></i>
                                     <i class="icon-line-bottom"></i>
-                                </span>
-                            </span>
-                        </span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
         
@@ -175,7 +175,7 @@
                         <a href="#pricing" class="navbar-item is-secondary">
                             Pricing
                         </a>
-                        <a href="https://crypto-studio.net/docs/" class="navbar-item is-secondary modal-trigger" data-modal="auth-modal">
+                        <a href="docs" class="navbar-item is-secondary modal-trigger" data-modal="auth-modal">
                             Docs
                         </a>
                         <a href="https://crypto-studio.net/create-token/" class="navbar-item">
@@ -1424,7 +1424,7 @@
                         'active': openedMenu === 'sidebar-menu-4',
                         '': openedMenu != 'sidebar-menu-4'
                     }">
-                    <a href="https://crypto-studio.net/docs/">
+                    <a href="docs">
                         <span class="material-icons">article</span>
                         <span>Docs</span>
                     </a>
