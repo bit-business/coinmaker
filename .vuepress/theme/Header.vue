@@ -3,7 +3,7 @@
 
         <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
-        <b-navbar-brand to="https://crypto-studio.net/">
+        <b-navbar-brand target="_self" href="https://crypto-studio.net/">
             <b-icon-house></b-icon-house>
         </b-navbar-brand>
 
