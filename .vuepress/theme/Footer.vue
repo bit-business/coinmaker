@@ -15,11 +15,14 @@
                     </b-col>
                     <b-col lg="4">
                         <b-list-group flush>
-                            <b-list-group-item to="/create-token/" class="text-light">
-                                Create BEP20 Token
+                            <b-list-group-item to="/create-token/" class="text-warning">
+                                Create BSC Token
                             </b-list-group-item>
-                            <b-list-group-item href="https://crypto-studio.net/erc20-generator/" target="_blank" class="text-warning">
-                                Create ERC20 Token
+                            <b-list-group-item href="https://polygon.crypto-studio.net/" target="_blank" class="text-light">
+                                Create Polygon Token
+                            </b-list-group-item>
+                               <b-list-group-item to="/" class="text-light">
+                                Create Ethereum Token
                             </b-list-group-item>
                         </b-list-group>
                     </b-col>

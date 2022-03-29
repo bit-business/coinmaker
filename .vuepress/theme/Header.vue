@@ -1,24 +1,29 @@
 <template>
-    <b-navbar toggleable="md" type="light" variant="light">
+    <b-navbar type="dark" variant="dark">
 
         <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
         <b-navbar-brand target="_self" href="https://crypto-studio.net/">
-            <b-icon-house></b-icon-house>
+            <b-icon-menu-button-wide-fill></b-icon-menu-button-wide-fill>
         </b-navbar-brand>
 
-        <b-collapse is-nav id="nav_collapse">
-            <b-navbar-nav>
-                <b-nav-item to="/create-token/" :active="page === 'Generator'">Crypto Studio</b-nav-item>
-            </b-navbar-nav>
 
-            <b-navbar-nav class="bg-gray-700">
-                <!--    <b-nav-item to="/" :active="page === 'Home'">Home</b-nav-item>  -->
-                <b-nav-item to="/docs/" :active="page === 'Docs'">Docs</b-nav-item>
-            <!--    <b-nav-item target="_blank" href="https://crypto-studio.net/">Blog</b-nav-item>
-            </b-navbar-nav>
+            <b-navbar-nav class="ml-auto">
+                <b-nav-item to="/create-token/" :active="page === 'Generator'"><img height="21" width="75" src="/assets/images/bsc.png"></b-nav-item>
+                <b-nav-item target="_self" href="https://polygon.crypto-studio.net/"><img height="21" width="75" src="/assets/images/polygon.png"></b-nav-item>
+                <b-nav-item target="_self" @click="$bvToast.show('my-toast')"><img height="21" width="75" src="/assets/images/ethereumgray.png"></b-nav-item>
 
-        </b-collapse>
+                <b-toast id="my-toast" variant="info" solid>
+      <template #toast-title>
+        <div class="d-flex flex-grow-1 align-items-baseline">
+          <strong class="mr-auto">ETHEREUM - Comming soon!</strong>
+          <small class="text-muted mr-2">1 sec ago</small>
+        </div>
+      </template>
+     Creator for ETHEREUM network is nearly finished. If you need it, please contact us by contact form and we will send you a link to BETA version.
+    </b-toast>
+
+        </b-navbar-nav>
     </b-navbar>
 </template>
 

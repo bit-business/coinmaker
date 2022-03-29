@@ -6,7 +6,7 @@
                      class="bg-gradient-to-r from-purple-400 via-pink-500 to-red-400"
                      fluid>
             <template #lead>  
-       <img height="140" width="240" src="/assets/images/headerlogo.svg"> 
+       <img height="90" width="240" src="/assets/images/headerlogo.svg"> 
   <h1 class="mt-1 text-center text-4xl font-bold text-white sm:text-5xl sm:tracking-tight lg:text-6xl"> Create your own Token
       </h1><br>Ready to create your new token? Type in token name, supply and features you want below!
                 <br>
