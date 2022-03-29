@@ -6,7 +6,7 @@
                      class="bg-gradient-to-r from-purple-400 via-pink-500 to-red-400"
                      fluid>
             <template #lead>  
-       <img height="90" width="240" src="/assets/images/headerlogo.svg"> 
+       <img height="40" width="240" src="/assets/images/headerlogo.svg"> 
   <h1 class="mt-1 text-center text-4xl font-bold text-white sm:text-5xl sm:tracking-tight lg:text-6xl"> Create your own Coin
       </h1><br>Ready to create your new coin on a Binance Smart Contract network? <br>Type in token name, supply and features you want below!
                 <br>
@@ -358,8 +358,8 @@
                                                         :class="{'is-invalid': errors.length > 0}">
                                                     <p>
                                                         I have read, understood and agreed to
-                                                        BEP20 Token Generator's
-                                                        <u v-b-modal.modal-terms>Terms of Use</u>.
+                                                        Crypto-Studio's
+                                                        <u v-b-modal.modal-terms>Terms of Use</u>. We only provide service of creating token. You are owner of the token and control it. 
                                                     </p>
                                                 </b-form-checkbox>
                                                 <small v-show="errors.length > 0" class="text-danger">
