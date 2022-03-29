@@ -8,7 +8,7 @@
         </b-navbar-brand>
 
 
-            <b-navbar-nav class="ml-auto">
+            <b-navbar-nav class="mx-auto">
                 <b-nav-item to="/create-token/" :active="page === 'Generator'"><img height="21" width="75" src="/assets/images/bsc.png"></b-nav-item>
                 <b-nav-item target="_self" href="https://polygon.crypto-studio.net/"><img height="21" width="75" src="/assets/images/polygon.png"></b-nav-item>
                 <b-nav-item target="_self" @click="$bvToast.show('my-toast')"><img height="21" width="75" src="/assets/images/ethereumgray.png"></b-nav-item>
