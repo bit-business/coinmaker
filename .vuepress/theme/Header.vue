@@ -1,13 +1,10 @@
 <template>
     <b-navbar type="dark" variant="dark">
 
-     
-
         <b-navbar-brand target="_self" href="https://crypto-studio.net/">
        <button type="button" class="btn btn-dark">
 <b-icon-menu-button-wide-fill></b-icon-menu-button-wide-fill></button>
         </b-navbar-brand>
-
 
             <b-navbar-nav class="mx-auto">
                 <b-nav-item to="/create-token/" :active="page === 'Generator'"><button type="button" class="btn btn-outline-secondary"><img height="21" width="75" src="/assets/images/bsc.png"></button></b-nav-item>
@@ -26,7 +23,7 @@
        <b-navbar-brand>
        <button disabled class="btn btn-dark"></button>
         </b-navbar-brand>
-        </b-navbar-nav>  
+        </b-navbar-nav>
     </b-navbar>
 </template>
 
