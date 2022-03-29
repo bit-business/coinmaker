@@ -16,7 +16,7 @@
                 <b-toast id="my-toast" variant="info" solid>
       <template #toast-title>
         <div class="d-flex flex-grow-1 align-items-baseline">
-          <strong class="mr-auto">ETHEREUM - Comming soon!</strong>
+          <strong class="mr-auto">ETHEREUM - Coming soon!</strong>
           <small class="text-muted mr-2">1 sec ago</small>
         </div>
       </template>
