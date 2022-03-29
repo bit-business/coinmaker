@@ -7,10 +7,10 @@
                      fluid>
             <template #lead>  
        <img height="90" width="240" src="/assets/images/headerlogo.svg"> 
-  <h1 class="mt-1 text-center text-4xl font-bold text-white sm:text-5xl sm:tracking-tight lg:text-6xl"> Create your own Token
-      </h1><br>Ready to create your new token? Type in token name, supply and features you want below!
+  <h1 class="mt-1 text-center text-4xl font-bold text-white sm:text-5xl sm:tracking-tight lg:text-6xl"> Create your own Coin
+      </h1><br>Ready to create your new coin on a Binance Smart Contract network? <br>Type in token name, supply and features you want below!
                 <br>
-                 This is the easiest and fastest way to create your own BEP20 token on the Binance Smart Chain network.<br><br> No coding! No login! You own and control it!
+                <br><br> No coding! No login! You own and control it!
           <br>  </template>
         </b-jumbotron>
         <b-row id="token-generator" class="mx-0">
