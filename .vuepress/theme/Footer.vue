@@ -5,7 +5,7 @@
                 <b-row>
                     <b-col lg="4">
                         <b-list-group flush>
-                            <b-list-group-item to="/" class="text-light">
+                            <b-list-group-item href="https://crypto-studio.net/" class="text-light">
                                 Crypto Studio
                             </b-list-group-item>
                             <b-list-group-item to="/docs/" class="text-light">
