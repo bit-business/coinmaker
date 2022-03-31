@@ -21,8 +21,7 @@
      Creator for ETHEREUM network is nearly finished. If you need it, please contact us by contact form and we will send you a link to BETA version.
     </b-toast>
        <b-navbar-brand>
-       <button disabled class="btn btn-dark"></button>
-        </b-navbar-brand>
+        </b-navbar-brand><button disabled class="btn btn-dark"></button>
         </b-navbar-nav>
     </b-navbar>
 </template>
