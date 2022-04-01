@@ -72,8 +72,6 @@
           this.$refs.btnToggle.className = 'btn btn-outline-warning';
         }
 
-       
-
         if (!this.metamask.installed) {
           this.makeToast(
             'No Wallet',
@@ -94,10 +92,9 @@
             this.$refs.btnToggle.className = 'btn btn-outline-warning';
           }
         }
- ethereum.on('chainChanged', () => {
+        ethereum.on('chainChanged', () => {
           document.location.reload();
         });
-
       },
 
     },
