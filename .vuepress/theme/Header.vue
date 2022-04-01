@@ -72,9 +72,7 @@
           this.$refs.btnToggle.className = 'btn btn-outline-warning';
         }
 
-        ethereum.on('chainChanged', () => {
-          document.location.reload();
-        });
+       
 
         if (!this.metamask.installed) {
           this.makeToast(
@@ -96,6 +94,10 @@
             this.$refs.btnToggle.className = 'btn btn-outline-warning';
           }
         }
+ ethereum.on('chainChanged', () => {
+          document.location.reload();
+        });
+
       },
 
     },
