@@ -6,7 +6,7 @@
 <b-icon-menu-button-wide-fill></b-icon-menu-button-wide-fill></button>
         </b-navbar-brand>
 
-       <b-navbar-nav class="ml-auto" style="overflow-x: auto;">>
+       <b-navbar-nav class="ml-auto" style="overflow-x: auto;">
                 <b-nav-item to="/create-token/" :active="page === 'Generator'"><button type="button" class="btn btn-outline-secondary"><img height="21" width="75" src="/assets/images/bsc.png"></button></b-nav-item>
                 <b-nav-item target="_self" href="https://polygon.crypto-studio.net/"><button type="button" class="btn btn-outline-secondary"><img height="21" width="75" src="/assets/images/polygon.png"></button></b-nav-item>
                 <b-nav-item target="_self" @click="$bvToast.show('my-toast')"><button type="button" class="btn btn-outline-secondary"><img height="21" width="75" src="/assets/images/ethereumgray.png"></button></b-nav-item>
