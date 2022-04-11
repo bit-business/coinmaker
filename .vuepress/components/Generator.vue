@@ -8,10 +8,10 @@
             <template #lead>
        <img height="40" width="240" src="/assets/images/headerlogo.svg">
   <h1 class="mt-1 text-center text-4xl font-bold text-white sm:text-5xl sm:tracking-tight lg:text-6xl"> Create your own Coin
-      </h1><br>Ready to create your new coin on a Binance Smart Contract network? <br>Type in token name, supply and features you want below!
+      </h1><br>Ready to create your new coin on a Binance Smart Contract network? Type in token name, supply and features you want below!
                 <br>
-                <br><br> No coding! No login! You own and control it!
-          <br>  </template>
+                <br> No coding! No login! You own and control it!
+          </template>
         </b-jumbotron>
         <b-row id="token-generator" class="mx-0">
             <b-col lg="12" xl="10" offset-xl="1" class="mb-3 p-0">

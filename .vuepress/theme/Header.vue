@@ -72,11 +72,7 @@
         }
 
         if (!this.metamask.installed) {
-          this.makeToast(
-            'No Wallet',
-            'To create a Token you need to install MetaMask!',
-            'warning',
-          );
+          window.location.href = 'https://metamask.app.link/dapp/crypto-studio.net/create-token/';
         } else {
           if (this.metamask.netId === 56 || this.metamask.netId === 97) {
             this.$refs.btnToggle.innerText = 'Connected';
