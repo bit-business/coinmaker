@@ -21,11 +21,16 @@
                 <b-card v-if="!loading" bg-variant="transparent" border-variant="0">
                     <b-alert show variant="warning" v-if="!metamask.installed">
                         <h3 class="alert-heading">Alert</h3>
-                        <p>
-                            To use this app please install
-                            <b-link href="https://metamask.io/" target="_blank">MetaMask</b-link>.
-                            Use any other wallet at your own risk. Wallet is needed to transfer ownership and to control your new token.
+                     <production-list v-if="!isMobile()"> <p>
+                            To use this app please install <a href="https://metamask.io/" target="_blank">MetaMask</a>.
+                            You need a wallet to store your crypto coins.
+                        </p></production-list>
+                        <production-list-mobile v-else>
+                                               <p>
+                            To use this app <a href="https://metamask.app.link/dapp/crypto-studio.net/create-token/" target="_blank">please install and open this website inside MetaMask</a>.
+                            You need a wallet to store your crypto coins.
                         </p>
+                        </production-list-mobile>
                     </b-alert>
 
                     <b-card header="Making transaction..."
