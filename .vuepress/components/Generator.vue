@@ -385,7 +385,7 @@
                                                     <b-icon-info-circle v-b-popover.v-warning.hover.top="
                                                         'Commission will be transferred directly to us through the ' +
                                                         'BSC network as part of your payment. ' +
-                                                        'Commission will support BEP20 Token Generator to keep it ' +
+                                                        'Commission will support our website to keep it ' +
                                                         'safe, running and constantly updated.'">
                                                         </b-icon-info-circle>
                                                 </span>
