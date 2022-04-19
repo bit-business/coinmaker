@@ -2,18 +2,20 @@
     <b-navbar type="dark" variant="dark">
 
         <b-navbar-brand target="_self" href="https://crypto-studio.net/">
-       <button type="button" class="btn btn-dark">
-<b-icon-menu-button-wide-fill></b-icon-menu-button-wide-fill></button>
-        </b-navbar-brand>
+    <button type="button" class="btn btn-white">
+  <img height="18" width="110" src="/assets/images/headerlogo.svg"></button>
+         </b-navbar-brand>
 
        <b-navbar-nav class="ml-auto" style="overflow-x: auto;">
-                <b-nav-item to="/create-token/" :active="page === 'Generator'"><button type="button" class="btn btn-outline-secondary"><img height="21" width="75" src="/assets/images/bsc.png"></button></b-nav-item>
-                <b-nav-item target="_self" href="https://polygon.crypto-studio.net/"><button type="button" class="btn btn-outline-secondary"><img height="21" width="75" src="/assets/images/polygon.png"></button></b-nav-item>
-                <b-nav-item target="_self" @click="$bvToast.show('my-toast')"><button type="button" class="btn btn-outline-secondary"><img height="21" width="75" src="/assets/images/ethereumgray.png"></button></b-nav-item>
+                <b-nav-item to="/create-token/" :active="page === 'Generator'"><button type="button" class="btn btn-link btn-rounded"><img height="18" width="70" src="/assets/images/bsc.png"></button></b-nav-item>
+                <b-nav-item target="_self" href="https://polygon.crypto-studio.net/"><button type="button" class="btn btn-link btn-rounded"><img height="18" width="70" src="/assets/images/polygon.png"></button></b-nav-item>
+                <b-nav-item target="_self" @click="$bvToast.show('my-toast')"><button type="button" class="btn btn-link btn-rounded"><img height="18" width="70" src="/assets/images/ethereumgray.png"></button></b-nav-item>
+  <production-list v-if="!isMobile()">
+                        
 <b-nav-item> <button type="button" class="btn btn-outline-warning" @click="connectmetamaskbutton" ref="btnToggle" >
 
                                     Connect</button>
-  </b-nav-item>
+  </b-nav-item> </production-list>  <production-list-mobile v-else></production-list-mobile>
                 <b-toast id="my-toast" variant="info" solid>
       <template #toast-title>
         <div class="d-flex flex-grow-1 align-items-baseline">

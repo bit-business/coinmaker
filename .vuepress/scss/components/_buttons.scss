@@ -1,0 +1,139 @@
+/* ==========================================================================
+Classes to change the feel of bulma buttons
+========================================================================== */
+
+// CTA buttons
+
+.button {
+    cursor: pointer;
+    transition: all 0.5s;
+    
+    &:focus, &:active {
+        outline: none;
+    }
+
+    &.cta {
+        font-size: 1rem;
+        font-weight: 500;
+        height: 44px;
+    }
+
+    &.ctaprice {
+        font-size: 1rem;
+        font-weight: 500;
+        height: 54px;
+    }
+
+    &.is-clear {
+        line-height: 0 !important;
+    }
+
+    &.is-bold {
+        font-weight: 500;
+    }
+
+    &.rounded {
+        border-radius: 300px;
+    }
+
+    &.raised:hover {
+        box-shadow: 0 14px 26px -12px rgba(0, 0, 0, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2) !important;
+        opacity: 0.8;
+    }
+
+    &.btn-outlined {
+        background: transparent;
+    }
+
+    &.signup-button {
+        font-weight: 660;
+        height: 44px;
+        width: 134px;
+    }
+}
+
+.button {
+    &.primary2-btn {
+        outline: none;
+        border-color: #4FC1EA;
+        background-color: #4FC1EA;
+        color: #fff;
+        transition: all 0.5s;
+
+        &:hover {
+            color: #fff;
+        }
+
+        &.raised:hover {
+            box-shadow: 0 14px 26px -12px rgba(#4FC1EA, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(#4FC1EA, 0.2) !important;
+            opacity: 0.8;
+        }
+
+        &.btn-outlined {
+            border-color: #4FC1EA;
+            color: #4FC1EA;
+            background-color: transparent;
+
+            &:hover {
+                color: #fff;
+                background-color: #4FC1EA;
+            }
+        }
+    }
+
+    &.secondary-btn {
+        outline: none;
+        border-color: #fcbe07;
+        background-color: #fcbe07;
+        color: #fff;
+        transition: all 0.5s;
+
+        &:hover {
+            color: #fff;
+        }
+
+        &.raised:hover {
+            box-shadow: 0 14px 26px -12px rgba(#fcbe07, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(#fcbe07, 0.2) !important;
+            opacity: 0.8;
+        }
+
+        &.btn-outlined {
+            border-color: #fcbe07;
+            color: #fcbe07;
+            background-color: transparent;
+
+            &:hover {
+                color: #fff;
+                background-color: #fcbe07;
+            }
+        }
+    }
+
+    &.button.accent-btn {
+        outline: none;
+        border-color: #00efb7;
+        background-color: #00efb7;
+        color: #fff;
+        transition: all 0.5s;
+
+        &:hover {
+            color: #fff;
+        }
+
+        &.raised:hover {
+            box-shadow: 0 14px 26px -12px rgba(#00efb7, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(#00efb7, 0.2) !important;
+            opacity: 0.8;
+        }
+
+        &.btn-outlined {
+            border-color: #00efb7;
+            color: #00efb7;
+            background-color: transparent;
+
+            &:hover {
+                color: #fff;
+                background-color: #00efb7;
+            }
+        }
+    }
+}

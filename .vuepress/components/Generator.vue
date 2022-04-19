@@ -1,18 +1,34 @@
 <template>
     <div>
 
-        <b-jumbotron text-variant="white text-center wiretap-padding"
-                     header=""
-                     class="bg-gradient-to-r from-purple-400 via-pink-500 to-red-400"
-                     fluid>
-            <template #lead>
-       <img height="40" width="240" src="/assets/images/headerlogo.svg">
-  <h1 class="mt-1 text-center text-4xl font-bold text-white sm:text-5xl sm:tracking-tight lg:text-6xl"> Create your own Coin
-      </h1><br>Ready to create your new coin on a Binance Smart Contract network? Type in token name, supply and features you want below!
-                <br>
-                <br> No coding! No login! You own and control it!
-          </template>
-        </b-jumbotron>
+        <section class="hero is-bold">
+
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-vcentered">
+                         <div class="column is-5 is-offset-1 landing-caption">
+                    <h1 class="title is-1 is-bold is-spaced">
+                       Welcome to your Crypto Coin Builder
+                    </h1>
+                    <h2 class="subtitle is-5 is-muted">Ready to create your new coin on Binance Smart Network? Type in token name, supply and features you want below! No coding! No login! You own it! </h2>
+                    <div class="button-wrap">
+                        <button class="button cta is-rounded secondary-btn raised" @click="connectmetamaskbutton" ref="btnToggle">
+                            <img height="40" width="130" src="/assets/images/metamask.svg">| Connect
+                        </button>
+                    </div>
+                </div>
+                <div class="column is-5">
+                    <figure class="image is-4by3">
+                        <img src="/assets/images/illustrations/worker.svg" alt="Woman at laptop creating crypto coin.">
+                    </figure>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</section>
+
         <b-row id="token-generator" class="mx-0">
             <b-col lg="12" xl="10" offset-xl="1" class="mb-3 p-0">
                 <div v-if="loading" class="text-center p-5">
@@ -22,7 +38,7 @@
                     <b-alert show variant="warning" v-if="!metamask.installed">
                         <h3 class="alert-heading">Alert</h3>
                      <production-list v-if="!isMobile()"> <p>
-                            To use this app please install <a href="https://metamask.io/" target="_blank">MetaMask</a>.
+                            To use this app please install <a href="https://metamask.io/" target="_blank">MetaMask</a>, if you don't have it.
                             You need a wallet to store your crypto coins.
                         </p></production-list>
                         <production-list-mobile v-else>
@@ -535,6 +551,44 @@
 
         this.loading = false;
       },
+  async connectmetamaskbutton () {
+         try {
+           await this.web3Provider.request({ method: 'eth_requestAccounts' });
+         } catch (e) {
+           this.show = !this.show;
+           this.$refs.btnToggle.innerText = 'Connect';
+           // this.$refs.btnToggle.className = 'primary-btn';
+         }
+
+         if (!this.metamask.installed) {
+           this.makeToast(
+             'No Wallet',
+             'To create a Token you need to install MetaMask!',
+             'warning',
+           );
+           window.location.href = 'https://metamask.app.link/dapp/crypto-studio.net/create-token/';
+         } else {
+           if (this.metamask.netId === 56 || this.metamask.netId === 97) {
+             this.$refs.btnToggle.innerText = 'Connected';
+             this.$refs.btnToggle.className = 'button primary-btn';
+           } else {
+             this.makeToast(
+               'Warning',
+               `Your MetaMask in on the wrong network. Please switch on ${this.network.current.name} and try again!`,
+               'warning',
+             );
+             this.$refs.btnToggle.innerText = 'Connect';
+             //   this.$refs.btnToggle.className = 'btn btn-outline-warning';
+           }
+         }
+
+         ethereum.on('chainChanged', () => {
+           document.location.reload();
+         });
+       },
+
+
+
       async generateToken () {
         this.$refs.observer.validate().then(async (result) => {
           if (result) {

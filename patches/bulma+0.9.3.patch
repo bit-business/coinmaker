@@ -1,0 +1,71 @@
+diff --git a/node_modules/bulma/css/bulma-rtl.css b/node_modules/bulma/css/bulma-rtl.css
+index 8995df7..1a3ebb0 100644
+--- a/node_modules/bulma/css/bulma-rtl.css
++++ b/node_modules/bulma/css/bulma-rtl.css
+@@ -383,13 +383,6 @@ code {
+   padding: 0.25em 0.5em 0.25em;
+ }
+ 
+-hr {
+-  background-color: whitesmoke;
+-  border: none;
+-  display: block;
+-  height: 2px;
+-  margin: 1.5rem 0;
+-}
+ 
+ img {
+   height: auto;
+diff --git a/node_modules/bulma/css/bulma.css b/node_modules/bulma/css/bulma.css
+index 35238eb..474ac86 100644
+--- a/node_modules/bulma/css/bulma.css
++++ b/node_modules/bulma/css/bulma.css
+@@ -383,13 +383,7 @@ code {
+   padding: 0.25em 0.5em 0.25em;
+ }
+ 
+-hr {
+-  background-color: whitesmoke;
+-  border: none;
+-  display: block;
+-  height: 2px;
+-  margin: 1.5rem 0;
+-}
++
+ 
+ img {
+   height: auto;
+diff --git a/node_modules/bulma/sass/base/_all.sass b/node_modules/bulma/sass/base/_all.sass
+index a5ae0a7..05f25dd 100644
+--- a/node_modules/bulma/sass/base/_all.sass
++++ b/node_modules/bulma/sass/base/_all.sass
+@@ -2,5 +2,5 @@
+ @charset "utf-8"
+ 
+ @import "minireset"
+-@import "generic"
++/* @import "generic" */
+ @import "animations"
+diff --git a/node_modules/bulma/sass/components/_all.sass b/node_modules/bulma/sass/components/_all.sass
+index a7062ec..bd962e8 100644
+--- a/node_modules/bulma/sass/components/_all.sass
++++ b/node_modules/bulma/sass/components/_all.sass
+@@ -2,7 +2,7 @@
+ @charset "utf-8"
+ 
+ @import "breadcrumb"
+-@import "card"
++/* @import "card" */
+ @import "dropdown"
+ @import "level"
+ @import "media"
+diff --git a/node_modules/bulma/sass/layout/_all.sass b/node_modules/bulma/sass/layout/_all.sass
+index 4d1df5b..7835fdb 100644
+--- a/node_modules/bulma/sass/layout/_all.sass
++++ b/node_modules/bulma/sass/layout/_all.sass
+@@ -3,4 +3,4 @@
+ 
+ @import "hero"
+ @import "section"
+-@import "footer"
++/* @import "footer" */
