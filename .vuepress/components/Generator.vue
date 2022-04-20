@@ -551,43 +551,41 @@
 
         this.loading = false;
       },
-  async connectmetamaskbutton () {
-         try {
-           await this.web3Provider.request({ method: 'eth_requestAccounts' });
-         } catch (e) {
-           this.show = !this.show;
-           this.$refs.btnToggle.innerText = 'Connect';
-           // this.$refs.btnToggle.className = 'primary-btn';
-         }
+      async connectmetamaskbutton () {
+        try {
+          await this.web3Provider.request({ method: 'eth_requestAccounts' });
+        } catch (e) {
+          this.show = !this.show;
+          this.$refs.btnToggle.innerText = 'Connect';
+          // this.$refs.btnToggle.className = 'primary-btn';
+        }
 
-         if (!this.metamask.installed) {
-           this.makeToast(
-             'No Wallet',
-             'To create a Token you need to install MetaMask!',
-             'warning',
-           );
-           window.location.href = 'https://metamask.app.link/dapp/crypto-studio.net/create-token/';
-         } else {
-           if (this.metamask.netId === 56 || this.metamask.netId === 97) {
-             this.$refs.btnToggle.innerText = 'Connected';
-             this.$refs.btnToggle.className = 'button primary-btn';
-           } else {
-             this.makeToast(
-               'Warning',
-               `Your MetaMask in on the wrong network. Please switch on ${this.network.current.name} and try again!`,
-               'warning',
-             );
-             this.$refs.btnToggle.innerText = 'Connect';
-             //   this.$refs.btnToggle.className = 'btn btn-outline-warning';
-           }
-         }
+        if (!this.metamask.installed) {
+          this.makeToast(
+            'No Wallet',
+            'To create a Token you need to install MetaMask!',
+            'warning',
+          );
+          window.location.href = 'https://metamask.app.link/dapp/crypto-studio.net/create-token/';
+        } else {
+          if (this.metamask.netId === 56 || this.metamask.netId === 97) {
+            this.$refs.btnToggle.innerText = 'Connected';
+            this.$refs.btnToggle.className = 'button primary-btn';
+          } else {
+            this.makeToast(
+              'Warning',
+              `Your MetaMask in on the wrong network. Please switch on ${this.network.current.name} and try again!`,
+              'warning',
+            );
+            this.$refs.btnToggle.innerText = 'Connect';
+            //   this.$refs.btnToggle.className = 'btn btn-outline-warning';
+          }
+        }
 
-         ethereum.on('chainChanged', () => {
-           document.location.reload();
-         });
-       },
-
-
+        ethereum.on('chainChanged', () => {
+          document.location.reload();
+        });
+      },
 
       async generateToken () {
         this.$refs.observer.validate().then(async (result) => {
