@@ -1,5 +1,5 @@
 diff --git a/node_modules/bulma/bulma.sass b/node_modules/bulma/bulma.sass
-index 232f655..830f420 100644
+index 87dec21..87f7e3c 100644
 --- a/node_modules/bulma/bulma.sass
 +++ b/node_modules/bulma/bulma.sass
 @@ -4,7 +4,7 @@
@@ -12,7 +12,7 @@ index 232f655..830f420 100644
  @import "sass/helpers/_all"
  @import "sass/layout/_all"
 diff --git a/node_modules/bulma/css/bulma-rtl.css b/node_modules/bulma/css/bulma-rtl.css
-index 8995df7..1a3ebb0 100644
+index 7770d4c..00c8e02 100644
 --- a/node_modules/bulma/css/bulma-rtl.css
 +++ b/node_modules/bulma/css/bulma-rtl.css
 @@ -383,13 +383,6 @@ code {
@@ -30,7 +30,7 @@ index 8995df7..1a3ebb0 100644
  img {
    height: auto;
 diff --git a/node_modules/bulma/css/bulma.css b/node_modules/bulma/css/bulma.css
-index 35238eb..474ac86 100644
+index 1dbfc86..a806010 100644
 --- a/node_modules/bulma/css/bulma.css
 +++ b/node_modules/bulma/css/bulma.css
 @@ -383,13 +383,7 @@ code {

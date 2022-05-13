@@ -330,7 +330,8 @@
                                             <b-form-select id="tokenType"
                                                            v-model="tokenType"
                                                            size="sm"
-                                                           @input="loadToken">
+                                                           @input="loadToken"
+                                                           style="font-weight: bold;">
                                                 <option v-for="(n, k) in tokenList" :value="k">
                                                     {{ n.contractName }}
                                                 </option>
@@ -343,7 +344,8 @@
                                             <b-form-select id="network"
                                                            v-model="currentNetwork"
                                                            size="sm"
-                                                           @input="initDapp">
+                                                           @input="initDapp"
+                                                           style="font-weight: bold;">
                                                 <option v-for="(n, k) in network.list" :value="k">{{ n.name }}
                                                 </option>
                                             </b-form-select>
