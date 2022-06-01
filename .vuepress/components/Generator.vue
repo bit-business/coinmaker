@@ -450,6 +450,9 @@
 <script>
   import dapp from '../mixins/dapp';
   import tokenDetails from '../mixins/tokenDetails';
+import TawkMessengerVue from '@tawk.to/tawk-messenger-vue-2';
+import Vue from 'vue';
+
 
   export default {
     name: 'Generator',
@@ -491,8 +494,16 @@
       this.tokenType = this.getParam('tokenType') || 'SimpleBEP20';
       this.currentNetwork = this.getParam('network') || this.network.default;
       this.initDapp();
+      this.initTawk();
     },
     methods: {
+
+async initTawk () {
+Vue.use(TawkMessengerVue, {
+    propertyId : '629755427b967b1179925980',
+        widgetId : '1g4fia2se'
+});
+  },
       async initDapp () {
         this.network.current = this.network.list[this.currentNetwork];
         try {
