@@ -25,6 +25,12 @@ module.exports = {
     ['vuepress-plugin-facebook-pixel', {
       pixelId: vars.fbPixelId,
     }],
+    [
+      {
+        src: '~/mixins/tawk-messenger.client.js',
+        mode: 'client',
+      },
+    ],
   ],
   defaultNetwork: vars.defaultNetwork,
   serviceReceiver: vars.serviceReceiver,
