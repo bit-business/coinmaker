@@ -31,6 +31,9 @@
                             <b-list-group-item v-b-modal.modal-terms>
                                 <small>Terms of Use</small>
                             </b-list-group-item>
+                             <b-list-group-item class="text-light"  href="https://docs.google.com/forms/d/e/1FAIpQLScfsLa4mXu476eZg43GPJUcUx-RB_GzNuvYBpkP7E-YY7SXRA/viewform?usp=sf_link" target="_blank">
+<small>Contact Us</small>
+                            </b-list-group-item>
                         </b-list-group>
                     </b-col>
                 </b-row>
