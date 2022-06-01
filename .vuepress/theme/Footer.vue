@@ -49,6 +49,19 @@
                 </b-list-group>
             </b-col>
         </b-row>
+         <b-modal id="modal-feedback"
+                 title="Contact Us"
+                 size="lg"
+                 centered
+                 hide-footer>
+            <b-embed
+                    type="iframe"
+                    aspect="4by3"
+                    src="https://docs.google.com/forms/d/e/1FAIpQLScfsLa4mXu476eZg43GPJUcUx-RB_GzNuvYBpkP7E-YY7SXRA/viewform?usp=sf_link"
+                    allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture"
+                    allowfullscreen
+            ></b-embed>
+        </b-modal>
         <b-modal id="modal-terms"
                  title="Terms of Use"
                  size="lg"
