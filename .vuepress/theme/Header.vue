@@ -10,12 +10,11 @@
                 <b-nav-item to="/create-token/" :active="page === 'Generator'"><button type="button" class="btn btn-link btn-rounded"><img height="18" width="70" src="/assets/images/bsc.png"></button></b-nav-item>
                 <b-nav-item target="_self" href="https://polygon.crypto-studio.net/"><button type="button" class="btn btn-link btn-rounded"><img height="18" width="70" src="/assets/images/polygon.png"></button></b-nav-item>
                 <b-nav-item target="_self" @click="$bvToast.show('my-toast')"><button type="button" class="btn btn-link btn-rounded"><img height="18" width="70" src="/assets/images/ethereumgray.png"></button></b-nav-item>
-  <my-component v-if="!isMobile()">
 
 <b-nav-item> <button type="button" class="btn btn-outline-warning" @click="connectmetamaskbutton" ref="btnToggle" >
 
                                     Connect</button>
-  </b-nav-item> </my-component>   <my-mobile-component v-if="isMobile()"></my-mobile-component>
+  </b-nav-item>
                 <b-toast id="my-toast" variant="info" solid>
       <template #toast-title>
         <div class="d-flex flex-grow-1 align-items-baseline">
