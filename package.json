@@ -1,5 +1,5 @@
 {
-  "title": "BSC Token Generator",
+  "title": "BSC Token Maker",
   "name": "coinmaker",
   "version": "1.0.0",
   "description": "Easily deploy and generate BNB Smart Contracts for a Standard, Capped, Mintable, Burnable BEP20 Token.",
