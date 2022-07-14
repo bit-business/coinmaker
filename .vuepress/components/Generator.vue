@@ -236,6 +236,20 @@
                                             header-bg-variant="dark"
                                             header-text-variant="white"
                                             class="mt-3">
+                                                 <b-form-group
+                                                description="It changes Features below depending on your selection"
+                                                label="Choose Features *"
+                                                label-for="tokenType">
+                                            <b-form-select id="tokenType"
+                                                           v-model="tokenType"
+                                                           size="sm"
+                                                           @input="loadToken"
+                                                           style="font-weight: bold;">
+                                                <option v-for="(n, k) in tokenList" :value="k">
+                                                    {{ n.contractName }}
+                                                </option>
+                                            </b-form-select>
+                                        </b-form-group>
                                         <b-form-group
                                                 :description="['100k', 'Fixed', 'Unlimited', 'Capped'].join(', ')"
                                                 label="Supply Type"
@@ -319,24 +333,10 @@
                                     </b-card>
                                 </b-col>
                                 <b-col md="12" lg="4">
-                                    <b-card header="Token Type and Network"
+                                    <b-card header="Token Network"
                                             header-bg-variant="dark"
                                             header-text-variant="white"
                                             class="mt-3">
-                                        <b-form-group
-                                                description="Choose your Token Type."
-                                                label="Token Type *"
-                                                label-for="tokenType">
-                                            <b-form-select id="tokenType"
-                                                           v-model="tokenType"
-                                                           size="sm"
-                                                           @input="loadToken"
-                                                           style="font-weight: bold;">
-                                                <option v-for="(n, k) in tokenList" :value="k">
-                                                    {{ n.contractName }}
-                                                </option>
-                                            </b-form-select>
-                                        </b-form-group>
                                         <b-form-group
                                                 description="Choose your Network."
                                                 label="Network *"
@@ -391,7 +391,7 @@
                                             </b-form-group>
                                         </ValidationProvider>
                                     </b-card>
-                                    <b-card header="Transaction"
+                                    <b-card header="Blockchain Transaction"
                                             header-bg-variant="info"
                                             header-text-variant="white"
                                             no-body
@@ -425,7 +425,7 @@
                                                         </b-icon-info-circle>
                                                 </span>
                                                 <b-badge variant="info">
-                                                    Variable
+                                                    ~0.012 BNB (~2$)
                                                 </b-badge>
                                             </b-list-group-item>
                                         </b-list-group>
@@ -434,8 +434,8 @@
                                               size="lg"
                                               block
                                               type="submit"
-                                              class="mt-3 py-3 px-5 text-uppercase">
-                                        Confirm
+                                              class="mt-3 py-3 px-5">
+                                        Create Token
                                     </b-button>
                                 </b-col>
                             </b-row>
