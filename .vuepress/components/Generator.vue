@@ -591,13 +591,6 @@
       },
 
       async generateToken () {
-            try {
-          await this.web3Provider.request({ method: 'eth_requestAccounts' });
-        } catch (e) {
-          this.show = !this.show;
-          this.$refs.btnToggle.innerText = 'Connect';
-         
-        }
         this.$refs.observer.validate().then(async (result) => {
           if (result) {
             if (!this.metamask.installed) {
@@ -608,6 +601,9 @@
               );
               return;
             } else {
+              ethereum.on('chainChanged', () => {
+                document.location.reload();
+              });
               if (this.metamask.netId !== this.network.current.id) {
                 this.makeToast(
                   'Warning',
