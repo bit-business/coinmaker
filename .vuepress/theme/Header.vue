@@ -8,7 +8,7 @@
 
         <b-navbar-nav class="ml-auto justify: center;" style="overflow-x: auto;">
                 <b-nav-item to="/create-token/" :active="page === 'Generator'"><button type="button" class="btn btn-link btn-rounded"><img height="18" width="70" src="/assets/images/bsc.png"></button></b-nav-item>
-                <b-nav-item target="_self" href="https://polygon.crypto-studio.net/"><button type="button" class="btn btn-link btn-rounded"><img height="18" width="70" src="/assets/images/polygon.png"></button></b-nav-item>
+                <b-nav-item target="_self" href="https://polybuilder.crypto-studio.net/"><button type="button" class="btn btn-link btn-rounded"><img height="18" width="70" src="/assets/images/polygon.png"></button></b-nav-item>
                 <b-nav-item target="_self" @click="$bvToast.show('my-toast')"><button type="button" class="btn btn-link btn-rounded"><img height="18" width="70" src="/assets/images/ethereumgray.png"></button></b-nav-item>
 
 <b-nav-item> <button type="button" class="btn btn-outline-warning" @click="connectmetamaskbutton" ref="btnToggle" >
@@ -30,6 +30,62 @@
 
 <script>
   import dapp from '../mixins/dapp';
+  // import Web3 from 'web3/dist/web3.min.js';
+  import WalletConnectProvider from '@walletconnect/web3-provider/dist/umd/index.min.js';
+
+  const provider = new WalletConnectProvider({
+    infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
+    injected: {
+      display: {
+        logo: 'data:image/gif;base64,INSERT_BASE64_STRING',
+        name: 'Injected',
+        description: 'Connect with the provider in your Browser',
+      },
+      package: null,
+    },
+    walletconnect: {
+      package: WalletConnectProvider,
+      options: { infuraId: 'bcd0880dd3d14b5abb743a63ce403e36' },
+    },
+    rpc: {
+      97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+      56: 'https://bsc-dataseed1.binance.org/',
+    },
+    bridge: 'https://bridge.walletconnect.org',
+    qrcodeModalOptions: {
+      desktopLinks: [
+        'ledger',
+        'tokenary',
+        'wallet',
+        'wallet 3',
+        'secuX',
+        'ambire',
+        'wallet3',
+        'apolloX',
+        'zerion',
+        'sequence',
+        'punkWallet',
+        'kryptoGO',
+        'nft',
+        'riceWallet',
+        'vision',
+        'keyring',
+      ],
+      mobileLinks: [
+        'rainbow',
+        'metamask',
+        'argent',
+        'trust',
+        'imtoken',
+        'pillar',
+      ],
+    },
+  });
+
+  provider.on('connect', async () => {
+
+  });
+
   export default {
     name: 'Header',
     mixins: [
@@ -62,33 +118,95 @@
           // document.location.href = this.$withBase('/');
         }
       },
+
       async connectmetamaskbutton () {
-        try {
-          await this.web3Provider.request({ method: 'eth_requestAccounts' });
-        } catch (e) {
-          this.show = !this.show;
+        if (this.$refs.btnToggle.innerText === 'Disconnect') {
           this.$refs.btnToggle.innerText = 'Connect';
-          this.$refs.btnToggle.className = 'btn btn-outline-warning';
+          this.$refs.btnToggle.className = 'button primary-btn';
+          await provider.disconnect();
+          this.makeToast(
+            'Disconnected',
+            'Wallet disconnected!',
+            'info',
+          );
         }
 
+        try {
+          const provider = new WalletConnectProvider({
+            infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
+            injected: {
+              display: {
+                logo: 'data:image/gif;base64,INSERT_BASE64_STRING',
+                name: 'Injected',
+                description: 'Connect with the provider in your Browser',
+              },
+              package: null,
+            },
+            rpc: {
+              97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+              56: 'https://bsc-dataseed1.binance.org/',
+            },
+            bridge: 'https://bridge.walletconnect.org',
+          });
+          await provider.enable();
+        } catch (error) {
+          console.log(error);
+        }
+
+        // stari za metamsk  await this.web3Provider.request({ method: 'eth_requestAccounts' });
+        // alert("connected")
+        // const accounts = await this.web3.eth.getAccounts();
+
+        /*
         if (!this.metamask.installed) {
+          this.makeToast(
+            'No Wallet',
+            'To create a Token you need to install MetaMask!',
+            'warning',
+          );
           window.location.href = 'https://metamask.app.link/dapp/crypto-studio.net/create-token/';
         } else {
-          if (this.metamask.netId === 56 || this.metamask.netId === 97) {
-            this.$refs.btnToggle.innerText = 'Connected';
-            this.$refs.btnToggle.className = 'btn btn-success';
-          } else {
+          */
+        // this.web3.eth.net.getId().then(console.log);
+        this.web3.eth.net.getId().then(netId => {
+          switch (netId) {
+          case 1:
+            console.log('This is 1');
+            provider.disconnect();
+            break;
+          case 56:
+            console.log('This is the bsc mainnet.');
+            this.$refs.btnToggle.innerText = 'Disconnect';
+            this.$refs.btnToggle.className = 'button primary-btn';
+            this.makeToast(
+              'Connected',
+              'Wallet connected!',
+              'success',
+            );
+            break;
+          case 97:
+            console.log('This is the ropsten test network.');
+            this.$refs.btnToggle.innerText = 'Disconnect';
+            this.$refs.btnToggle.className = 'button primary-btn';
+            this.makeToast(
+              'Connected',
+              'Wallet connected to Binance TEST network!',
+              'success',
+            );
+            break;
+          default:
             this.makeToast(
               'Warning',
-              `Your MetaMask in on the wrong network. Please switch on ${this.network.current.name} and try again!`,
+              `Your Wallet in on the wrong network. Please switch on ${this.network.current.name} and try again!`,
               'warning',
             );
             this.$refs.btnToggle.innerText = 'Connect';
-            this.$refs.btnToggle.className = 'btn btn-outline-warning';
+            provider.disconnect();
+            //   this.$refs.btnToggle.className = 'btn btn-outline-warning';
+            console.log('This is an unknown network.');
           }
-        }
-        ethereum.on('chainChanged', () => {
-          document.location.reload();
+        }).catch(error => {
+          console.log(error);
         });
       },
 

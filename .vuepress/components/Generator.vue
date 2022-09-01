@@ -35,6 +35,7 @@
                     <ui--loader :loading="true"></ui--loader>
                 </div>
                 <b-card v-if="!loading" bg-variant="transparent" border-variant="0">
+                  <!--
                     <b-alert show variant="warning" v-if="!metamask.installed">
                         <h3 class="alert-heading">Alert</h3>
                      <production-list v-if="!isMobile()"> <p>
@@ -48,7 +49,7 @@
                         </p>
                         </production-list-mobile>
                     </b-alert>
-
+                  -->
                     <b-card header="Making transaction..."
                             header-bg-variant="info"
                             header-text-variant="white"
@@ -89,7 +90,7 @@
                     <ValidationObserver
                             ref="observer"
                             tag="form"
-                            @submit.prevent="generateToken()"
+                            @submit.prevent="generateTokenprovjera()"
                             v-if="!makingTransaction">
                         <fieldset :disabled="formDisabled">
                             <b-row>
@@ -450,6 +451,65 @@
 <script>
   import dapp from '../mixins/dapp';
   import tokenDetails from '../mixins/tokenDetails';
+  import Web3 from 'web3/dist/web3.min.js';
+  import WalletConnectProvider from '@walletconnect/web3-provider/dist/umd/index.min.js';
+
+  const provider = new WalletConnectProvider({
+    infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
+    injected: {
+      display: {
+        logo: 'data:image/gif;base64,INSERT_BASE64_STRING',
+        name: 'Injected',
+        description: 'Connect with the provider in your Browser',
+      },
+      package: null,
+    },
+    walletconnect: {
+      package: WalletConnectProvider,
+      options: { infuraId: 'bcd0880dd3d14b5abb743a63ce403e36' },
+    },
+    rpc: {
+      97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+      56: 'https://bsc-dataseed1.binance.org/',
+    },
+    bridge: 'https://bridge.walletconnect.org',
+    qrcodeModalOptions: {
+      desktopLinks: [
+        'ledger',
+        'tokenary',
+        'wallet',
+        'wallet 3',
+        'secuX',
+        'ambire',
+        'wallet3',
+        'apolloX',
+        'zerion',
+        'sequence',
+        'punkWallet',
+        'kryptoGO',
+        'nft',
+        'riceWallet',
+        'vision',
+        'keyring',
+      ],
+      mobileLinks: [
+        'rainbow',
+        'metamask',
+        'argent',
+        'trust',
+        'imtoken',
+        'pillar',
+      ],
+    },
+  });
+
+  const web3 = new Web3(provider);
+  let krivamreza = 0;
+
+  provider.on('connect', async () => {
+  //  const accounts = await web3.eth.getAccounts();
+  // alert(accounts);
+  });
 
   export default {
     name: 'Generator',
@@ -459,6 +519,7 @@
     ],
     data () {
       return {
+        accounts: '',
         loading: true,
         currentNetwork: null,
         tokenType: '',
@@ -487,12 +548,80 @@
         },
       };
     },
+
     mounted () {
       this.tokenType = this.getParam('tokenType') || 'SimpleBEP20';
       this.currentNetwork = this.getParam('network') || this.network.default;
       this.initDapp();
+      this.subscribe();
+      this.getAccount(provider);
     },
     methods: {
+
+      changenetwork: async function () {
+        try {
+          console.log('Log in with connect wallet');
+          const provider = await new WalletConnectProvider({
+            rpc: {
+              56: 'https://bsc-dataseed1.binance.org',
+            },
+            chainId: 56,
+          });
+          // provider.networkId = 56;
+          await provider.enable();
+          const web33 = await new Web3(provider);
+          console.log(web33);
+          // resolve radi error na lintu resolve(web33);
+        } catch {
+          console.log('Install metamask or use wallet connect');
+        }
+      },
+
+      connect: async function () {
+        await provider.enable();
+        //   alert("connected")
+      //  const accounts = await web3.eth.getAccounts();
+      },
+      disconnect: async function () {
+        await provider.disconnect();
+        //    alert("disconnected")
+      },
+      async getAccount (provider) {
+        //    const web33 = new Web3(provider);
+        //    const accounts = await web33.eth.getAccounts();
+        //  const chainId = await web33.eth.getChainId();
+        //  const networkId = await web3.eth.net.getId();
+        // const responBalance = await web33.eth.getBalance(accounts[0]);
+        //   const balance = web33.utils.fromWei(responBalance);
+      /*  const payload = {
+          isConnected: true,
+          provider,
+          accounts: accounts[0],
+          chainId,
+          networkId,
+          balance,
+        }; */
+        //   this.setInfoToWallet(payload);
+      },
+      subscribe (provider) {
+        if (!provider) return;
+        // Subscribe to accounts change
+        provider.on('accountsChanged', () => {
+          this.getAccount(provider);
+        });
+        // Subscribe to chainId change
+        provider.on('chainChanged', () => {
+          this.getAccount(provider);
+        });
+        // Subscribe to networkId change
+        provider.on('networkChanged', () => {
+          this.getAccount(provider);
+        });
+        // Subscribe to provider disconnection
+        provider.on('disconnect', (error) => {
+          console.log(error);
+        });
+      },
 
       async initDapp () {
         this.network.current = this.network.list[this.currentNetwork];
@@ -538,9 +667,9 @@
               'We are having an issue with Current Network Provider. Please switch Network or try again later.',
               'warning',
             );
-            this.feeAmount = this.web3.utils.toWei('0', 'ether');
+            this.feeAmount = web3.utils.toWei('0', 'ether');
           } else {
-            this.feeAmount = this.web3.utils.toWei(`${this.token.price}`, 'ether');
+            this.feeAmount = web3.utils.toWei(`${this.token.price}`, 'ether');
           }
         }
 
@@ -555,14 +684,44 @@
         this.loading = false;
       },
       async connectmetamaskbutton () {
-        try {
-          await this.web3Provider.request({ method: 'eth_requestAccounts' });
-        } catch (e) {
-          this.show = !this.show;
+        if (this.$refs.btnToggle.innerText === 'Connected') {
           this.$refs.btnToggle.innerText = 'Connect';
-          // this.$refs.btnToggle.className = 'primary-btn';
+          this.$refs.btnToggle.className = 'button primary-btn';
+          await provider.disconnect();
+          this.makeToast(
+            'Disconnected',
+            'Wallet disconnected',
+            'warning',
+          );
         }
 
+        try {
+          const provider = new WalletConnectProvider({
+            infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
+            injected: {
+              display: {
+                logo: 'data:image/gif;base64,INSERT_BASE64_STRING',
+                name: 'Injected',
+                description: 'Connect with the provider in your Browser',
+              },
+              package: null,
+            },
+            rpc: {
+              97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+              56: 'https://bsc-dataseed1.binance.org/',
+            },
+            bridge: 'https://bridge.walletconnect.org',
+          });
+          await provider.enable();
+        } catch (error) {
+          console.log(error);
+        }
+
+        // stari za metamsk  await this.web3Provider.request({ method: 'eth_requestAccounts' });
+        // alert("connected")
+        // const accounts = await this.web3.eth.getAccounts();
+
+        /*
         if (!this.metamask.installed) {
           this.makeToast(
             'No Wallet',
@@ -571,66 +730,134 @@
           );
           window.location.href = 'https://metamask.app.link/dapp/crypto-studio.net/create-token/';
         } else {
-          if (this.metamask.netId === 56 || this.metamask.netId === 97) {
+          */
+        // this.web3.eth.net.getId().then(console.log);
+        this.web3.eth.net.getId().then(netId => {
+          switch (netId) {
+          case 1:
+            console.log('This is 1');
+            provider.disconnect();
+            break;
+          case 56:
+            console.log('This is the bsc mainnet.');
             this.$refs.btnToggle.innerText = 'Connected';
             this.$refs.btnToggle.className = 'button primary-btn';
-          } else {
+            this.makeToast(
+              'Connected',
+              'Wallet connected!',
+              'success',
+            );
+            break;
+          case 97:
+            console.log('This is the ropsten test network.');
+            this.$refs.btnToggle.innerText = 'Connected';
+            this.$refs.btnToggle.className = 'button primary-btn';
+            this.makeToast(
+              'Connected',
+              'Wallet connected to Binance TEST network!',
+              'success',
+            );
+            break;
+          default:
             this.makeToast(
               'Warning',
-              `Your MetaMask in on the wrong network. Please switch on ${this.network.current.name} and try again!`,
+              `Your Wallet in on the wrong network. Please switch on ${this.network.current.name} and try again!`,
               'warning',
             );
             this.$refs.btnToggle.innerText = 'Connect';
+            provider.disconnect();
             //   this.$refs.btnToggle.className = 'btn btn-outline-warning';
+            console.log('This is an unknown network.');
           }
-        }
+        }).catch(error => {
+          console.log(error);
+        });
+      },
 
-        ethereum.on('chainChanged', () => {
-          document.location.reload();
+      async generateTokenprovjera () {
+        console.log('TESTprvikorak');
+        await provider.enable();
+        // web3.eth.getChainId().then(console.log);
+
+        web3.eth.getChainId().then(async (result) => {
+          if (result) {
+            krivamreza = result;
+            console.log('TEST:56');
+            console.log(krivamreza);
+            if (krivamreza === 56 || krivamreza === 97) {
+              this.generateToken();
+            } else {
+              this.makeToast(
+                'WRONG NETWORK',
+                `Please change your network on wallet to ${this.network.current.name}!`,
+                'warning',
+              );
+            }
+          }
+        }).catch((e) => {
+
         });
       },
 
       async generateToken () {
+        const provider = new WalletConnectProvider({
+          infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
+
+          rpc: {
+            97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+            56: 'https://bsc-dataseed1.binance.org/',
+          },
+          bridge: 'https://bridge.walletconnect.org',
+        });
+        provider.enable();
+
         this.$refs.observer.validate().then(async (result) => {
           if (result) {
-            if (!this.metamask.installed) {
-              this.makeToast(
-                'Warning',
-                'To create a Token please install MetaMask!',
-                'danger',
-              );
-              return;
-            } else {
-              ethereum.on('chainChanged', () => {
-                document.location.reload();
-              });
-              if (this.metamask.netId !== this.network.current.id) {
-                this.makeToast(
-                  'Warning',
-                  `Your MetaMask in on the wrong network. Please switch on ${this.network.current.name} and try again!`,
-                  'warning',
-                );
-                return;
-              }
-            }
-
             try {
               this.trx.hash = '';
               this.trx.link = '';
               this.formDisabled = true;
               this.makingTransaction = true;
 
-              if (this.currentNetwork === 'mainnet') {
-                this.gaSend('AddToCart', this.tokenType, '');
-                this.fbtrack('AddToCart', {
-                  content_ids: [this.tokenType], // eslint-disable-line camelcase
-                  content_type: 'product', // eslint-disable-line camelcase
-                });
-              }
+              web3.eth.net.getId().then(netId => {
+                switch (netId) {
+                case 1:
+                  this.makeToast(
+                    'Warning',
+                    `Your Wallet in on the wrong network. Please switch on ${this.network.current.name} and try again!`,
+                    'warning',
+                  );
+                  break;
+                case 56:
 
-              await this.web3Provider.request({ method: 'eth_requestAccounts' });
+                  console.log('This is the bsc mainnet.');
+                  this.gaSend('AddToCart', this.tokenType, '');
+                  this.fbtrack('AddToCart', {
+                    content_ids: [this.tokenType], // eslint-disable-line camelcase
+                    content_type: 'product', // eslint-disable-line camelcase
+                  });
 
-              const tokenContract = new this.web3.eth.Contract(this.contracts.token.abi);
+                  break;
+                case 97:
+                  console.log('This is the bsc test network.');
+                  break;
+                default:
+                  console.log('This is an unknown network.');
+                  this.makeToast(
+                    'Warning',
+                    `Your Wallet in on the wrong network. Please switch on ${this.network.current.name} and try again!`,
+                    'warning',
+                  );
+                }
+              }).catch(error => {
+                console.log(error);
+              });
+
+              await provider.enable();
+              // const accounts = await web3.eth.getAccounts();
+              // stari za metamask  await this.web3Provider.request({ method: 'eth_requestAccounts' });
+
+              const tokenContract = new web3.eth.Contract(this.contracts.token.abi);
 
               const deployOptions = {
                 data: this.contracts.token.bytecode,
@@ -638,7 +865,7 @@
               };
 
               const sendOptions = {
-                from: await this.promisify(this.web3.eth.getCoinbase),
+                from: await this.promisify(web3.eth.getCoinbase),
                 value: this.feeAmount,
                 gasPrice: '10000000000', // default gas price 10 gwei
               };
@@ -664,10 +891,22 @@
                   this.trx.hash = transactionHash;
                   this.trx.link = `${this.network.current.explorerLink}/tx/${this.trx.hash}`;
 
-                  if (this.currentNetwork === 'mainnet') {
-                    this.gaSend('InitiateCheckout', this.tokenType, this.trx.hash);
-                    this.fbtrack('InitiateCheckout');
-                  }
+                  web3.eth.net.getId().then(netId => {
+                    switch (netId) {
+                    case 1:
+                      console.log('This is 1');
+                      break;
+                    case 56:
+                      console.log('This is the bsc mainnet.');
+                      this.gaSend('InitiateCheckout', this.tokenType, this.trx.hash);
+                      this.fbtrack('InitiateCheckout');
+                      break;
+                    default:
+                      console.log('This is an unknown network.');
+                    }
+                  }).catch(error => {
+                    console.log(error);
+                  });
                 })
                 .on('receipt', (receipt) => {
                   this.token.address = receipt.contractAddress;
@@ -679,15 +918,24 @@
                     'success',
                   );
 
-                  if (this.currentNetwork === 'mainnet') {
-                    this.gaSend('Purchase', this.tokenType, this.token.address);
-                    this.fbtrack('Purchase', {
-                      value: this.web3.utils.fromWei(this.feeAmount, 'ether'),
-                      currency: 'EUR', // should be BNB
-                      content_ids: [this.tokenType], // eslint-disable-line camelcase
-                      content_type: 'product', // eslint-disable-line camelcase
-                    });
-                  }
+                  web3.eth.net.getId().then(netId => {
+                    switch (netId) {
+                    case 56:
+                      console.log('This is the bsc mainnet.');
+                      this.gaSend('Purchase', this.tokenType, this.token.address);
+                      this.fbtrack('Purchase', {
+                        value: web3.utils.fromWei(this.feeAmount, 'ether'),
+                        currency: 'EUR', // should be BNB
+                        content_ids: [this.tokenType], // eslint-disable-line camelcase
+                        content_type: 'product', // eslint-disable-line camelcase
+                      });
+                      break;
+                    default:
+                      console.log('This is an unknown network.');
+                    }
+                  }).catch(error => {
+                    console.log(error);
+                  });
                 });
             } catch (e) {
               this.makingTransaction = false;
@@ -722,7 +970,7 @@
         this.token.tokenRecover = detail.tokenRecover;
         this.token.removeCopyright = detail.removeCopyright;
         this.token.price = detail.price;
-        this.token.gas = this.web3.utils.toBN(detail.gas);
+        this.token.gas = web3.utils.toBN(detail.gas);
 
         this.token.decimals = detail.customizeDecimals ? this.token.decimals : 18;
       },
@@ -735,9 +983,9 @@
       getDeployArguments () {
         const name = this.token.name;
         const symbol = this.token.symbol;
-        const decimals = this.web3.utils.toBN(this.token.decimals);
-        const cap = this.web3.utils.toBN(this.token.cap).mul(this.web3.utils.toBN(Math.pow(10, this.token.decimals)));
-        const initialBalance = this.web3.utils.toBN(this.token.initialBalance).mul(this.web3.utils.toBN(Math.pow(10, this.token.decimals))); // eslint-disable-line max-len
+        const decimals = web3.utils.toBN(this.token.decimals);
+        const cap = web3.utils.toBN(this.token.cap).mul(web3.utils.toBN(Math.pow(10, this.token.decimals)));
+        const initialBalance = web3.utils.toBN(this.token.initialBalance).mul(web3.utils.toBN(Math.pow(10, this.token.decimals))); // eslint-disable-line max-len
 
         const params = [name, symbol];
 
@@ -775,7 +1023,7 @@
         try {
           const gas = await this.promisify(tokenContract.deploy(deployOptions).estimateGas, sendOptions);
 
-          return this.web3.utils.toBN(gas).muln(1.3); // add 30% tolerance
+          return web3.utils.toBN(gas).muln(1.3); // add 30% tolerance
         } catch (e) {
           console.log(e); // eslint-disable-line no-console
 
@@ -784,7 +1032,7 @@
       },
       async addToMetaMask () {
         try {
-          await this.web3Provider.request({
+          await this.provider.request({
             method: 'wallet_watchAsset',
             params: {
               type: 'ERC20',
@@ -801,4 +1049,14 @@
       },
     },
   };
+  // returns number chainId instead of string so 0xfa -> 250
+  export const getChainIdFromString = async (provider) => {
+    if (!provider) {
+      return;
+    }
+    const web3 = new Web3(provider);
+    const chainId = await web3.eth.getChainId();
+    return chainId;
+  };
+
 </script>

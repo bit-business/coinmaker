@@ -1,6 +1,9 @@
 const vars = require('./.env.json');
 
 module.exports = {
+  chainWebpack (config) {
+    config.resolve.alias.set('vue', 'vue/dist/vue.common.js');
+  },
   description: 'Create your own crypto coin. BNB Smart Contracts in minutes. The easiest and fastest way to create your own BEP20 token on the Binance Smart Chain network. No coding skills are required.',
   base: '/',
   head: [
