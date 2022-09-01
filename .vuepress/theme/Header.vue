@@ -27,64 +27,36 @@
        </b-navbar-nav>
     </b-navbar>
 </template>
+<script lang="ts">
+  // // vue dapp
+  // window.global = window
+  // let global = globalThis
+  // import process from 'process'
+  // window.process = process
+  // import buffer from 'buffer'
+  // window.Buffer = buffer.Buffer
+  // import util from 'util'
+  // window.util = util
+  // CONNECT TO ETHEREUM NETWORK NODE(S)
+  // OPTION 1 "web3"
+  // vue web3
+  //import Web3 from "web3"
+  //import WalletConnectProvider from "@walletconnect/web3-provider"
+  // Create WalletConnect Provider
+
+  console.log('*** HEY HEY HEY -- App.vue (web3)')
+  </script>
+
 
 <script>
   import dapp from '../mixins/dapp';
-  // import Web3 from 'web3/dist/web3.min.js';
+ // import Web3 from 'web3';
+ // import WalletConnectProvider from '@walletconnect/web3-provider';
   import WalletConnectProvider from '@walletconnect/web3-provider/dist/umd/index.min.js';
 
-  const provider = new WalletConnectProvider({
-    infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
-    injected: {
-      display: {
-        logo: 'data:image/gif;base64,INSERT_BASE64_STRING',
-        name: 'Injected',
-        description: 'Connect with the provider in your Browser',
-      },
-      package: null,
-    },
-    walletconnect: {
-      package: WalletConnectProvider,
-      options: { infuraId: 'bcd0880dd3d14b5abb743a63ce403e36' },
-    },
-    rpc: {
-      97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
-      56: 'https://bsc-dataseed1.binance.org/',
-    },
-    bridge: 'https://bridge.walletconnect.org',
-    qrcodeModalOptions: {
-      desktopLinks: [
-        'ledger',
-        'tokenary',
-        'wallet',
-        'wallet 3',
-        'secuX',
-        'ambire',
-        'wallet3',
-        'apolloX',
-        'zerion',
-        'sequence',
-        'punkWallet',
-        'kryptoGO',
-        'nft',
-        'riceWallet',
-        'vision',
-        'keyring',
-      ],
-      mobileLinks: [
-        'rainbow',
-        'metamask',
-        'argent',
-        'trust',
-        'imtoken',
-        'pillar',
-      ],
-    },
-  });
 
-  provider.on('connect', async () => {
 
-  });
+ 
 
   export default {
     name: 'Header',
@@ -152,22 +124,6 @@
         } catch (error) {
           console.log(error);
         }
-
-        // stari za metamsk  await this.web3Provider.request({ method: 'eth_requestAccounts' });
-        // alert("connected")
-        // const accounts = await this.web3.eth.getAccounts();
-
-        /*
-        if (!this.metamask.installed) {
-          this.makeToast(
-            'No Wallet',
-            'To create a Token you need to install MetaMask!',
-            'warning',
-          );
-          window.location.href = 'https://metamask.app.link/dapp/crypto-studio.net/create-token/';
-        } else {
-          */
-        // this.web3.eth.net.getId().then(console.log);
         this.web3.eth.net.getId().then(netId => {
           switch (netId) {
           case 1:

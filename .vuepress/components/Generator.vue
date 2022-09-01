@@ -448,12 +448,36 @@
     </div>
 </template>
 
+ <!--Start of Tawk.to Script-->
+ <script lang="ts">
+  // window.global = window
+ let global = globalThis
+ (window as any).global = window;
+ </script>
+
+ <script lang="javascript">
+   // (window as any).global = window;
+  if (global === undefined) {
+     var global = globalThis;
+  }  
+  </script>
+  <!--End of Tawk.to Script-->
+
+
+
 <script>
   import dapp from '../mixins/dapp';
   import tokenDetails from '../mixins/tokenDetails';
+
+  
   import Web3 from 'web3/dist/web3.min.js';
+ // import WalletConnectProvider from '@walletconnect/web3-provider';
   import WalletConnectProvider from '@walletconnect/web3-provider/dist/umd/index.min.js';
 
+  const global = globalThis;
+ //const web3 = new Web3('ws://localhost:8080');
+
+  
   const provider = new WalletConnectProvider({
     infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
     injected: {
@@ -503,13 +527,11 @@
     },
   });
 
+
   const web3 = new Web3(provider);
   let krivamreza = 0;
 
-  provider.on('connect', async () => {
-  //  const accounts = await web3.eth.getAccounts();
-  // alert(accounts);
-  });
+
 
   export default {
     name: 'Generator',
@@ -519,7 +541,6 @@
     ],
     data () {
       return {
-        accounts: '',
         loading: true,
         currentNetwork: null,
         tokenType: '',
@@ -553,56 +574,10 @@
       this.tokenType = this.getParam('tokenType') || 'SimpleBEP20';
       this.currentNetwork = this.getParam('network') || this.network.default;
       this.initDapp();
-      this.subscribe();
-      this.getAccount(provider);
     },
     methods: {
 
-      changenetwork: async function () {
-        try {
-          console.log('Log in with connect wallet');
-          const provider = await new WalletConnectProvider({
-            rpc: {
-              56: 'https://bsc-dataseed1.binance.org',
-            },
-            chainId: 56,
-          });
-          // provider.networkId = 56;
-          await provider.enable();
-          const web33 = await new Web3(provider);
-          console.log(web33);
-          // resolve radi error na lintu resolve(web33);
-        } catch {
-          console.log('Install metamask or use wallet connect');
-        }
-      },
 
-      connect: async function () {
-        await provider.enable();
-        //   alert("connected")
-      //  const accounts = await web3.eth.getAccounts();
-      },
-      disconnect: async function () {
-        await provider.disconnect();
-        //    alert("disconnected")
-      },
-      async getAccount (provider) {
-        //    const web33 = new Web3(provider);
-        //    const accounts = await web33.eth.getAccounts();
-        //  const chainId = await web33.eth.getChainId();
-        //  const networkId = await web3.eth.net.getId();
-        // const responBalance = await web33.eth.getBalance(accounts[0]);
-        //   const balance = web33.utils.fromWei(responBalance);
-      /*  const payload = {
-          isConnected: true,
-          provider,
-          accounts: accounts[0],
-          chainId,
-          networkId,
-          balance,
-        }; */
-        //   this.setInfoToWallet(payload);
-      },
       subscribe (provider) {
         if (!provider) return;
         // Subscribe to accounts change
@@ -691,7 +666,7 @@
           this.makeToast(
             'Disconnected',
             'Wallet disconnected',
-            'warning',
+            'info',
           );
         }
 
@@ -775,14 +750,11 @@
       },
 
       async generateTokenprovjera () {
-        console.log('TESTprvikorak');
         await provider.enable();
         // web3.eth.getChainId().then(console.log);
-
         web3.eth.getChainId().then(async (result) => {
           if (result) {
             krivamreza = result;
-            console.log('TEST:56');
             console.log(krivamreza);
             if (krivamreza === 56 || krivamreza === 97) {
               this.generateToken();
@@ -1049,14 +1021,6 @@
       },
     },
   };
-  // returns number chainId instead of string so 0xfa -> 250
-  export const getChainIdFromString = async (provider) => {
-    if (!provider) {
-      return;
-    }
-    const web3 = new Web3(provider);
-    const chainId = await web3.eth.getChainId();
-    return chainId;
-  };
+
 
 </script>

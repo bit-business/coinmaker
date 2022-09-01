@@ -1,5 +1,6 @@
 import config from '../config';
 import utils from './utils';
+import Web3 from 'web3';
 
 import HelloBEP20 from '../abi/token/HelloBEP20.json';
 import SimpleBEP20 from '../abi/token/SimpleBEP20.json';
@@ -11,6 +12,8 @@ import UnlimitedBEP20 from '../abi/token/UnlimitedBEP20.json';
 import AmazingBEP20 from '../abi/token/AmazingBEP20.json';
 
 import ServiceReceiverArtifact from '../abi/service/ServiceReceiver.json';
+
+let global = globalThis;
 
 export default {
   mixins: [
@@ -71,9 +74,10 @@ export default {
         );
       }
 
-      if (checkWeb3 && (typeof window.ethereum !== 'undefined')) {
+      if (checkWeb3 ) {
         console.log('injected bsc'); // eslint-disable-line no-console
-        this.web3Provider = window.ethereum;
+        let global = globalThis;
+     //   this.web3Provider = global.ethereum;
 
         this.web3 = new Web3(this.web3Provider);
         this.metamask.installed = this.web3Provider.isMetaMask;
