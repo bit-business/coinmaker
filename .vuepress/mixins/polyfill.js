@@ -1,6 +1,4 @@
 
-
-
-//if (global === undefined) {
+// if (global === undefined) {
 //  var global = window;
-//}
+// }

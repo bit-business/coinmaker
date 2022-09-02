@@ -1,6 +1,6 @@
 import config from '../config';
 import utils from './utils';
-import Web3 from 'web3';
+//import Web3 from 'web3'
 
 import HelloBEP20 from '../abi/token/HelloBEP20.json';
 import SimpleBEP20 from '../abi/token/SimpleBEP20.json';
@@ -13,14 +13,19 @@ import AmazingBEP20 from '../abi/token/AmazingBEP20.json';
 
 import ServiceReceiverArtifact from '../abi/service/ServiceReceiver.json';
 
-let global = globalThis;
+// import Web3ModalMixin from '../mixins/web3modalmixin';
+// import web3 from 'web3/dist/web3.min.js'
+import Web3 from 'web3';
+// let global = globalThis;
 
 export default {
   mixins: [
     utils,
+  //  Web3ModalMixin,
   ],
   data () {
     return {
+      global: globalThis,
       web3: null,
       web3Provider: null,
       metamask: {
@@ -68,16 +73,19 @@ export default {
   },
   methods: {
     async initWeb3 (network, checkWeb3) {
+      if (global === undefined) {
+        var global = globalThis;
+     }
       if (!Object.prototype.hasOwnProperty.call(this.network.list, network)) {
         throw new Error(
           `Failed initializing network ${network}. Allowed values are ${Object.keys(this.network.list)}.`,
         );
       }
 
-      if (checkWeb3 ) {
+      if (checkWeb3 && (typeof window.ethereum !== 'undefined') && (typeof window !== 'undefined') && (typeof global !== 'undefined')) {
         console.log('injected bsc'); // eslint-disable-line no-console
-        let global = globalThis;
-     //   this.web3Provider = global.ethereum;
+        
+        this.web3Provider = window.ethereum;
 
         this.web3 = new Web3(this.web3Provider);
         this.metamask.installed = this.web3Provider.isMetaMask;

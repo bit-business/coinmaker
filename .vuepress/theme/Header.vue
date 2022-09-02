@@ -27,7 +27,7 @@
        </b-navbar-nav>
     </b-navbar>
 </template>
-<script lang="ts">
+<script type="text/javascript">
   // // vue dapp
   // window.global = window
   // let global = globalThis
@@ -40,23 +40,17 @@
   // CONNECT TO ETHEREUM NETWORK NODE(S)
   // OPTION 1 "web3"
   // vue web3
-  //import Web3 from "web3"
-  //import WalletConnectProvider from "@walletconnect/web3-provider"
+  // import Web3 from "web3"
+  // import WalletConnectProvider from "@walletconnect/web3-provider"
   // Create WalletConnect Provider
+  window.global = window;
 
-  console.log('*** HEY HEY HEY -- App.vue (web3)')
   </script>
-
 
 <script>
   import dapp from '../mixins/dapp';
- // import Web3 from 'web3';
+  import Web3 from 'web3';
  // import WalletConnectProvider from '@walletconnect/web3-provider';
-  import WalletConnectProvider from '@walletconnect/web3-provider/dist/umd/index.min.js';
-
-
-
- 
 
   export default {
     name: 'Header',
@@ -76,6 +70,7 @@
     },
     methods: {
       async initDapp () {
+    
         this.network.current = this.network.list[this.currentNetwork];
         try {
           await this.initWeb3(this.currentNetwork, true);
@@ -103,27 +98,7 @@
           );
         }
 
-        try {
-          const provider = new WalletConnectProvider({
-            infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
-            injected: {
-              display: {
-                logo: 'data:image/gif;base64,INSERT_BASE64_STRING',
-                name: 'Injected',
-                description: 'Connect with the provider in your Browser',
-              },
-              package: null,
-            },
-            rpc: {
-              97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
-              56: 'https://bsc-dataseed1.binance.org/',
-            },
-            bridge: 'https://bridge.walletconnect.org',
-          });
-          await provider.enable();
-        } catch (error) {
-          console.log(error);
-        }
+   
         this.web3.eth.net.getId().then(netId => {
           switch (netId) {
           case 1:

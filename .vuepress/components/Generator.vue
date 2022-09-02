@@ -450,35 +450,28 @@
 
  <!--Start of Tawk.to Script-->
  <script lang="ts">
-  // window.global = window
- let global = globalThis
- (window as any).global = window;
+  window.global = window;
+  const global = globalThis;
+
  </script>
 
  <script lang="javascript">
    // (window as any).global = window;
-  if (global === undefined) {
-     var global = globalThis;
-  }  
+
   </script>
   <!--End of Tawk.to Script-->
-
-
 
 <script>
   import dapp from '../mixins/dapp';
   import tokenDetails from '../mixins/tokenDetails';
+ 
+  import Web3 from 'web3';
+  import WalletConnectProvider from '@walletconnect/web3-provider/dist/umd/index.min.js'
 
-  
-  import Web3 from 'web3/dist/web3.min.js';
- // import WalletConnectProvider from '@walletconnect/web3-provider';
-  import WalletConnectProvider from '@walletconnect/web3-provider/dist/umd/index.min.js';
-
-  const global = globalThis;
- //const web3 = new Web3('ws://localhost:8080');
-
-  
-  const provider = new WalletConnectProvider({
+  if (typeof window !== 'undefined' && typeof window.ethereum !== 'undefined')
+{
+    // we are in the browser and metamask is running
+    const provider = new WalletConnectProvider({
     infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
     injected: {
       display: {
@@ -526,12 +519,22 @@
       ],
     },
   });
-
-
   const web3 = new Web3(provider);
+}
+else
+{
+    // we are on the server *OR* the user is not running metamask
+    // https://medium.com/jelly-market/how-to-get-infura-api-key-e7d552dd396f
+    const provider = new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/bcd0880dd3d14b5abb743a63ce403e36");
+    const web3 = new Web3(provider);
+}
+  
+  
+
+  //const global = globalThis;
+ //const web3 = new Web3('ws://localhost:8080');
+
   let krivamreza = 0;
-
-
 
   export default {
     name: 'Generator',
@@ -541,6 +544,7 @@
     ],
     data () {
       return {
+        web3: '',
         loading: true,
         currentNetwork: null,
         tokenType: '',
@@ -577,7 +581,6 @@
     },
     methods: {
 
-
       subscribe (provider) {
         if (!provider) return;
         // Subscribe to accounts change
@@ -599,6 +602,10 @@
       },
 
       async initDapp () {
+        if (global === undefined) {
+     var global = globalThis;
+  }
+
         this.network.current = this.network.list[this.currentNetwork];
         try {
           await this.initWeb3(this.currentNetwork, true);
@@ -642,9 +649,9 @@
               'We are having an issue with Current Network Provider. Please switch Network or try again later.',
               'warning',
             );
-            this.feeAmount = web3.utils.toWei('0', 'ether');
+            this.feeAmount = this.web3.utils.toWei('0', 'ether');
           } else {
-            this.feeAmount = web3.utils.toWei(`${this.token.price}`, 'ether');
+            this.feeAmount = this.web3.utils.toWei(`${this.token.price}`, 'ether');
           }
         }
 
@@ -669,7 +676,6 @@
             'info',
           );
         }
-
         try {
           const provider = new WalletConnectProvider({
             infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
@@ -691,7 +697,20 @@
         } catch (error) {
           console.log(error);
         }
+        /*
+        const Web3Modal = window.Web3Modal.default;
+const providerOptions = {
+  /* See Provider Options Section
+};
 
+const web3Modal = new Web3Modal({
+  network: "mainnet", // optional
+  cacheProvider: true, // optional
+  providerOptions // required
+});
+
+const provider = await web3Modal.connect();
+*/
         // stari za metamsk  await this.web3Provider.request({ method: 'eth_requestAccounts' });
         // alert("connected")
         // const accounts = await this.web3.eth.getAccounts();
@@ -772,9 +791,9 @@
       },
 
       async generateToken () {
+
         const provider = new WalletConnectProvider({
           infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
-
           rpc: {
             97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
             56: 'https://bsc-dataseed1.binance.org/',
@@ -782,6 +801,7 @@
           bridge: 'https://bridge.walletconnect.org',
         });
         provider.enable();
+
 
         this.$refs.observer.validate().then(async (result) => {
           if (result) {
@@ -896,7 +916,7 @@
                       console.log('This is the bsc mainnet.');
                       this.gaSend('Purchase', this.tokenType, this.token.address);
                       this.fbtrack('Purchase', {
-                        value: web3.utils.fromWei(this.feeAmount, 'ether'),
+                        value: this.web3.utils.fromWei(this.feeAmount, 'ether'),
                         currency: 'EUR', // should be BNB
                         content_ids: [this.tokenType], // eslint-disable-line camelcase
                         content_type: 'product', // eslint-disable-line camelcase
@@ -942,7 +962,7 @@
         this.token.tokenRecover = detail.tokenRecover;
         this.token.removeCopyright = detail.removeCopyright;
         this.token.price = detail.price;
-        this.token.gas = web3.utils.toBN(detail.gas);
+        this.token.gas = this.web3.utils.toBN(detail.gas);
 
         this.token.decimals = detail.customizeDecimals ? this.token.decimals : 18;
       },
@@ -955,9 +975,9 @@
       getDeployArguments () {
         const name = this.token.name;
         const symbol = this.token.symbol;
-        const decimals = web3.utils.toBN(this.token.decimals);
-        const cap = web3.utils.toBN(this.token.cap).mul(web3.utils.toBN(Math.pow(10, this.token.decimals)));
-        const initialBalance = web3.utils.toBN(this.token.initialBalance).mul(web3.utils.toBN(Math.pow(10, this.token.decimals))); // eslint-disable-line max-len
+        const decimals = this.web3.utils.toBN(this.token.decimals);
+        const cap = this.web3.utils.toBN(this.token.cap).mul(this.web3.utils.toBN(Math.pow(10, this.token.decimals)));
+        const initialBalance = this.web3.utils.toBN(this.token.initialBalance).mul(this.web3.utils.toBN(Math.pow(10, this.token.decimals))); // eslint-disable-line max-len
 
         const params = [name, symbol];
 
@@ -995,7 +1015,7 @@
         try {
           const gas = await this.promisify(tokenContract.deploy(deployOptions).estimateGas, sendOptions);
 
-          return web3.utils.toBN(gas).muln(1.3); // add 30% tolerance
+          return this.web3.utils.toBN(gas).muln(1.3); // add 30% tolerance
         } catch (e) {
           console.log(e); // eslint-disable-line no-console
 
@@ -1021,6 +1041,5 @@
       },
     },
   };
-
 
 </script>
