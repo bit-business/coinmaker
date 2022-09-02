@@ -19,7 +19,7 @@ module.exports = {
     ['meta', { property: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { property: 'twitter:image', content: 'https://crypto-studio.net/assets/images/bep20-token-generator.png' }], // eslint-disable-line max-len
     // ['script', { src: '/dist/web3.min.js' }],
-   // ['script', { src: 'https://uploads.codesandbox.io/uploads/user/68052bd8-43d7-466a-af1e-bb0ab2bd3a40/F6-W-web3.min.js' }],
+    ['script', { src: 'https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js' }],
     //  ['script', { src: 'https://cdn.jsdelivr.net/npm/@walletconnect/web3-provider@1.7.8/dist/umd/index.min.js' }],
 
     ['script',

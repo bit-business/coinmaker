@@ -452,12 +452,14 @@
  <script lang="ts">
   window.global = window;
   const global = globalThis;
+  var web3: any = window["web3"];
+var Web3: any = window["Web3"];
 
  </script>
 
  <script lang="javascript">
    // (window as any).global = window;
-
+global = globalThis;
   </script>
   <!--End of Tawk.to Script-->
 
@@ -465,9 +467,11 @@
   import dapp from '../mixins/dapp';
   import tokenDetails from '../mixins/tokenDetails';
  
-  import Web3 from 'web3';
+  import Web3 from 'web3/dist/web3.min.js';
   import WalletConnectProvider from '@walletconnect/web3-provider/dist/umd/index.min.js'
 
+  let web3 = new Web3();
+  
   if (typeof window !== 'undefined' && typeof window.ethereum !== 'undefined')
 {
     // we are in the browser and metamask is running
@@ -544,7 +548,7 @@ else
     ],
     data () {
       return {
-        web3: '',
+        web3,
         loading: true,
         currentNetwork: null,
         tokenType: '',

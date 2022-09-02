@@ -15,8 +15,7 @@ import ServiceReceiverArtifact from '../abi/service/ServiceReceiver.json';
 
 // import Web3ModalMixin from '../mixins/web3modalmixin';
 // import web3 from 'web3/dist/web3.min.js'
-import Web3 from 'web3';
-// let global = globalThis;
+
 
 export default {
   mixins: [
@@ -25,7 +24,6 @@ export default {
   ],
   data () {
     return {
-      global: globalThis,
       web3: null,
       web3Provider: null,
       metamask: {

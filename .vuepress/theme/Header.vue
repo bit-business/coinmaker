@@ -49,8 +49,9 @@
 
 <script>
   import dapp from '../mixins/dapp';
-  import Web3 from 'web3';
+  import Web3 from 'web3/dist/web3.min.js';
  // import WalletConnectProvider from '@walletconnect/web3-provider';
+ let web3 = new Web3();
 
   export default {
     name: 'Header',
