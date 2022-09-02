@@ -450,10 +450,12 @@
 
  <!--Start of Tawk.to Script-->
  <script lang="ts">
+ // import WalletConnectProvider from '@walletconnect/web3-provider';
+  import { JsonRpcPayload, JsonRpcResponse } from 'web3-core-helpers';
+  import { AbstractProvider } from 'web3-core/types';
+
   window.global = window;
   const global = globalThis;
-  var web3: any = window["web3"];
-var Web3: any = window["Web3"];
 
  </script>
 
@@ -466,14 +468,17 @@ global = globalThis;
 <script>
   import dapp from '../mixins/dapp';
   import tokenDetails from '../mixins/tokenDetails';
- 
-  import Web3 from 'web3/dist/web3.min.js';
-  import WalletConnectProvider from '@walletconnect/web3-provider/dist/umd/index.min.js'
 
-  let web3 = new Web3();
-  
-  if (typeof window !== 'undefined' && typeof window.ethereum !== 'undefined')
+  //import WalletConnectProvider from '@walletconnect/web3-provider';
+  import WalletConnectProvider  from '@walletconnect/web3-provider/dist/umd/index.min.js';
+
+ // const WalletConnectProvider = require('@walletconnect/web3-provider/dist/umd/index.min.js');
+
+  if (typeof window !== 'undefined')
 {
+const Web3 = require('web3/dist/web3.min.js');
+//let web3 = new Web3();
+
     // we are in the browser and metamask is running
     const provider = new WalletConnectProvider({
     infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
@@ -523,17 +528,18 @@ global = globalThis;
       ],
     },
   });
+
   const web3 = new Web3(provider);
+
 }
 else
 {
+  const Web3 = require('web3');
     // we are on the server *OR* the user is not running metamask
     // https://medium.com/jelly-market/how-to-get-infura-api-key-e7d552dd396f
-    const provider = new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/bcd0880dd3d14b5abb743a63ce403e36");
+  const provider = new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/bcd0880dd3d14b5abb743a63ce403e36");
     const web3 = new Web3(provider);
 }
-  
-  
 
   //const global = globalThis;
  //const web3 = new Web3('ws://localhost:8080');
@@ -548,7 +554,6 @@ else
     ],
     data () {
       return {
-        web3,
         loading: true,
         currentNetwork: null,
         tokenType: '',
@@ -584,7 +589,7 @@ else
       this.initDapp();
     },
     methods: {
-
+/*
       subscribe (provider) {
         if (!provider) return;
         // Subscribe to accounts change
@@ -604,7 +609,7 @@ else
           console.log(error);
         });
       },
-
+*/
       async initDapp () {
         if (global === undefined) {
      var global = globalThis;
@@ -673,14 +678,21 @@ else
         if (this.$refs.btnToggle.innerText === 'Connected') {
           this.$refs.btnToggle.innerText = 'Connect';
           this.$refs.btnToggle.className = 'button primary-btn';
+          if (typeof window !== 'undefined')
+{
           await provider.disconnect();
+        }
           this.makeToast(
             'Disconnected',
             'Wallet disconnected',
             'info',
           );
         }
+
+        if (typeof window !== 'undefined')
+{
         try {
+
           const provider = new WalletConnectProvider({
             infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
             injected: {
@@ -700,7 +712,7 @@ else
           await provider.enable();
         } catch (error) {
           console.log(error);
-        }
+        }     }
         /*
         const Web3Modal = window.Web3Modal.default;
 const providerOptions = {
@@ -730,11 +742,15 @@ const provider = await web3Modal.connect();
         } else {
           */
         // this.web3.eth.net.getId().then(console.log);
+
         this.web3.eth.net.getId().then(netId => {
           switch (netId) {
           case 1:
             console.log('This is 1');
+            if (typeof window !== 'undefined')
+{
             provider.disconnect();
+          }
             break;
           case 56:
             console.log('This is the bsc mainnet.');
@@ -763,16 +779,22 @@ const provider = await web3Modal.connect();
               'warning',
             );
             this.$refs.btnToggle.innerText = 'Connect';
+            if (typeof window !== 'undefined')
+{
             provider.disconnect();
+          }
             //   this.$refs.btnToggle.className = 'btn btn-outline-warning';
             console.log('This is an unknown network.');
           }
         }).catch(error => {
           console.log(error);
         });
-      },
+       },
 
       async generateTokenprovjera () {
+
+        if (typeof window !== 'undefined')
+{
         await provider.enable();
         // web3.eth.getChainId().then(console.log);
         web3.eth.getChainId().then(async (result) => {
@@ -792,10 +814,11 @@ const provider = await web3Modal.connect();
         }).catch((e) => {
 
         });
-      },
+      }  },
 
       async generateToken () {
-
+        if (typeof window !== 'undefined')
+{
         const provider = new WalletConnectProvider({
           infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
           rpc: {
@@ -806,7 +829,7 @@ const provider = await web3Modal.connect();
         });
         provider.enable();
 
-
+      }
         this.$refs.observer.validate().then(async (result) => {
           if (result) {
             try {
@@ -848,8 +871,10 @@ const provider = await web3Modal.connect();
               }).catch(error => {
                 console.log(error);
               });
-
+              if (typeof window !== 'undefined')
+{
               await provider.enable();
+            }
               // const accounts = await web3.eth.getAccounts();
               // stari za metamask  await this.web3Provider.request({ method: 'eth_requestAccounts' });
 

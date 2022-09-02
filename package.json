@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@coinbase/wallet-sdk": "^3.5.2",
+    "@metamask/eth-json-rpc-infura": "^7.0.0",
     "@saeris/vue-spinners": "^1.0.8",
     "@swc/core": "^1.2.246",
     "@tawk.to/tawk-messenger-vue-2": "^1.0.3",
@@ -33,6 +34,7 @@
     "bootstrap-vue": "^2.22.0",
     "buffer": "^6.0.3",
     "bulma": "^0.9.3",
+    "eth-json-rpc-middleware": "^9.0.0",
     "ethers": "^5.7.0",
     "global": "^4.4.0",
     "https-browserify": "^1.0.0",

@@ -1,5 +1,8 @@
 const vars = require('./.env.json');
-//const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
+// const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
+if (typeof window !== 'undefined') {
+  const Web3 = require('web3/dist/web3.min.js');
+}
 
 module.exports = {
 
@@ -7,7 +10,7 @@ module.exports = {
   mode: 'production', /* or "development", or "none" */
   chainWebpack (config) {
     config.resolve.alias.set('vue', 'vue/dist/vue.common.js');
-   // config.plugin('polyfills').use(NodePolyfillPlugin);
+    // config.plugin('polyfills').use(NodePolyfillPlugin);
   },
   description: 'Create your own crypto coin. BNB Smart Contracts in minutes. The easiest and fastest way to create your own BEP20 token on the Binance Smart Chain network. No coding skills are required.',
   base: '/',

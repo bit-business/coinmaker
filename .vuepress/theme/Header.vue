@@ -49,9 +49,32 @@
 
 <script>
   import dapp from '../mixins/dapp';
-  import Web3 from 'web3/dist/web3.min.js';
+  //import Web3 from 'web3/dist/web3.min.js';
  // import WalletConnectProvider from '@walletconnect/web3-provider';
- let web3 = new Web3();
+ import WalletConnectProvider  from '@walletconnect/web3-provider/dist/umd/index.min.js';
+
+ if (typeof window !== 'undefined')
+{
+const Web3 = require('web3/dist/web3.min.js');
+let web3 = new Web3();
+const provider = new WalletConnectProvider({
+            infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
+            injected: {
+              display: {
+                logo: 'data:image/gif;base64,INSERT_BASE64_STRING',
+                name: 'Injected',
+                description: 'Connect with the provider in your Browser',
+              },
+              package: null,
+            },
+            rpc: {
+              97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+              56: 'https://bsc-dataseed1.binance.org/',
+            },
+            bridge: 'https://bridge.walletconnect.org',
+          });
+  web3 = new Web3(provider);
+}
 
   export default {
     name: 'Header',
@@ -71,7 +94,7 @@
     },
     methods: {
       async initDapp () {
-    
+
         this.network.current = this.network.list[this.currentNetwork];
         try {
           await this.initWeb3(this.currentNetwork, true);
@@ -91,7 +114,10 @@
         if (this.$refs.btnToggle.innerText === 'Disconnect') {
           this.$refs.btnToggle.innerText = 'Connect';
           this.$refs.btnToggle.className = 'button primary-btn';
+          if (typeof window !== 'undefined')
+{
           await provider.disconnect();
+        }
           this.makeToast(
             'Disconnected',
             'Wallet disconnected!',
@@ -99,12 +125,13 @@
           );
         }
 
-   
         this.web3.eth.net.getId().then(netId => {
           switch (netId) {
           case 1:
             console.log('This is 1');
-            provider.disconnect();
+            if (typeof window !== 'undefined')
+{
+            provider.disconnect();  }
             break;
           case 56:
             console.log('This is the bsc mainnet.');
@@ -133,7 +160,9 @@
               'warning',
             );
             this.$refs.btnToggle.innerText = 'Connect';
-            provider.disconnect();
+            if (typeof window !== 'undefined')
+{
+            provider.disconnect();  }
             //   this.$refs.btnToggle.className = 'btn btn-outline-warning';
             console.log('This is an unknown network.');
           }
