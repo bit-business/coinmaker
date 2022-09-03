@@ -82,7 +82,12 @@
                                 <b-link @click="addToMetaMask" class="btn btn-success my-2">
                                     <b-icon-plus-circle-fill></b-icon-plus-circle-fill>
                                     Add to MetaMask
-                                </b-link>
+                              </b-link><div> Note: automatic "Add to MetaMask" works only on PC. Manual import of token:</div>
+                              <hr>
+                              <br>
+                              <img src="/assets/images/addtokeninfo.jpeg" alt="Adding token to Metamask info.">
+                              <img src="/assets/images/addtokeninfo2.jpg" alt="Adding token to Metamask info2.">
+                              <div> <br>You can import token anywhere with your token address. Save your token address, so you can always have it (you wallet has this saved in transaction also).<br>You can now add liquidity of token (example PancakeSwap) or add it to public crypto chart trackers.<br></br>Your wallet address has all the control over token, so always use this wallet address for burning/minting/other functions. You can control your token on BscScan.<br>   </div>
                             </div>
                         </div>
                     </b-card>
@@ -836,9 +841,21 @@ const provider = new WalletConnectProvider({
           if (result) {
             krivamreza = result;
             console.log(krivamreza);
-            if (krivamreza === 56 || krivamreza === 97) {
+            if (krivamreza === 56 && this.network.current.name === 'Binance Smart Chain') {
               this.generateToken();
-            } else {
+            } 
+            else if (krivamreza === 97 && this.network.current.name === 'Binance Smart Chain' ){
+              this.makeToast(
+                'TEST NETWORK',
+                `You have chosen BSC TEST network. If this is an error please change to ${this.network.current.name} and reject transaction on your wallet! If not, everything is ok.`,
+                'warning',
+              );
+              this.generateToken();
+          } 
+          else if (krivamreza === 97 && this.network.current.name !== 'Binance Smart Chain' ){
+              this.generateToken();
+          } 
+            else {
               this.makeToast(
                 'WRONG NETWORK',
                 `Please change your network on wallet to ${this.network.current.name}!`,
@@ -1199,7 +1216,7 @@ const provider = new WalletConnectProvider({
             bridge: 'https://bridge.walletconnect.org',
           });
       
-          await this.provider.request({
+          await provider.request({
             method: 'wallet_watchAsset',
             params: {
               type: 'ERC20',
