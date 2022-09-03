@@ -23,14 +23,7 @@ if (typeof window !== 'undefined') {
   let web3 = new Web3();
   const provider = new WalletConnectProvider({
     infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
-    injected: {
-      display: {
-        logo: 'data:image/gif;base64,INSERT_BASE64_STRING',
-        name: 'Injected',
-        description: 'Connect with the provider in your Browser',
-      },
-      package: null,
-    },
+
     rpc: {
       97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
       56: 'https://bsc-dataseed1.binance.org/',
@@ -93,6 +86,15 @@ export default {
     };
   },
   methods: {
+    async connectWeb3 () {
+      this.web3Provider = await web3Modal.connect();
+
+      this.web3Provider.on('connect', async (chainId) => {
+        this.web3Account = (await this.web3.eth.getAccounts())[0];
+        this.web3Chain = chainId;
+        this.$emit('Web3Connect');
+      })   },
+
     async initWeb3 (network, checkWeb3) {
       if (global === undefined) {
         const global = globalThis;
@@ -106,6 +108,8 @@ export default {
       if (checkWeb3 && (typeof window.ethereum !== 'undefined') && (typeof window !== 'undefined') && (typeof global !== 'undefined')) {
         console.log('injected bsc'); // eslint-disable-line no-console
 
+
+        
         this.web3Provider = window.ethereum;
 
         this.web3 = new Web3(this.web3Provider);

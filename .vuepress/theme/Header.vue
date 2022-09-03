@@ -53,28 +53,6 @@
  // import WalletConnectProvider from '@walletconnect/web3-provider';
  import WalletConnectProvider  from '@walletconnect/web3-provider/dist/umd/index.min.js';
 
- if (typeof window !== 'undefined')
-{
-const Web3 = require('web3/dist/web3.min.js');
-let web3 = new Web3();
-const provider = new WalletConnectProvider({
-            infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
-            injected: {
-              display: {
-                logo: 'data:image/gif;base64,INSERT_BASE64_STRING',
-                name: 'Injected',
-                description: 'Connect with the provider in your Browser',
-              },
-              package: null,
-            },
-            rpc: {
-              97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
-              56: 'https://bsc-dataseed1.binance.org/',
-            },
-            bridge: 'https://bridge.walletconnect.org',
-          });
-  web3 = new Web3(provider);
-}
 
   export default {
     name: 'Header',
@@ -116,7 +94,21 @@ const provider = new WalletConnectProvider({
           this.$refs.btnToggle.className = 'button primary-btn';
           if (typeof window !== 'undefined')
 {
+  const Web3 = require('web3/dist/web3.min.js');
+let web3 = new Web3();
+
+const provider = new WalletConnectProvider({
+            infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
+           
+            rpc: {
+              97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+              56: 'https://bsc-dataseed1.binance.org/',
+            },
+            bridge: 'https://bridge.walletconnect.org',
+          });
+  web3 = new Web3(provider);
           await provider.disconnect();
+
         }
           this.makeToast(
             'Disconnected',
@@ -124,8 +116,10 @@ const provider = new WalletConnectProvider({
             'info',
           );
         }
+else{
 
-        this.web3.eth.net.getId().then(netId => {
+
+       this.web3.eth.net.getId().then(netId => {
           switch (netId) {
           case 1:
             console.log('This is 1');
@@ -135,6 +129,20 @@ const provider = new WalletConnectProvider({
             break;
           case 56:
             console.log('This is the bsc mainnet.');
+
+            if (typeof window !== 'undefined')
+{
+  const provider = new WalletConnectProvider({
+            infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
+           
+            rpc: {
+              97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+              56: 'https://bsc-dataseed1.binance.org/',
+            },
+            bridge: 'https://bridge.walletconnect.org',
+          });
+  provider.enable();
+}
             this.$refs.btnToggle.innerText = 'Disconnect';
             this.$refs.btnToggle.className = 'button primary-btn';
             this.makeToast(
@@ -144,6 +152,10 @@ const provider = new WalletConnectProvider({
             );
             break;
           case 97:
+          if (typeof window !== 'undefined')
+{
+  provider.enable();
+}
             console.log('This is the ropsten test network.');
             this.$refs.btnToggle.innerText = 'Disconnect';
             this.$refs.btnToggle.className = 'button primary-btn';
@@ -162,14 +174,14 @@ const provider = new WalletConnectProvider({
             this.$refs.btnToggle.innerText = 'Connect';
             if (typeof window !== 'undefined')
 {
-            provider.disconnect();  }
+         provider.disconnect();  }
             //   this.$refs.btnToggle.className = 'btn btn-outline-warning';
             console.log('This is an unknown network.');
           }
         }).catch(error => {
           console.log(error);
         });
-      },
+      }  },
 
     },
 

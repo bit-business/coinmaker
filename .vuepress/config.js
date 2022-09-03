@@ -1,7 +1,7 @@
 const vars = require('./.env.json');
 // const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 if (typeof window !== 'undefined') {
-  const Web3 = require('web3/dist/web3.min.js');
+  const web3 = require('web3/dist/web3.min.js');
 }
 
 module.exports = {

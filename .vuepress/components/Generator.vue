@@ -469,16 +469,21 @@ global = globalThis;
   import dapp from '../mixins/dapp';
   import tokenDetails from '../mixins/tokenDetails';
 
-  //import WalletConnectProvider from '@walletconnect/web3-provider';
-  import WalletConnectProvider  from '@walletconnect/web3-provider/dist/umd/index.min.js';
+  if (typeof window !== 'undefined')
+{
+  const Web3 = require('web3/dist/web3.min.js');
+}
+    // we are on the server *OR* the user is not running metamask
+    // https://medium.com/jelly-market/how-to-get-infura-api-key-e7d552dd396f
+  
 
- // const WalletConnectProvider = require('@walletconnect/web3-provider/dist/umd/index.min.js');
-
+  //import Web3 from 'web3/dist/web3.min.js';
+ // import WalletConnectProvider from '@walletconnect/web3-provider';
+  import WalletConnectProvider from '@walletconnect/web3-provider/dist/umd/index.min.js';
   if (typeof window !== 'undefined')
 {
 const Web3 = require('web3/dist/web3.min.js');
 //let web3 = new Web3();
-
     // we are in the browser and metamask is running
     const provider = new WalletConnectProvider({
     infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
@@ -528,9 +533,7 @@ const Web3 = require('web3/dist/web3.min.js');
       ],
     },
   });
-
   const web3 = new Web3(provider);
-
 }
 else
 {
@@ -541,11 +544,8 @@ else
     const web3 = new Web3(provider);
 }
 
-  //const global = globalThis;
- //const web3 = new Web3('ws://localhost:8080');
 
   let krivamreza = 0;
-
   export default {
     name: 'Generator',
     mixins: [
@@ -582,39 +582,14 @@ else
         },
       };
     },
-
     mounted () {
       this.tokenType = this.getParam('tokenType') || 'SimpleBEP20';
       this.currentNetwork = this.getParam('network') || this.network.default;
       this.initDapp();
     },
     methods: {
-/*
-      subscribe (provider) {
-        if (!provider) return;
-        // Subscribe to accounts change
-        provider.on('accountsChanged', () => {
-          this.getAccount(provider);
-        });
-        // Subscribe to chainId change
-        provider.on('chainChanged', () => {
-          this.getAccount(provider);
-        });
-        // Subscribe to networkId change
-        provider.on('networkChanged', () => {
-          this.getAccount(provider);
-        });
-        // Subscribe to provider disconnection
-        provider.on('disconnect', (error) => {
-          console.log(error);
-        });
-      },
-*/
+ 
       async initDapp () {
-        if (global === undefined) {
-     var global = globalThis;
-  }
-
         this.network.current = this.network.list[this.currentNetwork];
         try {
           await this.initWeb3(this.currentNetwork, true);
@@ -637,21 +612,16 @@ else
             'Selected token type does not exist!',
             'danger',
           );
-
           this.tokenType = 'SimpleBEP20';
         }
-
         this.initToken(this.tokenType);
-
         this.updateTokenDetails();
         this.updateSupply();
         this.updateCap();
-
         try {
           this.feeAmount = await this.promisify(this.contracts.service.methods.getPrice(this.tokenType).call);
         } catch (e) {
           console.log(e.message); // eslint-disable-line no-console
-
           if (this.currentNetwork === 'mainnet') {
             this.makeToast(
               'Warning',
@@ -663,7 +633,6 @@ else
             this.feeAmount = this.web3.utils.toWei(`${this.token.price}`, 'ether');
           }
         }
-
         if (this.currentNetwork === 'mainnet') {
           this.gaSend('ViewContent', this.tokenType, '');
           this.fbtrack('ViewContent', {
@@ -671,7 +640,6 @@ else
             content_type: 'product', // eslint-disable-line camelcase
           });
         }
-
         this.loading = false;
       },
       async connectmetamaskbutton () {
@@ -680,7 +648,7 @@ else
           this.$refs.btnToggle.className = 'button primary-btn';
           if (typeof window !== 'undefined')
 {
-          await provider.disconnect();
+          provider.disconnect();
         }
           this.makeToast(
             'Disconnected',
@@ -691,28 +659,22 @@ else
 
         if (typeof window !== 'undefined')
 {
-        try {
+  console.log('Tenabke1');
 
           const provider = new WalletConnectProvider({
             infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
-            injected: {
-              display: {
-                logo: 'data:image/gif;base64,INSERT_BASE64_STRING',
-                name: 'Injected',
-                description: 'Connect with the provider in your Browser',
-              },
-              package: null,
-            },
             rpc: {
               97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
               56: 'https://bsc-dataseed1.binance.org/',
             },
             bridge: 'https://bridge.walletconnect.org',
           });
-          await provider.enable();
-        } catch (error) {
-          console.log(error);
-        }     }
+          provider.enable(); 
+           provider.getAccount;
+       
+           console.log('Tenabke12');
+    
+
         /*
         const Web3Modal = window.Web3Modal.default;
 const providerOptions = {
@@ -729,8 +691,8 @@ const provider = await web3Modal.connect();
 */
         // stari za metamsk  await this.web3Provider.request({ method: 'eth_requestAccounts' });
         // alert("connected")
-        // const accounts = await this.web3.eth.getAccounts();
-
+       
+     //   const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
         /*
         if (!this.metamask.installed) {
           this.makeToast(
@@ -741,14 +703,25 @@ const provider = await web3Modal.connect();
           window.location.href = 'https://metamask.app.link/dapp/crypto-studio.net/create-token/';
         } else {
           */
-        // this.web3.eth.net.getId().then(console.log);
-
+   
+        // web3.eth.net.getId().then(console.log);
+        const Web3 = require('web3/dist/web3.min.js');
+  const web3 = new Web3(provider);
         this.web3.eth.net.getId().then(netId => {
           switch (netId) {
           case 1:
             console.log('This is 1');
             if (typeof window !== 'undefined')
 {
+  const provider = new WalletConnectProvider({
+            infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
+           
+            rpc: {
+              97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+              56: 'https://bsc-dataseed1.binance.org/',
+            },
+            bridge: 'https://bridge.walletconnect.org',
+          });
             provider.disconnect();
           }
             break;
@@ -780,7 +753,15 @@ const provider = await web3Modal.connect();
             );
             this.$refs.btnToggle.innerText = 'Connect';
             if (typeof window !== 'undefined')
-{
+{   const provider = new WalletConnectProvider({
+            infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
+           
+            rpc: {
+              97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+              56: 'https://bsc-dataseed1.binance.org/',
+            },
+            bridge: 'https://bridge.walletconnect.org',
+          });
             provider.disconnect();
           }
             //   this.$refs.btnToggle.className = 'btn btn-outline-warning';
@@ -788,14 +769,71 @@ const provider = await web3Modal.connect();
           }
         }).catch(error => {
           console.log(error);
-        });
+        });   }
        },
 
-      async generateTokenprovjera () {
+  
 
+
+
+
+  async generateTokenprovjera () {
         if (typeof window !== 'undefined')
-{
-        await provider.enable();
+{ 
+
+  const provider = new WalletConnectProvider({
+    infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
+    injected: {
+      display: {
+        logo: 'data:image/gif;base64,INSERT_BASE64_STRING',
+        name: 'Injected',
+        description: 'Connect with the provider in your Browser',
+      },
+      package: null,
+    },
+    walletconnect: {
+      package: WalletConnectProvider,
+      options: { infuraId: 'bcd0880dd3d14b5abb743a63ce403e36' },
+    },
+    rpc: {
+      97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+      56: 'https://bsc-dataseed1.binance.org/',
+    },
+    bridge: 'https://bridge.walletconnect.org',
+    qrcodeModalOptions: {
+      desktopLinks: [
+        'ledger',
+        'tokenary',
+        'wallet',
+        'wallet 3',
+        'secuX',
+        'ambire',
+        'wallet3',
+        'apolloX',
+        'zerion',
+        'sequence',
+        'punkWallet',
+        'kryptoGO',
+        'nft',
+        'riceWallet',
+        'vision',
+        'keyring',
+      ],
+      mobileLinks: [
+        'rainbow',
+        'metamask',
+        'argent',
+        'trust',
+        'imtoken',
+        'pillar',
+      ],
+    },
+  });
+  provider.enable();
+  const Web3 = require('web3/dist/web3.min.js');
+  const web3 = new Web3(provider);
+
+      
         // web3.eth.getChainId().then(console.log);
         web3.eth.getChainId().then(async (result) => {
           if (result) {
@@ -813,14 +851,17 @@ const provider = await web3Modal.connect();
           }
         }).catch((e) => {
 
-        });
-      }  },
+        });  }
+      },
 
       async generateToken () {
+
         if (typeof window !== 'undefined')
-{
+{ 
+  
         const provider = new WalletConnectProvider({
           infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
+
           rpc: {
             97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
             56: 'https://bsc-dataseed1.binance.org/',
@@ -828,7 +869,6 @@ const provider = await web3Modal.connect();
           bridge: 'https://bridge.walletconnect.org',
         });
         provider.enable();
-
       }
         this.$refs.observer.validate().then(async (result) => {
           if (result) {
@@ -838,7 +878,7 @@ const provider = await web3Modal.connect();
               this.formDisabled = true;
               this.makingTransaction = true;
 
-              web3.eth.net.getId().then(netId => {
+              this.web3.eth.net.getId().then(netId => {
                 switch (netId) {
                 case 1:
                   this.makeToast(
@@ -871,8 +911,58 @@ const provider = await web3Modal.connect();
               }).catch(error => {
                 console.log(error);
               });
-              if (typeof window !== 'undefined')
-{
+           
+              if (typeof window !== 'undefined'){
+              const provider = new WalletConnectProvider({
+    infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
+    injected: {
+      display: {
+        logo: 'data:image/gif;base64,INSERT_BASE64_STRING',
+        name: 'Injected',
+        description: 'Connect with the provider in your Browser',
+      },
+      package: null,
+    },
+    walletconnect: {
+      package: WalletConnectProvider,
+      options: { infuraId: 'bcd0880dd3d14b5abb743a63ce403e36' },
+    },
+    rpc: {
+      97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+      56: 'https://bsc-dataseed1.binance.org/',
+    },
+    bridge: 'https://bridge.walletconnect.org',
+    qrcodeModalOptions: {
+      desktopLinks: [
+        'ledger',
+        'tokenary',
+        'wallet',
+        'wallet 3',
+        'secuX',
+        'ambire',
+        'wallet3',
+        'apolloX',
+        'zerion',
+        'sequence',
+        'punkWallet',
+        'kryptoGO',
+        'nft',
+        'riceWallet',
+        'vision',
+        'keyring',
+      ],
+      mobileLinks: [
+        'rainbow',
+        'metamask',
+        'argent',
+        'trust',
+        'imtoken',
+        'pillar',
+      ],
+    },
+  });
+  web3 = new Web3(provider);
+ 
               await provider.enable();
             }
               // const accounts = await web3.eth.getAccounts();
@@ -912,7 +1002,7 @@ const provider = await web3Modal.connect();
                   this.trx.hash = transactionHash;
                   this.trx.link = `${this.network.current.explorerLink}/tx/${this.trx.hash}`;
 
-                  web3.eth.net.getId().then(netId => {
+                  this.web3.eth.net.getId().then(netId => {
                     switch (netId) {
                     case 1:
                       console.log('This is 1');
@@ -939,13 +1029,13 @@ const provider = await web3Modal.connect();
                     'success',
                   );
 
-                  web3.eth.net.getId().then(netId => {
+                  this.web3.eth.net.getId().then(netId => {
                     switch (netId) {
                     case 56:
                       console.log('This is the bsc mainnet.');
                       this.gaSend('Purchase', this.tokenType, this.token.address);
                       this.fbtrack('Purchase', {
-                        value: this.web3.utils.fromWei(this.feeAmount, 'ether'),
+                        value: web3.utils.fromWei(this.feeAmount, 'ether'),
                         currency: 'EUR', // should be BNB
                         content_ids: [this.tokenType], // eslint-disable-line camelcase
                         content_type: 'product', // eslint-disable-line camelcase
@@ -981,6 +1071,22 @@ const provider = await web3Modal.connect();
       updateTokenDetails () {
         const detail = this.tokenDetails.find((elem) => elem.name === this.tokenType);
 
+        if (typeof window !== 'undefined')
+{ 
+        const provider = new WalletConnectProvider({
+            infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
+           
+            rpc: {
+              97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+              56: 'https://bsc-dataseed1.binance.org/',
+            },
+            bridge: 'https://bridge.walletconnect.org',
+          });
+        // web3.eth.net.getId().then(console.log);
+        const Web3 = require('web3/dist/web3.min.js');
+  const web3 = new Web3(provider);
+}
+
         this.token.customizeDecimals = detail.customizeDecimals;
         this.token.verified = detail.verified;
         this.token.supplyType = detail.supplyType;
@@ -1002,6 +1108,21 @@ const provider = await web3Modal.connect();
         this.token.initialBalance = this.token.supplyType === '100k' ? 100000 : this.token.initialBalance;
       },
       getDeployArguments () {
+        if (typeof window !== 'undefined')
+{ 
+        const provider = new WalletConnectProvider({
+            infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
+           
+            rpc: {
+              97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+              56: 'https://bsc-dataseed1.binance.org/',
+            },
+            bridge: 'https://bridge.walletconnect.org',
+          });
+        // web3.eth.net.getId().then(console.log);
+        const Web3 = require('web3/dist/web3.min.js');
+  const web3 = new Web3(provider);
+}
         const name = this.token.name;
         const symbol = this.token.symbol;
         const decimals = this.web3.utils.toBN(this.token.decimals);
@@ -1043,7 +1164,21 @@ const provider = await web3Modal.connect();
       async estimateDeployGas (tokenContract, deployOptions, sendOptions) {
         try {
           const gas = await this.promisify(tokenContract.deploy(deployOptions).estimateGas, sendOptions);
-
+          if (typeof window !== 'undefined')
+{ 
+          const provider = new WalletConnectProvider({
+            infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
+           
+            rpc: {
+              97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+              56: 'https://bsc-dataseed1.binance.org/',
+            },
+            bridge: 'https://bridge.walletconnect.org',
+          });
+        // web3.eth.net.getId().then(console.log);
+        const Web3 = require('web3/dist/web3.min.js');
+  const web3 = new Web3(provider);
+}
           return this.web3.utils.toBN(gas).muln(1.3); // add 30% tolerance
         } catch (e) {
           console.log(e); // eslint-disable-line no-console
@@ -1053,6 +1188,18 @@ const provider = await web3Modal.connect();
       },
       async addToMetaMask () {
         try {
+          if (typeof window !== 'undefined')
+{ 
+          const provider = new WalletConnectProvider({
+            infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
+           
+            rpc: {
+              97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+              56: 'https://bsc-dataseed1.binance.org/',
+            },
+            bridge: 'https://bridge.walletconnect.org',
+          });
+      
           await this.provider.request({
             method: 'wallet_watchAsset',
             params: {
@@ -1063,7 +1210,7 @@ const provider = await web3Modal.connect();
                 decimals: this.token.decimals,
               },
             },
-          });
+          });  }
         } catch (e) {
           console.log(e); // eslint-disable-line no-console
         }
