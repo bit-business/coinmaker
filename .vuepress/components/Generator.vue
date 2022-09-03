@@ -645,21 +645,36 @@ else
       async connectmetamaskbutton () {
         if (this.$refs.btnToggle.innerText === 'Connected') {
           this.$refs.btnToggle.innerText = 'Connect';
-          this.$refs.btnToggle.className = 'button primary-btn';
+          this.$refs.btnToggle.className = 'button cta is-rounded secondary-btn raised';
           if (typeof window !== 'undefined')
 {
-          provider.disconnect();
+  const Web3 = require('web3/dist/web3.min.js');
+let web3 = new Web3();
+
+const provider = new WalletConnectProvider({
+            infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
+           
+            rpc: {
+              97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
+              56: 'https://bsc-dataseed1.binance.org/',
+            },
+            bridge: 'https://bridge.walletconnect.org',
+          });
+  web3 = new Web3(provider);
+          await provider.disconnect();
+
         }
           this.makeToast(
             'Disconnected',
-            'Wallet disconnected',
+            'Wallet disconnected!',
             'info',
           );
+
         }
+        else{
 
         if (typeof window !== 'undefined')
 {
-  console.log('Tenabke1');
 
           const provider = new WalletConnectProvider({
             infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
@@ -671,38 +686,7 @@ else
           });
           provider.enable(); 
            provider.getAccount;
-       
-           console.log('Tenabke12');
-    
 
-        /*
-        const Web3Modal = window.Web3Modal.default;
-const providerOptions = {
-  /* See Provider Options Section
-};
-
-const web3Modal = new Web3Modal({
-  network: "mainnet", // optional
-  cacheProvider: true, // optional
-  providerOptions // required
-});
-
-const provider = await web3Modal.connect();
-*/
-        // stari za metamsk  await this.web3Provider.request({ method: 'eth_requestAccounts' });
-        // alert("connected")
-       
-     //   const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-        /*
-        if (!this.metamask.installed) {
-          this.makeToast(
-            'No Wallet',
-            'To create a Token you need to install MetaMask!',
-            'warning',
-          );
-          window.location.href = 'https://metamask.app.link/dapp/crypto-studio.net/create-token/';
-        } else {
-          */
    
         // web3.eth.net.getId().then(console.log);
         const Web3 = require('web3/dist/web3.min.js');
@@ -710,10 +694,10 @@ const provider = await web3Modal.connect();
         this.web3.eth.net.getId().then(netId => {
           switch (netId) {
           case 1:
-            console.log('This is 1');
+          //  console.log('This is 1');
             if (typeof window !== 'undefined')
-{
-  const provider = new WalletConnectProvider({
+          {
+          const provider = new WalletConnectProvider({
             infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
            
             rpc: {
@@ -726,9 +710,9 @@ const provider = await web3Modal.connect();
           }
             break;
           case 56:
-            console.log('This is the bsc mainnet.');
+           // console.log('This is the bsc mainnet.');
             this.$refs.btnToggle.innerText = 'Connected';
-            this.$refs.btnToggle.className = 'button primary-btn';
+            this.$refs.btnToggle.className = 'button cta secondary-btn raised';
             this.makeToast(
               'Connected',
               'Wallet connected!',
@@ -736,9 +720,9 @@ const provider = await web3Modal.connect();
             );
             break;
           case 97:
-            console.log('This is the ropsten test network.');
+           // console.log('This is the ropsten test network.');
             this.$refs.btnToggle.innerText = 'Connected';
-            this.$refs.btnToggle.className = 'button primary-btn';
+            this.$refs.btnToggle.className = 'button cta secondary-btn raised';
             this.makeToast(
               'Connected',
               'Wallet connected to Binance TEST network!',
@@ -752,6 +736,7 @@ const provider = await web3Modal.connect();
               'warning',
             );
             this.$refs.btnToggle.innerText = 'Connect';
+            this.$refs.btnToggle.className = 'button cta is-rounded secondary-btn raised';
             if (typeof window !== 'undefined')
 {   const provider = new WalletConnectProvider({
             infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
@@ -769,7 +754,7 @@ const provider = await web3Modal.connect();
           }
         }).catch(error => {
           console.log(error);
-        });   }
+        });   }     }
        },
 
   

@@ -91,7 +91,7 @@
       async connectmetamaskbutton () {
         if (this.$refs.btnToggle.innerText === 'Disconnect') {
           this.$refs.btnToggle.innerText = 'Connect';
-          this.$refs.btnToggle.className = 'button primary-btn';
+          this.$refs.btnToggle.className = 'btn btn-outline-warning';
           if (typeof window !== 'undefined')
 {
   const Web3 = require('web3/dist/web3.min.js');
@@ -172,6 +172,7 @@ else{
               'warning',
             );
             this.$refs.btnToggle.innerText = 'Connect';
+            this.$refs.btnToggle.className = 'btn btn-outline-warning';
             if (typeof window !== 'undefined')
 {
          provider.disconnect();  }
