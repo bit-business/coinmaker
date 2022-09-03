@@ -912,7 +912,7 @@ const provider = await web3Modal.connect();
                 console.log(error);
               });
            
-              if (typeof window !== 'undefined'){
+   if (typeof window !== 'undefined'){
               const provider = new WalletConnectProvider({
     infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
     injected: {
@@ -961,15 +961,17 @@ const provider = await web3Modal.connect();
       ],
     },
   });
-  web3 = new Web3(provider);
+ // web3 = new Web3(provider);
  
               await provider.enable();
-            }
+         
               // const accounts = await web3.eth.getAccounts();
               // stari za metamask  await this.web3Provider.request({ method: 'eth_requestAccounts' });
+              const Web3 = require('web3/dist/web3.min.js');
+    const web3 = new Web3(provider);
 
               const tokenContract = new web3.eth.Contract(this.contracts.token.abi);
-
+     
               const deployOptions = {
                 data: this.contracts.token.bytecode,
                 arguments: this.getDeployArguments(),
@@ -980,9 +982,9 @@ const provider = await web3Modal.connect();
                 value: this.feeAmount,
                 gasPrice: '10000000000', // default gas price 10 gwei
               };
-
+      
               sendOptions.gas = await this.estimateDeployGas(tokenContract, deployOptions, sendOptions);
-
+         
               tokenContract.deploy(deployOptions)
                 .send(sendOptions)
                 .on('error', (error) => {
@@ -1048,7 +1050,7 @@ const provider = await web3Modal.connect();
                     console.log(error);
                   });
                 });
-            } catch (e) {
+              }} catch (e) {
               this.makingTransaction = false;
               this.formDisabled = false;
               this.makeToast(
@@ -1056,9 +1058,9 @@ const provider = await web3Modal.connect();
                 e.message,
                 'danger',
               );
-            }
-          }
-        }).catch((e) => {
+            } 
+           } 
+         }).catch((e) => {
           console.log(e); // eslint-disable-line no-console
           this.makingTransaction = false;
           this.makeToast(
@@ -1066,7 +1068,7 @@ const provider = await web3Modal.connect();
             e.message,
             'danger',
           );
-        });
+        } ) ;
       },
       updateTokenDetails () {
         const detail = this.tokenDetails.find((elem) => elem.name === this.tokenType);
