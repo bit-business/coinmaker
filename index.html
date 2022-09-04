@@ -1,378 +1,1496 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>BEP20 Token Generator | Create BEP20 Token for FREE</title>
-    <meta name="generator" content="VuePress 1.9.7">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?forceLang=en&amp;theme=momh&amp;thirdparty=1&amp;always=1&amp;noGeoIp=1&amp;scrolling=1&amp;hideDetailsBtn=1" defer="true"></script>
-    <meta name="description" content="Create your own BEP20 Smart Contract without coding. BEP20 Generator is the easiest and fastest way to create your own BEP20 token on the Binance Smart Chain network. No coding skills are required.">
-    <meta property="twitter:title" content="BEP20 Token Generator | Create BEP20 Token for FREE">
-    <meta property="og:title" content="BEP20 Token Generator | Create BEP20 Token for FREE">
-    <meta property="twitter:description" content="Create your own BEP20 Smart Contract without coding. BEP20 Generator is the easiest and fastest way to create your own BEP20 token on the Binance Smart Chain network. No coding skills are required.">
-    <meta property="og:description" content="Create your own BEP20 Smart Contract without coding. BEP20 Generator is the easiest and fastest way to create your own BEP20 token on the Binance Smart Chain network. No coding skills are required.">
-    <meta property="og:url" content="https://crypto-studio.net/">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://crypto-studio.net/assets/images/bep20-token-generator.png">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:image" content="https://crypto-studio.net/assets/images/bep20-token-generator.png">
-    
-    <link rel="preload" href="/assets/css/2.styles.0d01ed9a.css" as="style"><link rel="preload" href="/assets/js/app.896a813c.js" as="script"><link rel="preload" href="/assets/js/6.4a251604.js" as="script"><link rel="preload" href="/assets/js/10.446780a3.js" as="script"><link rel="preload" href="/assets/js/14.12051beb.js" as="script"><link rel="preload" href="/assets/js/9.36afa99f.js" as="script"><link rel="preload" href="/assets/js/13.65610442.js" as="script"><link rel="preload" href="/assets/js/12.87e8b05a.js" as="script"><link rel="prefetch" href="/assets/js/0.b3f55abe.js"><link rel="prefetch" href="/assets/js/1.8f4862d0.js"><link rel="prefetch" href="/assets/js/11.312b0e83.js"><link rel="prefetch" href="/assets/js/15.536ddbf5.js"><link rel="prefetch" href="/assets/js/16.6785c718.js"><link rel="prefetch" href="/assets/js/17.ed10d856.js"><link rel="prefetch" href="/assets/js/18.2b480a07.js"><link rel="prefetch" href="/assets/js/19.e39922ff.js"><link rel="prefetch" href="/assets/js/20.f2c8705d.js"><link rel="prefetch" href="/assets/js/21.39047309.js"><link rel="prefetch" href="/assets/js/4.f5ad257b.js"><link rel="prefetch" href="/assets/js/5.d872cde7.js"><link rel="prefetch" href="/assets/js/7.d6932430.js"><link rel="prefetch" href="/assets/js/8.5407d84f.js">
-    <link rel="stylesheet" href="/assets/css/2.styles.0d01ed9a.css">
-  </head>
-  <body>
-    <div id="app" data-server-rendered="true"><div class="page-wrapper"><nav class="navbar navbar-dark bg-dark navbar-expand"><a href="https://crypto-studio.net/" target="_self" class="navbar-brand"><button type="button" class="btn btn-white"><img height="18" width="110" src="/assets/images/headerlogo.svg"></button></a> <ul class="navbar-nav ml-auto justify: center;" style="overflow-x:auto;"><li class="nav-item"><a href="/create-token/" target="_self" class="nav-link"><button type="button" class="btn btn-link btn-rounded"><img height="18" width="70" src="/assets/images/bsc.png"></button></a></li> <li class="nav-item"><a href="https://polybuilder.crypto-studio.net/" target="_self" class="nav-link"><button type="button" class="btn btn-link btn-rounded"><img height="18" width="70" src="/assets/images/polygon.png"></button></a></li> <li class="nav-item"><a href="#" target="_self" class="nav-link"><button type="button" class="btn btn-link btn-rounded"><img height="18" width="70" src="/assets/images/ethereumgray.png"></button></a></li> <li class="nav-item"><a href="#" target="_self" class="nav-link"><button type="button" class="btn btn-outline-warning">
+<html lang="en">
 
-                                    Connect</button></a></li> <!----></ul></nav> <div><div class="jumbotron mb-0 wiretap-gradient jumbotron-fluid text-white"><div class="container"><h1 class="display-3">Launch your own Crypto</h1><p class="lead">
-            Create your own BSC crypto coin. In seconds.
-            <br>
-            This s the easiest and fastest way to create your own BEP20 token on the Binance Smart Chain network. No coding is required. You own it!
-       </p> <hr class="my-5"> <p><a href="/create-token/" target="_self" class="btn my-2 py-3 px-5 text-uppercase btn-success btn-lg">
-                Create NEW TOKEN
-            </a> <a href="#pricing" class="btn btn-lg btn-outline-light py-3 px-5 text-uppercase">
-                Pricing
-            </a></p></div></div> <div id="how-it-works" class="row mx-0"><div class="mb-3 col-lg-8 offset-lg-2"><h2 class="p-5 font-weight-lighter text-center text-dark">How it works</h2> <h4 class="text-center font-weight-light">
-                Create your new BNB Crypto Token in less than a minute.
-            </h4> <p class="text-center font-weight-light">
-                Easily deploy Smart Contract for a Standard, Capped, Mintable, Burnable BEP20 Token.
-                <br>
-                Crypto Studio Generator is the easiest and fastest way to create your own Binance token on the Binance Smart Chain network. No coding skills are required.
-            </p> <div class="how-it-works-table"><div class="row"><div class="text-center col-lg-10 offset-lg-1"><a size="lg" href="#" target="_self"><h2 class="btn btn-outline-info"><svg viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="play fill" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-play-fill b-icon bi"><g><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/></g></svg></h2></a> <div><small>Watch a Video Tutorial</small></div> <!----></div></div> <div class="row"><div class="col-lg-4"><div class="card mb-3 bg-light border-light"><!----><!----><div class="card-body"><!----><!----><h4 class="card-title font-weight-light text-center"><p class="h1 mb-2"><svg viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="wallet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-wallet m-4 b-icon bi"><g><path d="M0 3a2 2 0 0 1 2-2h13.5a.5.5 0 0 1 0 1H15v2a1 1 0 0 1 1 1v8.5a1.5 1.5 0 0 1-1.5 1.5h-12A2.5 2.5 0 0 1 0 12.5V3zm1 1.732V12.5A1.5 1.5 0 0 0 2.5 14h12a.5.5 0 0 0 .5-.5V5H2a1.99 1.99 0 0 1-1-.268zM1 3a1 1 0 0 0 1 1h12V2H2a1 1 0 0 0-1 1z"/></g></svg></p> <p>Install MetaMask</p></h4> <p class="card-text text-center">
-                    You need to have
-                    <a href="https://metamask.io/" target="_blank" class="text-reset">MetaMask</a>
-                    installed with an amount of BNB
-                    to pay for contract deployment.
-                </p></div><!----><!----></div></div> <div class="col-lg-4"><div class="card mb-3 bg-light border-light"><!----><!----><div class="card-body"><!----><!----><h4 class="card-title font-weight-light text-center"><p class="h1 mb-2"><svg viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="card checklist" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-card-checklist m-4 b-icon bi"><g><path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/><path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/></g></svg></p> <p>Enter Details</p></h4> <p class="card-text text-center">
-                    Enter your preferred Token name and symbol.
-                    Choose your supply and Token type.
-                </p></div><!----><!----></div></div> <div class="col-lg-4"><div class="card mb-3 bg-light border-light"><!----><!----><div class="card-body"><!----><!----><h4 class="card-title font-weight-light text-center"><p class="h1 mb-2"><svg viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="link" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-link m-4 b-icon bi"><g><path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9c-.086 0-.17.01-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z"/><path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0 1 0 0-6H9z"/></g></svg></p> <p>Deploy Token</p></h4> <p class="card-text text-center">
-                    Confirm your transaction using MetaMask.
-                    Once deployed your Token is ready to use.
-                </p></div><!----><!----></div></div></div> <div class="row"><div class="text-center col-lg-10 offset-lg-1"><a href="/create-token/" target="_self" class="btn my-5 py-3 px-5 text-uppercase btn-outline-success btn-lg">
-                Get Started
-            </a></div></div></div></div></div> <div id="pricing" class="row aqua-gradient mx-0"><div class="py-5 col-lg-12 col-xl-10 offset-xl-1"><h2 class="p-5 font-weight-lighter text-center text-light">Pricing</h2> <div class="pricing-table"><div class="row mb-5"><div class="col-lg-10 offset-lg-1"><h4 class="text-center font-weight-light text-light">
-                Choose between 8 different Token types.
-            </h4> <p class="text-center font-weight-light text-light">
-                What are your Token requirements?
-            </p></div></div> <!----> <div class="row"><div class="mt-4 col-lg-6 offset-lg-3"><p class="text-center text-light">
-                * GAS fee will be added to final amount
-            </p></div></div></div></div></div> <div class="row bg-dark text-white mx-0"><div class="mb-3 text-center col-lg-10 offset-lg-1"><h2 class="pt-5 mb-4 font-weight-lighter text-light">Ready to deploy your own Altcoin?</h2> <p class="font-weight-light">
-                Try building your BSC Token in less than a minute. You can try it on the Test Network before you go live on mainnet.
-            </p> <a href="/create-token/" target="_self" class="btn my-5 py-3 px-5 text-uppercase btn-success btn-lg">
-                Create Token
-            </a></div></div> <div id="features" class="row peach-gradient mx-0"><div class="py-5 col-lg-12 col-xl-8 offset-xl-2"><h2 class="p-5 font-weight-lighter text-center text-light">Features</h2> <div class="features-table"><div class="row mb-5"><div class="col-lg-10 offset-lg-1"><h4 class="text-center font-weight-light text-light">
-                You will be able to choose between several features.
-            </h4> <p class="text-center font-weight-light text-light">
-                What are your Token requirements?
-            </p></div></div> <div class="card-deck"><div class="card mb-3"><!----><!----><div class="card-body"><!----><h6 class="card-subtitle text-muted mb-2">Detailed</h6><p class="card-text">
-                Your Token will be fully compliant with the BEP20 definition and
-                compatible with any BEP20 wallet all around the world.
-                It will have a name, a symbol and a decimals amount.
-            </p></div><!----><!----></div> <div class="card mb-3"><!----><!----><div class="card-body"><!----><h6 class="card-subtitle text-muted mb-2">Capped</h6><p class="card-text">
-                You won't be able to generate more tokens than the defined token cap.
-                This ensure people that you will not generate more tokens than declared.
-            </p></div><!----><!----></div> <div class="card mb-3"><!----><!----><div class="card-body"><!----><h6 class="card-subtitle text-muted mb-2">Mintable</h6><p class="card-text">
-                You will be able to generate tokens by minting them.
-                Only token owner will be able to mint.
-                You can also disable minting if you don’t want to generate tokens anymore.
-            </p></div><!----><!----></div></div> <div class="card-deck"><div class="card mb-3"><!----><!----><div class="card-body"><!----><h6 class="card-subtitle text-muted mb-2">Burnable</h6><p class="card-text">
-                Your Token can be burnt.
-                It means that you can choose to reduce the circulating supply by destroying some of your
-                tokens.
-            </p></div><!----><!----></div> <div class="card mb-3"><!----><!----><div class="card-body"><!----><h6 class="card-subtitle text-muted mb-2">Ownable Access</h6><p class="card-text">
-                Your Token will have an Owner.
-                Token owner will be able to mint new tokens or to call the finish minting function.
-            </p></div><!----><!----></div> <div class="card mb-3"><!----><!----><div class="card-body"><!----><h6 class="card-subtitle text-muted mb-2">Role Based Access</h6><p class="card-text">
-                Your Token will have Roles.
-                You can add or remove ADMIN or MINTER role to addresses. Your token will be Ownable too.
-            </p></div><!----><!----></div></div> <div class="card-deck"><div class="card mb-3"><!----><!----><div class="card-body"><!----><h6 class="card-subtitle text-muted mb-2">Operable Token (ERC1363)</h6><p class="card-text">
-                The Operable Token is a BEP20 compatible Token that can make a
-                callback on the receiver contract to notify token transfers or token approvals.
-            </p></div><!----><!----></div> <div class="card mb-3"><!----><!----><div class="card-body"><!----><h6 class="card-subtitle text-muted mb-2">Token Recover</h6><p class="card-text">
-                There are lots of tokens lost forever into Smart Contracts.
-                It allows the contract owner to recover any BEP20 token sent into the contract for error.
-            </p></div><!----><!----></div></div> <div class="row"><div class="col-lg-12"><div role="alert" aria-live="polite" aria-atomic="true" class="alert mb-3 alert-warning"><!----><h4 class="alert-heading">Copyright</h4> <p>
-                    Deploying HelloBEP20 for FREE or SimpleBEP20, a link pointing to this page will be added to
-                    your contract.
-                    Your Token will be fully compliant with the BEP20 Standard and you can use it without issues.
-                    It is only a little credit to advertise BEP20 Token Generator.
-                    You can remove it by choosing an advanced Token type.
-                </p></div></div> <div class="mt-4 col-lg-6 offset-lg-3"><p class="text-center text-light">
-                Learn more in
-                <a href="#faq" class="text-reset">
-                    Frequently Asked Questions
-                </a></p></div></div></div></div></div> <div class="row bg-dark text-white mx-0"><div class="mb-3 text-center col-lg-10 offset-lg-1"><h2 class="pt-5 mb-4 font-weight-lighter text-light">Need a custom development?</h2> <p class="font-weight-light">
-                Open to getting in touch with awesome people and projects.
-            </p> <button type="button" class="btn my-5 py-3 px-5 text-uppercase btn-outline-warning btn-lg">
-                Let us know
-            </button> <!----></div></div> <div id="faq" class="row purple-gradient mx-0"><div class="py-5 col-lg-12 col-xl-8 offset-xl-2"><h2 class="p-5 font-weight-lighter text-center text-light">FAQ</h2> <div itemscope="itemscope" itemtype="https://schema.org/FAQPage" class="faq-table"><div class="row"><div class="col"><div class="card mb-4 bg-light"><!----><!----><div class="card-body"><!----><!----><h3 class="font-weight-light">BNB Token Creator</h3> <p class="font-weight-light">
-                    Create your own BEP20 Smart Contract without coding. BEP20 Generator is the easiest and fastest way to create your own BEP20 token on the Binance Smart Chain network. No coding skills are required.
-                </p> <hr class="my-4"> <h6 class="font-weight-light">The BEP20 Standard</h6> <p class="font-weight-light">
-                    BEP20 defines the implementation of APIs for token smart contracts. It is proposed by deriving
-                    the ERC20 protocol of Ethereum and provides the basic functionality to transfer tokens,
-                    allow tokens to be approved so they can be spent by another on-chain third party, and transfer
-                    between Binance Chain and Binance Smart Chain.
-                </p></div><!----><!----></div></div></div> <div class="row"><div class="col"><h5 class="font-weight-light text-white"><a href="#about-token-features" class="btn-block text-reset text-decoration-none"><svg viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="caret down fill" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-caret-down-fill b-icon bi"><g><path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></g></svg> Token Features
-                </a></h5> <div id="about-token-features" class="mt-4 collapse show"><div role="tablist" class="accordion mb-3"><div itemscope="itemscope" itemprop="mainEntity" itemtype="https://schema.org/Question" class="card bg-light"><!----><!----><div role="tab" class="card-header"><a href="#difference-between-fixed-capped" class="btn-block text-reset text-decoration-none"><span itemprop="name">
-                                    What's the difference between 100k, Fixed, Capped and Unlimited Supply?
-                                </span></a></div> <div id="difference-between-fixed-capped" class="p-4 collapse" style="display:none;"><p itemscope="itemscope" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="card-text"><span itemprop="text"><b>100k</b><br>
-                                    Your token supply will be 100.000.
-                                    The entire token supply will be generated during deploy and sent to Token Owner
-                                    wallet. You can't increase or reduce supply later.<br><br> <b>Fixed Supply</b><br>
-                                    The entire token supply will be generated during deploy and sent to Token Owner
-                                    wallet. You can't increase or reduce supply later.<br><br> <b>Capped Supply</b><br>
-                                    You can define an initial supply to sent to Token Owner's wallet. You can
-                                    increase or reduce supply later by minting or burning tokens (if allowed).
-                                    You won't be able to generate more tokens than the defined supply cap.<br><br> <b>Unlimited Supply</b><br>
-                                    You can define an initial supply to sent to Token Owner's wallet. You can
-                                    increase or reduce supply later by minting or burning tokens (if allowed).
-                                    You will be able to generate unlimited tokens without an upper limit.
-                                </span></p></div><!----><!----></div> <div itemscope="itemscope" itemprop="mainEntity" itemtype="https://schema.org/Question" class="card bg-light"><!----><!----><div role="tab" class="card-header"><a href="#difference-between-access" class="btn-block text-reset text-decoration-none"><span itemprop="name">
-                                    What's the difference between None, Ownable and Role Based Access?
-                                </span></a></div> <div id="difference-between-access" class="p-4 collapse" style="display:none;"><p itemscope="itemscope" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="card-text"><span itemprop="text"><b>None</b><br>
-                                    Your Token doesn't need an access type because of there are not actions that
-                                    needs privileges.<br><br> <b>Ownable</b><br>
-                                    Your Token will have an Owner. The account you use to deploy your Token will be
-                                    owner by default and will be able to mint new tokens or call the finish minting
-                                    function. You can transfer token ownership to addresses or Smart Contract.
-                                    <br><br> <b>Role Based</b><br>
-                                    Your Token will have Roles. Accounts with &quot;MINTER&quot; role will be able to mint new
-                                    tokens. Accounts with &quot;ADMIN&quot; role will be able to add or remove roles to
-                                    minters or other admins. The account you use to deploy your Token will be ADMIN
-                                    and MINTER by default. In addition your Token will have the Ownable behaviour
-                                    too.
-                                </span></p></div><!----><!----></div> <div itemscope="itemscope" itemprop="mainEntity" itemtype="https://schema.org/Question" class="card bg-light"><!----><!----><div role="tab" class="card-header"><a href="#who-can-mint-burn" class="btn-block text-reset text-decoration-none"><span itemprop="name">
-                                    Who can mint or burn tokens?
-                                </span></a></div> <div id="who-can-mint-burn" class="p-4 collapse" style="display:none;"><p itemscope="itemscope" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="card-text"><span itemprop="text"><b>Mint</b><br>
-                                    It depends on your Token Access Type. If you choose Ownable Access only Token
-                                    Owner will be able to mint new tokens. If you choose Role Based Access only
-                                    addresses with MINTER role will be able to mint new tokens.
-                                    In both cases, if you choose a Capped supply you won't be able to mint more
-                                    tokens than the defined cap. By choosing Unlimited supply instead, you will be
-                                    able to generate unlimited tokens.<br><br> <b>Burn</b><br>
-                                    Everyone will be able to burn tokens he held. A third party can burn tokens from
-                                    other addresses only after an approval. Nobody, not even the Token Owner,
-                                    will be able to burn tokens from other addresses without approval.
-                                </span></p></div><!----><!----></div> <div itemscope="itemscope" itemprop="mainEntity" itemtype="https://schema.org/Question" class="card bg-light"><!----><!----><div role="tab" class="card-header"><a href="#what-is-operable" class="btn-block text-reset text-decoration-none"><span itemprop="name">
-                                    What is Operable Token?
-                                </span></a></div> <div id="what-is-operable" class="p-4 collapse" style="display:none;"><p itemscope="itemscope" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="card-text"><span itemprop="text">
-                                    There is no way to execute code after a BEP-20 transfer or approval (i.e.
-                                    making a payment), so to make an action it is required to send another
-                                    transaction and pay GAS twice. Operable Token makes token payments easier and
-                                    working without the use of any other listener. It allows to make a callback
-                                    after a transfer or approval in a single transaction.<br>
-                                    There are many proposed uses of Ethereum Smart Contracts that can accept BEP-20
-                                    payments.<br>
-                                    Examples could be:
-                                    <ul><li>
-                                            to create a token payable crowdsale
-                                        </li> <li>
-                                            selling services for tokens
-                                        </li> <li>
-                                            paying invoices
-                                        </li> <li>
-                                            making subscriptions
-                                        </li></ul>
-                                    Operable Token is derived by ERC1363.
-                                </span></p> <a href="https://eips.ethereum.org/EIPS/eip-1363" rel="noopener" target="_blank" class="card-link">
-                                Discover ERC1363
-                            </a></div><!----><!----></div> <div itemscope="itemscope" itemprop="mainEntity" itemtype="https://schema.org/Question" class="card bg-light"><!----><!----><div role="tab" class="card-header"><a href="#what-is-token-recover" class="btn-block text-reset text-decoration-none"><span itemprop="name">
-                                    What is Token Recover?
-                                </span></a></div> <div id="what-is-token-recover" class="p-4 collapse" style="display:none;"><p itemscope="itemscope" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="card-text"><span itemprop="text">
-                                    There are lots of tokens lost forever into Smart Contracts. Each Ethereum
-                                    contract is a potential token trap for BEP20 tokens. They can't be recovered so
-                                    it means money losses for end users.<br>
-                                    TokenRecover allows the contract owner to recover any BEP20 token sent into the
-                                    contract for error.
-                                    This behaviour is derived by ERC20 Token Recover.
-                                </span></p> <a href="https://crypto-studio.net/eth-token-recover/" rel="noopener" target="_blank" class="card-link">
-                                Discover Token Recover
-                            </a></div><!----><!----></div> <div itemscope="itemscope" itemprop="mainEntity" itemtype="https://schema.org/Question" class="card bg-light"><!----><!----><div role="tab" class="card-header"><a href="#will-copyright-be-an-issue" class="btn-block text-reset text-decoration-none"><span itemprop="name">
-                                    Will be having BEP20 Generator Copyright an issue?
-                                </span></a></div> <div id="will-copyright-be-an-issue" class="p-4 collapse" style="display:none;"><p itemscope="itemscope" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="card-text"><span itemprop="text">
-                                    No. BEP20 Generator code is released under MIT License so, using TestERC20 for
-                                    FREE or SimpleBEP20, you will have a view method in your Smart Contract named
-                                    &quot;generator&quot; showing a link to this page.
-                                    You will also have a disclaimer in source code.
-                                    It is not an issue for you because of your Token will be fully compliant with
-                                    BEP20 definition.
-                                    You can remove it by choosing a token type with remove Copyright feature.
-                                </span></p></div><!----><!----></div></div></div> <h5 class="font-weight-light text-white"><a href="#about-token-behaviours" class="btn-block text-reset text-decoration-none"><svg viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="caret down fill" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-caret-down-fill b-icon bi"><g><path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></g></svg> Token Behaviours
-                </a></h5> <div id="about-token-behaviours" class="mt-4 collapse" style="display:none;"><div role="tablist" class="accordion mb-3"><div itemscope="itemscope" itemprop="mainEntity" itemtype="https://schema.org/Question" class="card bg-light"><!----><!----><div role="tab" class="card-header"><a href="#where-is-my-token-address" class="btn-block text-reset text-decoration-none"><span itemprop="name">
-                                    Where is my Token address?
-                                </span></a></div> <div id="where-is-my-token-address" class="p-4 collapse" style="display:none;"><p itemscope="itemscope" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="card-text"><span itemprop="text">
-                                    Once you confirm your transaction you will receive transaction hash (first) and
-                                    Token address (when transaction is confirmed). If your transaction will take
-                                    some time to be confirmed due to network status, you can monitor it and your
-                                    Token will be visible in transaction page. Watch the above video tutorial for
-                                    details.
-                                </span></p></div><!----><!----></div> <div itemscope="itemscope" itemprop="mainEntity" itemtype="https://schema.org/Question" class="card bg-light"><!----><!----><div role="tab" class="card-header"><a href="#who-will-be-token-owner" class="btn-block text-reset text-decoration-none"><span itemprop="name">
-                                    Who will be Token Owner?
-                                </span></a></div> <div id="who-will-be-token-owner" class="p-4 collapse" style="display:none;"><p itemscope="itemscope" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="card-text"><span itemprop="text">
-                                    Once your Token will be deployed you (your MetaMask address) will be the only
-                                    owner.
-                                </span></p></div><!----><!----></div> <div itemscope="itemscope" itemprop="mainEntity" itemtype="https://schema.org/Question" class="card bg-light"><!----><!----><div role="tab" class="card-header"><a href="#where-token-supply-will-go" class="btn-block text-reset text-decoration-none"><span itemprop="name">
-                                    Where will token supply go after deploy?
-                                </span></a></div> <div id="where-token-supply-will-go" class="p-4 collapse" style="display:none;"><p itemscope="itemscope" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="card-text"><span itemprop="text">
-                                    The initial token supply will be held by the address used to deploy the token
-                                    (your MetaMask address). This address will be Token Owner and will be able to
-                                    generate new tokens (in case you selected a token type with Mintable behaviour).
-                                </span></p></div><!----><!----></div> <div itemscope="itemscope" itemprop="mainEntity" itemtype="https://schema.org/Question" class="card bg-light"><!----><!----><div role="tab" class="card-header"><a href="#which-wallet-support" class="btn-block text-reset text-decoration-none"><span itemprop="name">
-                                    Which wallet will my Token be supported by?
-                                </span></a></div> <div id="which-wallet-support" class="p-4 collapse" style="display:none;"><p itemscope="itemscope" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="card-text"><span itemprop="text">
-                                    Your Token will be a fully BEP20 compatible token. Any BEP20 wallet will support
-                                    your Token.
-                                </span></p></div><!----><!----></div> <div itemscope="itemscope" itemprop="mainEntity" itemtype="https://schema.org/Question" class="card bg-light"><!----><!----><div role="tab" class="card-header"><a href="#how-to-mint-new-tokens" class="btn-block text-reset text-decoration-none"><span itemprop="name">
-                                    How to mint new tokens?
-                                </span></a></div> <div id="how-to-mint-new-tokens" class="p-4 collapse" style="display:none;"><p itemscope="itemscope" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="card-text"><span itemprop="text">
-                                    To generate new tokens you must use the &quot;mint&quot; function using token owner
-                                    wallet. You can doing this by using the Contract/Write tab on your BscScan
-                                    token page.<br> <small>
-                                        Note: remember that your tokens has a number of decimals (usually 18), so
-                                        you must use the entire number with decimals.<br>I.e. if you need to
-                                        generate 500 additional tokens, call the mint function by inserting
-                                        500000000000000000000.
-                                    </small></span></p></div><!----><!----></div> <div itemscope="itemscope" itemprop="mainEntity" itemtype="https://schema.org/Question" class="card bg-light"><!----><!----><div role="tab" class="card-header"><a href="#will-my-token-be-verified" class="btn-block text-reset text-decoration-none"><span itemprop="name">
-                                    Will my Token Source Code be verified on BscScan?
-                                </span></a></div> <div id="will-my-token-be-verified" class="p-4 collapse" style="display:none;"><p itemscope="itemscope" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="card-text"><span itemprop="text">
-                                    Yes, your token source code will be already verified by &quot;Similar Match&quot;.
-                                    It means that your source code is similar to other tokens deployed using this
-                                    generator.
-                                </span></p></div><!----><!----></div> <div itemscope="itemscope" itemprop="mainEntity" itemtype="https://schema.org/Question" class="card bg-light"><!----><!----><div role="tab" class="card-header"><a href="#can-i-add-logo" class="btn-block text-reset text-decoration-none"><span itemprop="name">
-                                    Can I add logo and information to my token on BscScan?
-                                </span></a></div> <div id="can-i-add-logo" class="p-4 collapse" style="display:none;"><p itemscope="itemscope" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="card-text"><span itemprop="text">
-                                    Once your token will be deployed you will be able to add information on BscScan
-                                    using their procedure.
-                                </span></p> <a href="https://bscscan.freshdesk.com/support/solutions/articles/67000221190-how-to-update-token-information-on-bscscan-" rel="noopener" target="_blank" class="card-link">
-                                Update Token Information
-                            </a></div><!----><!----></div></div></div> <h5 class="font-weight-light text-white"><a href="#about-bsc" class="btn-block text-reset text-decoration-none"><svg viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" aria-label="caret down fill" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-caret-down-fill b-icon bi"><g><path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/></g></svg> Binance Smart Chain and Ecosystem
-                </a></h5> <div id="about-bsc" class="mt-4 collapse" style="display:none;"><div role="tablist" class="accordion mb-3"><div itemscope="itemscope" itemprop="mainEntity" itemtype="https://schema.org/Question" class="card bg-light"><!----><!----><div role="tab" class="card-header"><a href="#what-is-bsc" class="btn-block text-reset text-decoration-none"><span itemprop="name">
-                                    What is Binance Smart Chain?
-                                </span></a></div> <div id="what-is-bsc" class="p-4 collapse" style="display:none;"><p itemscope="itemscope" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="card-text"><span itemprop="text">
-                                    Binance Chain was launched by Binance in April 2019. Its primary focus is to
-                                    facilitate fast, decentralized (or non-custodial) trading.<br>
-                                    Binance Smart Chain (BSC) is best described as a blockchain that runs in
-                                    parallel to the Binance Chain. Unlike Binance Chain, BSC boasts smart contract
-                                    functionality and compatibility with the Ethereum Virtual Machine (EVM).
-                                    The design goal here was to leave the high throughput of Binance Chain intact
-                                    while introducing smart contracts into its ecosystem.
-                                </span></p> <a href="https://docs.binance.org/smart-chain/guides/bsc-intro.html" rel="noopener" target="_blank" class="card-link">
-                                BSC official website
-                            </a></div><!----><!----></div> <div itemscope="itemscope" itemprop="mainEntity" itemtype="https://schema.org/Question" class="card bg-light"><!----><!----><div role="tab" class="card-header"><a href="#explore-bsc" class="btn-block text-reset text-decoration-none"><span itemprop="name">
-                                    How to explore the BSC blockchain?
-                                </span></a></div> <div id="explore-bsc" class="p-4 collapse" style="display:none;"><p itemscope="itemscope" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="card-text"><span itemprop="text">
-                                    A Block Explorer is basically a search engine that allows users to easily
-                                    lookup, confirm and validate transactions that have taken place on the Binance
-                                    Smart Chain.
-                                </span></p> <a href="https://bscscan.com" rel="noopener" target="_blank" class="card-link">
-                                BscScan
-                            </a></div><!----><!----></div> <div itemscope="itemscope" itemprop="mainEntity" itemtype="https://schema.org/Question" class="card bg-light"><!----><!----><div role="tab" class="card-header"><a href="#what-is-a-dapp" class="btn-block text-reset text-decoration-none"><span itemprop="name">
-                                    What is a DApp?
-                                </span></a></div> <div id="what-is-a-dapp" class="p-4 collapse" style="display:none;"><p itemscope="itemscope" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="card-text"><span itemprop="text">
-                                    DApp is an abbreviated form for decentralized application.<br>
-                                    A DApp has its backend code running on a decentralized peer-to-peer network.
-                                    Contrast this with an app where the backend code is running on centralized
-                                    servers.<br>
-                                    A DApp can have frontend code and user interfaces written in any language (just
-                                    like an app) that can make calls to its backend. Furthermore, its frontend can
-                                    be hosted on decentralized storage such as Swarm or IPFS.<br>
-                                    For an application to be considered a Dapp (pronounced Dee-app, similar to
-                                    Email) it must meet the following criteria:
-                                    <ul><li>
-                                            The application must be completely open-source, it must operate
-                                            autonomously, and with no entity controlling the majority of its tokens.
-                                            The application may adapt its protocol in response to proposed
-                                            improvements and market feedback but all changes must be decided by
-                                            consensus of its users.
-                                        </li> <li>
-                                            The application's data and records of operation must be
-                                            cryptographically stored in a public, decentralized blockchain in order
-                                            to avoid any central points of failure.
-                                        </li> <li>
-                                            The application must use a cryptographic token (bitcoin or a token
-                                            native to its system) which is necessary for access to the application
-                                            and any contribution of value from (miners / farmers) should be rewarded
-                                            in the application’s tokens.
-                                        </li> <li>
-                                            The application must generate tokens according to a standard
-                                            crytptographic algorithm acting as a proof of the value nodes are
-                                            contributing to the application (Bitcoin uses the Proof of Work
-                                            Algorithm).
-                                        </li></ul></span></p></div><!----><!----></div> <div itemscope="itemscope" itemprop="mainEntity" itemtype="https://schema.org/Question" class="card bg-light"><!----><!----><div role="tab" class="card-header"><a href="#what-is-a-bep20-token" class="btn-block text-reset text-decoration-none"><span itemprop="name">
-                                    What is a BEP20 token?
-                                </span></a></div> <div id="what-is-a-bep20-token" class="p-4 collapse" style="display:none;"><p itemscope="itemscope" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="card-text"><span itemprop="text">
-                                    BEP-20 is a token standard on Binance Smart Chain that extends ERC-20, the most
-                                    common Ethereum token standard. You can think of it as a blueprint for tokens
-                                    that defines how they can be spent, who can spend them, and other rules for
-                                    their usage. Due to its similarity to Binance Chain’s BEP-2 and Ethereum’s
-                                    ERC-20, it’s compatible with both.<br>
-                                    BEP-20 was conceived as a technical specification for Binance Smart Chain,
-                                    with the goal of providing a flexible format for developers to launch a
-                                    range of different tokens. These could represent anything from shares in a
-                                    business to dollars stored in a bank vault (i.e., a stablecoin).
-                                </span></p> <a href="https://github.com/binance-chain/BEPs/blob/master/BEP20.md" rel="noopener" target="_blank" class="card-link">
-                                BEP20 Technical specification
-                            </a></div><!----><!----></div> <div itemscope="itemscope" itemprop="mainEntity" itemtype="https://schema.org/Question" class="card bg-light"><!----><!----><div role="tab" class="card-header"><a href="#what-is-gas" class="btn-block text-reset text-decoration-none"><span itemprop="name">
-                                    What is GAS and how to set Gas price?
-                                </span></a></div> <div id="what-is-gas" class="p-4 collapse" style="display:none;"><p itemscope="itemscope" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="card-text"><span itemprop="text">
-                                    &quot;Gas&quot; is the name for a special unit used in BSC. It measures how much
-                                    &quot;work&quot; an action or set of actions takes to perform.<br>
-                                    Every operation that can be performed by a transaction or contract on the
-                                    BSC platform costs a certain number of gas, with operations that require
-                                    more computational resources costing more gas than operations that require few
-                                    computational resources.<br>
-                                    The reason gas is important is that it helps to ensure an appropriate fee is
-                                    being paid by transactions submitted to the network. By requiring that a
-                                    transaction pay for each operation it performs (or causes a contract to
-                                    perform), we ensure that network doesn't become bogged down with performing
-                                    a lot of intensive work that isn't valuable to anyone.
-                                </span></p> <a href="https://bscscan.com/gastracker" rel="noopener" target="_blank" class="card-link">
-                                BscScan Gas tracker
-                            </a></div><!----><!----></div> <div itemscope="itemscope" itemprop="mainEntity" itemtype="https://schema.org/Question" class="card bg-light"><!----><!----><div role="tab" class="card-header"><a href="#connect-metamask-to-bsc" class="btn-block text-reset text-decoration-none"><span itemprop="name">
-                                    How to connect MetaMask to Binance Smart Chain
-                                </span></a></div> <div id="connect-metamask-to-bsc" class="p-4 collapse" style="display:none;"><p itemscope="itemscope" itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="card-text"><span itemprop="text">
-                                    You need to access the <b>Settings</b> to point the wallet towards Binance Smart
-                                    Chain nodes. On the Settings page, locate the <b>Networks</b> menu.
-                                    Click <b>Add Network</b> in the top-right corner to manually add the Binance
-                                    Smart Chain one.<br>
-                                    There are two networks we can use here:
-                                    the testnet or the mainnet. Below are the parameters to fill in for each.
-                                    <br><br> <b>Mainnet (This is the one you are probably looking for)</b> <ul><li>Network Name: Binance Smart Chain</li> <li>New RPC URL: https://bsc-dataseed.binance.org/</li> <li>ChainID: 56</li> <li>Symbol: BNB</li> <li>Block Explorer URL: https://bscscan.com</li></ul> <b>Testnet</b> <ul><li>Network Name: Binance Smart Chain - Testnet</li> <li>New RPC URL: https://data-seed-prebsc-1-s1.binance.org:8545/</li> <li>ChainID: 97</li> <li>Symbol: BNB</li> <li>Block Explorer URL: https://testnet.bscscan.com</li></ul></span></p> <a href="https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain" rel="noopener" target="_blank" class="card-link">
-                                More details
-                            </a></div><!----><!----></div></div></div></div></div> <div class="row"><div class="col"><div role="alert" aria-live="polite" aria-atomic="true" class="alert mt-4 alert-warning"><!----><h4 class="alert-heading">DISCLAIMER</h4> <p>
-                    BEP20 Token Generator and its author are free of any liability regarding Tokens built using
-                    this App, and the use that is made of them. Tokens built on BEP20 Token Generator, their
-                    projects, their teams, their use of Token (as well as anything related to Token) are in no way
-                    connected to BEP20 Token Generator or its author.
-                </p> <hr> <small>
-                    BEP20 Token Generator's code is provided under MIT License. Anyone can use it as per their
-                    needs. The App's purpose is to make people able to tokenize their ideas without coding or
-                    paying large amounts for it. Source code is public and well tested and continuously updated to
-                    reduce risk of bugs and introduce language optimizations. Anyway the purchase of tokens
-                    involves a high degree of risk. Before acquiring tokens, it is recommended to carefully weighs
-                    all the information and risks detailed in Token owner's Conditions.
-                </small></div></div></div></div></div></div> <div class="row bg-light text-dark mx-0"><div class="mb-3 text-center col-lg-10 offset-lg-1"><h2 class="pt-5 mb-4 font-weight-lighter text-dark">Ready to deploy your BEP20 Token?</h2> <p class="font-weight-light">
-                Try building your BEP20 Token in less than a minute. You can try on Test Network before to go live.
-            </p> <a href="/create-token/" target="_self" class="btn my-5 py-3 px-5 text-uppercase btn-success btn-lg">
-                Create BEP20 Token
-            </a></div></div></div> <div class="footer container-fluid"><div class="row bg-dark text-light py-4"><div class="col-lg-12 col-xl-8 offset-xl-2"><div class="row"><div class="col-lg-4"><div class="list-group list-group-flush"><a href="https://crypto-studio.net/" target="_self" class="list-group-item text-light list-group-item-action">
-                                Crypto Studio
-                            </a> <a href="/docs/" target="_self" class="list-group-item text-light list-group-item-action">
-                                Documentation
-                            </a></div></div> <div class="col-lg-4"><div class="list-group list-group-flush"><a href="/create-token/" target="_self" class="list-group-item text-warning list-group-item-action">
-                                Create BSC Token
-                            </a> <a href="https://polygon.crypto-studio.net/" rel="noopener" target="_blank" class="list-group-item text-light list-group-item-action">
-                                Create Polygon Token
-                            </a> <a href="/" aria-current="page" target="_self" class="list-group-item text-light router-link-exact-active router-link-active list-group-item-action">
-                                Create Ethereum Token
-                            </a></div></div> <div class="col-lg-4"><div class="list-group list-group-flush"><div class="list-group-item"><small>Terms of Use</small></div> <a href="https://docs.google.com/forms/d/e/1FAIpQLScfsLa4mXu476eZg43GPJUcUx-RB_GzNuvYBpkP7E-YY7SXRA/viewform?usp=sf_link" rel="noopener" target="_blank" class="list-group-item text-light list-group-item-action"><small>Contact Us</small></a></div></div></div></div> <div class="col-lg-12 col-xl-8 offset-xl-2"><hr> <div class="list-group list-group-flush"><div class="list-group-item"><small>
-                            All rights reserved © 2022
-                            <a href="https://crypto-studio.net/" rel="noopener" target="_blank" class="text-warning text-center">
-                                Crypto Studio
-                            </a></small></div></div></div></div> <!----> <!----></div></div><div class="global-ui"></div></div>
-    <script src="/assets/js/app.896a813c.js" defer></script><script src="/assets/js/6.4a251604.js" defer></script><script src="/assets/js/10.446780a3.js" defer></script><script src="/assets/js/14.12051beb.js" defer></script><script src="/assets/js/9.36afa99f.js" defer></script><script src="/assets/js/13.65610442.js" defer></script><script src="/assets/js/12.87e8b05a.js" defer></script>
-  </body>
+<head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-223959549-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-223959549-1');
+    </script>    
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+ fbq('init', '1123260808462504'); 
+fbq('track', 'PageView');
+</script>
+<noscript>
+ <img height="1" width="1" 
+src="https://www.facebook.com/tr?id=1123260808462504&ev=PageView
+&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/629755427b967b1179925980/1g4fia2se';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Create your own crypto token with our crypto generator. Token generator can create BSC, Ethereum and Polygon Tokens. No coding crypto builder.">. 
+    <title>Crypto Studio - Token Generator</title>
+
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+
+    <div id="pageloader" class="pageloader"></div>
+    <div id="infraloader" class="infraloader is-active"></div>    
+    <section class="hero is-fullheight is-default is-bold">
+    
+        <nav x-data="initNavbar()" class="navbar is-fresh is-transparent no-shadow" role="navigation"
+            aria-label="main navigation">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="https://crypto-studio.net">
+                        <img src="img/logo/fresh-alt.svg" alt="" width="112" height="28">
+                    </a>
+        
+                    <a @click="openSidebar()" class="navbar-item is-hidden-desktop is-hidden-tablet">
+                        <div id="menu-icon-wrapper" class="menu-icon-wrapper" style="visibility: visible;" :class="{
+                                'open': $store.app.isSiderbarOpen,
+                                '': !$store.app.isSiderbarOpen
+                            }">
+                            <svg width="1000px" height="1000px">
+                                <path class="path1"
+                                    d="M 300 400 L 700 400 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800"></path>
+                                <path class="path2" d="M 300 500 L 700 500"></path>
+                                <path class="path3"
+                                    d="M 700 600 L 300 600 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200"></path>
+                            </svg>
+                            <button id="menu-icon-trigger" class="menu-icon-trigger"></button>
+                        </div>
+                    </a>
+        
+                    <div class="navbar-burger" @click="openMobileMenu()">
+                        <div class="menu-toggle">
+                            <div class="icon-box-toggle" :class="{
+                                    'active': mobileOpen,
+                                    '': !mobileOpen
+                                }">
+                                <div class="rotate">
+                                    <i class="icon-line-top"></i>
+                                    <i class="icon-line-center"></i>
+                                    <i class="icon-line-bottom"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div id="navbar-menu" class="navbar-menu is-static" :class="{
+                        'is-active': mobileOpen,
+                        '': !mobileOpen
+                    }">
+        
+                    <div class="navbar-start">
+                        <a @click="openSidebar()" class="navbar-item is-hidden-mobile">
+                            <div id="menu-icon-wrapper" class="menu-icon-wrapper" style="visibility: visible;" :class="{
+                                    'open': $store.app.isSiderbarOpen,
+                                    '': !$store.app.isSiderbarOpen
+                                }">
+                                <svg width="1000px" height="1000px">
+                                    <path class="path1"
+                                        d="M 300 400 L 700 400 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800">
+                                    </path>
+                                    <path class="path2" d="M 300 500 L 700 500"></path>
+                                    <path class="path3"
+                                        d="M 700 600 L 300 600 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200">
+                                    </path>
+                                </svg>
+                                <button id="menu-icon-trigger" class="menu-icon-trigger"></button>
+                            </div>
+                        </a>
+                    </div>
+        
+                    <div class="navbar-end">
+                        <a href="#features" class="navbar-item is-secondary">
+                            Features
+                        </a>
+                        <a href="#pricing" class="navbar-item is-secondary">
+                            Pricing
+                        </a>
+                        <a href="docs" class="navbar-item is-secondary modal-trigger" data-modal="auth-modal">
+                            Docs
+                        </a>
+                        <a href="https://crypto-studio.net/create-token/" class="navbar-item">
+                            <span class="button signup-button rounded secondary-btn raised">
+                                Create Token
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <nav x-data="initNavbar()"  x-on:scroll.window="scroll()" id="navbar-clone" class="navbar is-fresh is-transparent" role="navigation" aria-label="main navigation" :class="{
+                'is-active': scrolled,
+                '': !scrolled
+            }">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="https://crypto-studio.net/">
+                        <img src="img/logo/fresh-alt.svg" alt="" width="112" height="28">
+                    </a>
+        
+                    <a @click="openSidebar()" class="navbar-item is-hidden-desktop is-hidden-tablet">
+                        <div id="menu-icon-wrapper" class="menu-icon-wrapper" style="visibility: visible;" :class="{
+                                'open': $store.app.isSiderbarOpen,
+                                '': !$store.app.isSiderbarOpen
+                            }">
+                            <svg width="1000px" height="1000px">
+                                <path class="path1" d="M 300 400 L 700 400 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800"></path>
+                                <path class="path2" d="M 300 500 L 700 500"></path>
+                                <path class="path3" d="M 700 600 L 300 600 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200"></path>
+                            </svg>
+                            <button id="menu-icon-trigger" class="menu-icon-trigger"></button>
+                        </div>
+                    </a>
+        
+                    <div class="navbar-burger" @click="openMobileMenu()">
+                        <div class="menu-toggle">
+                            <div class="icon-box-toggle" :class="{
+                                    'active': mobileOpen,
+                                    '': !mobileOpen
+                                }">
+                                <div class="rotate">
+                                    <i class="icon-line-top"></i>
+                                    <i class="icon-line-center"></i>
+                                    <i class="icon-line-bottom"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div id="cloned-navbar-menu" class="navbar-menu is-fixed" :class="{
+                        'is-active': mobileOpen,
+                        '': !mobileOpen
+                    }">
+        
+                    <div class="navbar-start">
+                        <a @click="openSidebar()" class="navbar-item is-hidden-mobile">
+                            <div id="cloned-menu-icon-wrapper" class="menu-icon-wrapper" style="visibility: visible;" :class="{
+                                    'open': $store.app.isSiderbarOpen,
+                                    '': !$store.app.isSiderbarOpen
+                                }">
+                                <svg width="1000px" height="1000px">
+                                    <path class="path1" d="M 300 400 L 700 400 C 900 400 900 750 600 850 A 400 400 0 0 1 200 200 L 800 800"></path>
+                                    <path class="path2" d="M 300 500 L 700 500"></path>
+                                    <path class="path3" d="M 700 600 L 300 600 C 100 600 100 200 400 150 A 400 380 0 1 1 200 800 L 800 200"></path>
+                                </svg>
+                                <button id="cloned-menu-icon-trigger" class="menu-icon-trigger"></button>
+                            </div>
+                        </a>
+                    </div>
+        
+                    <div class="navbar-end">
+                        <a href="#features" class="navbar-item is-secondary">
+                            Features
+                        </a>
+                        <a href="#pricing" class="navbar-item is-secondary">
+                            Pricing
+                        </a>
+                        <a href="docs" class="navbar-item is-secondary modal-trigger" data-modal="auth-modal">
+                            Docs
+                        </a>
+                        <a href="https://crypto-studio.net/create-token/" class="navbar-item">
+                            <span class="button signup-button rounded secondary-btn raised">
+                                Create Token
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-vcentered">
+                    <div class="column is-5 is-offset-1 landing-caption">
+                        <h1 class="title is-1 is-bold is-spaced">
+                            Build your own crypto coin.
+                        </h1>
+                        <h2 class="subtitle is-5 is-muted">Build, deploy your own crypto token in seconds! No coding! No login! You own it! </h2>
+                        <div class="button-wrap">
+                            <a href="https://crypto-studio.net/create-token/" class="button cta is-rounded primary-btn raised">
+                                Create Token
+                            </a>
+                            <a href="#pricing" class="button cta is-rounded">
+                                Pricing
+                            </a>
+                        </div>
+                    </div>
+                    <div class="column is-5">
+                        <figure class="image is-4by3">
+                            <img src="img/illustrations/worker.svg" alt="Woman at laptop creating crypto coin.">
+                        </figure>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    
+        <div class="hero-foot mb-20">
+            <div class="container">
+                <div class="tabs is-centered">
+                    <ul>
+                        <li><a href="https://crypto-studio.net/create-token/"><img class="partner-logo" src="img/logo/clients/systek.svg" alt="ethereum icon"></a></li>
+                        <li><a><img class="partner-logo" src="img/logo/clients/tribe.svg" alt="pancake icon"></a></li>
+                        <li><a href="https://crypto-studio.net/create-token/"><img class="partner-logo" src="img/logo/clients/kromo.svg" alt="bsc icon"></a></li>
+                        <li><a><img class="partner-logo" src="img/logo/clients/infinite.svg" alt="metamask icon"></a></li>
+                        <li><a href="https://polybuilder.crypto-studio.net/"><img class="partner-logo" src="img/logo/clients/gutwork.svg" alt="polygon icon"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section section-feature-grey is-medium">
+        <div class="container">
+            <div class="title-wrapper has-text-centered">
+                <h2 class="title is-2">How it works </h2>
+                <h3 class="subtitle is-5 is-muted">No login. No setup. No coding required..</h3>
+                <div class="divider is-centered"></div>
+            </div>
+            <center><iframe width="560" height="280" 
+                src="https://youtube.com/embed/9cvNy2K0ZS4" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+                gyroscope; picture-in-picture" allowfullscreen></iframe></iframe></center>
+            <div class="content-wrapper">
+                <div class="columns">
+                    <div class="column is-one-third">
+                        <div class="feature-card is-bordered has-text-centered is-feature-reveal">
+                            <div class="card-title">
+                                <h4>1. Start Builder</h4>
+                            </div>
+                            <div class="card-icon">
+                                <img src="img/icons/light-bulb.svg" alt="Crypto builder">
+                            </div>
+                            <div class="card-text">
+                                <p>Type in token name, amount and type. Launch token on Mainnet or Testnet first.</p>
+                            </div>
+                        
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="feature-card is-bordered has-text-centered is-feature-reveal">
+                            <div class="card-title">
+                                <h4>2. Make sure you have Metamask wallet</h4>
+                            </div>
+                            <div class="card-icon">
+                                <img src="img/icons/web.svg" alt="Metamask connected coin">
+                            </div>
+                            <div class="card-text">
+                                <p>Sign contracts for your new tokens with metamask.</p>
+                            </div>
+                            <div class="card-action">
+                                <a href="https://crypto-studio.net/create-token/" class="button btn-align-md primary-btn raised">Start</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="feature-card is-bordered has-text-centered is-feature-reveal">
+                            <div class="card-title">
+                                <h4>3. Your new token is live</h4>
+                            </div>
+                            <div class="card-icon">
+                                <img src="img/icons/rocket.svg" alt="Launch of token">
+                            </div>
+                            <div class="card-text">
+                                <p>You now have your new token, contract and all ownership. We collect no data.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section is-medium">
+        <div class="container">
+            <div class="title-wrapper has-text-centered">
+                <h2 class="title is-2">Build your own Token</h2>
+                <h3 class="subtitle is-5 is-muted">To make you super happy choose any token feature you want</h3>
+                <div class="divider is-centered"></div>
+            </div>
+    
+            <div class="columns is-vcentered side-feature mt-60">
+                <div class="column is-4 is-offset-2">
+                    <h3 class="title is-3 mb-10 is-title-reveal">Verified Contracts</h3>
+                    <p class="subtitle is-5 is-muted">Your Token will be fully compliant with the ERC20 definition and compatible with any ERC20 wallet all around the world. It will have a name, a symbol and a decimals amount.</p>
+                </div>
+                <div class="column is-5">
+                    <img src="img/illustrations/features/feature-1.png" alt="Verified smart contracts for all people">
+                </div>
+            </div>
+    
+            <div class="columns is-vcentered side-feature mt-60">
+                <div class="column is-5 is-offset-1">
+                    <img src="img/illustrations/features/feature-2.png" alt="Multiple tokens everywhere">
+                </div>
+                <div class="column is-4 is-offset-1">
+                    <h3 class="title is-3 mb-10 is-title-reveal">Launch on Mainnet or Testnet</h3>
+                    <p class="subtitle is-5 is-muted">Choose network on what you want your token to go live!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section section-feature-grey is-medium">
+        <div class="container">
+    
+            <div class="columns is-vcentered app-side">
+                <div class="column is-5 is-offset-1">
+                    <h3 class="title is-3 is-spaced is-title-reveal">Easy and simple Generator</h3>
+                    <p class="subtitle is-5 is-muted">Your token will be ready in seconds. Just choose token name, total supply and what features should it have.</p>
+                </div>
+                <div class="column is-10">
+                    <div class="has-text-centered">
+                        <img class="pushed-image" src="img/illustrations/mockups/app-mockup.png" alt="dashboard look">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section is-medium" id="features">
+        <div class="container">
+            <div class="title-wrapper has-text-centered">
+                <h2 class="title is-2">Wait, there's more</h2>
+                <h3 class="subtitle is-5 is-muted">To make you super happy</h3>
+                <div class="divider is-centered"></div>
+            </div>
+    
+            <div class="content-wrapper">
+                <div class="columns is-multiline icon-list">
+                    <div class="column is-3">
+                        <div class="feature-icon has-text-centered">
+                            <div class="icon-wrap is-icon-reveal">
+                                <ion-icon name="cube" size="large"></ion-icon>
+                            </div>
+                            <h4>Full control</h4>
+                            <p>You decide token properties and control token.</p>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="feature-icon has-text-centered">
+                            <div class="icon-wrap is-icon-reveal">
+                                <ion-icon name="flame" size="large"></ion-icon>
+                            </div>
+                            <h4>Burnable</h4>
+                            <p>Your Token can be burnt. It means that you can choose to reduce the circulating supply by destroying some of your tokens.</p>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="feature-icon has-text-centered">
+                            <div class="icon-wrap is-icon-reveal">
+                                <ion-icon name="flash" size="large"></ion-icon>
+                            </div>
+                            <h4>Powerfull customization</h4>
+                            <p>You decide what will your token have. You create your smart contract by clicking on features and control that you want.</p>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="feature-icon has-text-centered">
+                            <div class="icon-wrap is-icon-reveal">
+                                <ion-icon name="infinite" size="large"></ion-icon>
+                            </div>
+                            <h4>Supply Control</h4>
+                            <p>You won't be able to generate more tokens than the defined token cap. This ensure people that you will not generate more tokens than declared.</p>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="feature-icon has-text-centered">
+                            <div class="icon-wrap is-icon-reveal">
+                                <ion-icon name="code" size="large"></ion-icon>
+                            </div>
+                            <h4>No Coding</h4>
+                            <p>Smart contracts are generated without any need for coding.</p>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="feature-icon has-text-centered">
+                            <div class="icon-wrap is-icon-reveal">
+                                <ion-icon name="person" size="large"></ion-icon>
+                            </div>
+                            <h4>Owner control</h4>
+                            <p>Your Token will have an Owner. Token owner will be able to mint new tokens or to call the finish minting function.</p>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="feature-icon has-text-centered">
+                            <div class="icon-wrap is-icon-reveal">
+                                <ion-icon name="git-network" size="large"></ion-icon>
+                            </div>
+                            <h4>ERC1363 Payable Token</h4>
+                            <p>The ERC1363 is an ERC20 compatible Token that can make a callback on the receiver contract to notify token transfers or token approvals.</p>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="feature-icon has-text-centered">
+                            <div class="icon-wrap is-icon-reveal">
+                                <ion-icon name="globe" size="large"></ion-icon>
+                            </div>
+                            <h4>Metamask integration</h4>
+                            <p>After launching your token, easily add your new token to your metamask account with a push of a button.</p>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="feature-icon has-text-centered">
+                            <div class="icon-wrap is-icon-reveal">
+                                <ion-icon name="document" size="large"></ion-icon>
+                            </div>
+                            <h4>Verified Contracts</h4>
+                            <p>Your Token will be fully compliant with the ERC20 definition and compatible with any ERC20 wallet all around the world. It will have a name, a symbol and a decimals amount.</p>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="feature-icon has-text-centered">
+                            <div class="icon-wrap is-icon-reveal">
+                                <ion-icon name="albums" size="large"></ion-icon>
+                            </div>
+                            <h4>Mintable</h4>
+                            <p>You will be able to generate tokens by minting them. Only token owner will be able to mint. You can also disable minting if you don’t want to generate tokens anymore.</p>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="feature-icon has-text-centered">
+                            <div class="icon-wrap is-icon-reveal">
+                                <ion-icon name="build" size="large"></ion-icon>
+                            </div>
+                            <h4>Token Recovery</h4>
+                            <p>There are lots of tokens lost forever into Smart Contracts. It allows the contract owner to recover any ERC20 token sent into the contract for error.</p>
+                        </div>
+                    </div>
+                    <div class="column is-3">
+                        <div class="feature-icon has-text-centered">
+                            <div class="icon-wrap is-icon-reveal">
+                                <ion-icon name="browsers" size="large"></ion-icon>
+                            </div>
+                            <h4>Full owner</h4>
+                            <p>You have all the rights and the contract is published with your own wallet on Mainnet or Testnet.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    <section class="secprice" id="pricing">
+    
+        <main class="min-h-3/4">
+            <div class="bg-white">
+                <div class="">
+                    <div class="sm:flex sm:flex-col sm:align-center">
+                        <h2 class="text-5xl font-extrabold text-gray-900 sm:text-center"> Pricing </h2>
+                        <p class="mt-5 text-xl text-gray-500 sm:text-center"> Choose from 8 different Token types for your requirements.  </p>
+                           
+                                <p class="mt-4 flex items-center justify-center">
+                                <span class="px-3 rounded text-base font-bold text-white mr-2 bg-red-500 strikethrough">LIMITED SALE:</span>
+                                <span class="text-2xl font-normal text-green-600">28 <span class='text-base'>remaining</span></p>
+                                </span>                         
+                    </div>
+                    <div class="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-8 lg:max-w-4xl  xl:max-w-none xl:mx-0 xl:grid-cols-3">
+                        <div class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
+                            <div class="p-5 text-center">
+                                <h2 class="text-xl leading-6 font-normal text-gray-900"> HelloBEP20 </h2>
+                                <p class="mt-8 flex items-center justify-center">
+                                    <!---->
+                                    <span class="text-3xl font-normal text-green-600">FREE</span>
+                                </p>
+                            </div>
+                            <div class="text-base ">
+                                <ul class="divide-y">
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">BEP20 Compliant</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Verified Source Code</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Customizable Decimals</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Supply Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-red-500"> 10k </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Access Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-yellow-500"> None </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Burnable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Mintable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Operable (ERC1363)</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Recover</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Owner</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-green-500"> You </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Remove Copyright</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                    </li>
+    
+                                </ul>
+                                <a href="create-token/?tokenType=HelloBEP20" class="mt-1 block w-full bg-green-700 border border-green-800 rounded-b-sm py-4 text-sm font-semibold text-white text-center button ctaprice primary-btn raised"> Create HelloBEP20 </a>
+                            </div>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
+                            <div class="p-5 text-center">
+                                <h2 class="text-xl leading-6 font-normal text-gray-900"> SimpleBEP20 </h2>
+                                <p class="mt-8 flex items-center justify-center">
+                                    <span class="line-through px-3 rounded text-base font-normal text-white mr-2 bg-red-500 strikethrough">0.5 BNB</span>
+                                    <span class="text-3xl font-normal text-green-600">0.015 <span class='text-base'>BNB</span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="text-base ">
+                                <ul class="divide-y">
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">BEP20 Compliant</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Verified Source Code</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Customizable Decimals</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Supply Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-yellow-500"> Fixed </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Access Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-yellow-500"> None </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Burnable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Mintable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Operable (ERC1363)</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Recover</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Owner</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-green-500"> You </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Remove Copyright</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                    </li>
+                                </ul>
+                                <a href="create-token/?tokenType=SimpleBEP20" class="mt-1 block w-full bg-green-700 border border-green-800 rounded-b-sm py-4 text-sm font-semibold text-white text-center button ctaprice primary-btn raised"> Create SimpleBEP20 </a>
+                            </div>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
+                            <div class="p-5 text-center">
+                                <h2 class="text-xl leading-6 font-normal text-gray-900"> StandardBEP20 </h2>
+                                <p class="mt-8 flex items-center justify-center">
+                                    <span class="line-through px-3 rounded text-base font-normal text-white mr-2 bg-red-500 strikethrough">0.75 BNB</span>
+                                    <span class="text-3xl font-normal text-green-600">0.05 <span class='text-base'>BNB</span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="text-base ">
+                                <ul class="divide-y">
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">BEP20 Compliant</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Verified Source Code</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Customizable Decimals</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Supply Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-yellow-500"> Fixed </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Access Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-yellow-500"> None </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Burnable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Mintable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Operable (ERC1363)</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Recover</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Owner</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-green-500"> You </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Remove Copyright</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                    </li>
+                                </ul>
+                                <a href="create-token/?tokenType=StandardBEP20" class="mt-1 block w-full bg-green-700 border border-green-800 rounded-b-sm py-4 text-sm font-semibold text-white text-center button ctaprice primary-btn raised"> Create StandardBEP20 </a>
+                            </div>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
+                            <div class="p-5 text-center">
+                                <h2 class="text-xl leading-6 font-normal text-gray-900"> BurnableBEP20 </h2>
+                                <p class="mt-8 flex items-center justify-center">
+                                    <span class="text-3xl font-normal text-green-600">0.1 <span class='text-base'>BNB</span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="text-base ">
+                                <ul class="divide-y">
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">BEP20 Compliant</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Verified Source Code</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Customizable Decimals</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Supply Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-yellow-500"> Fixed </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Access Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-yellow-500"> None </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Burnable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Mintable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Operable (ERC1363)</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Recover</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Owner</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-green-500"> You </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Remove Copyright</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                    </li>
+                                </ul>
+                                <a href="create-token/?tokenType=BurnableBEP20" class="mt-1 block w-full bg-green-700 border border-green-800 rounded-b-sm py-4 text-sm font-semibold text-white text-center button ctaprice primary-btn raised"> Create BurnableBEP20 </a>
+                            </div>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
+                            <div class="p-5 text-center">
+                                <h2 class="text-xl leading-6 font-normal text-gray-900"> MintableBEP20 </h2>
+                                <p class="mt-8 flex items-center justify-center">
+                                    <span class="line-through px-3 rounded text-base font-normal text-white mr-2 bg-red-500 strikethrough">1 BNB</span>
+                                    <span class="text-3xl font-normal text-green-600">0.1 <span class='text-base'>BNB</span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="text-base ">
+                                <ul class="divide-y">
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">BEP20 Compliant</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Verified Source Code</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Customizable Decimals</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Supply Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-green-500"> Capped </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Access Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-pink-500"> Ownable </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Burnable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Mintable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Operable (ERC1363)</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Recover</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Owner</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-green-500"> You </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Remove Copyright</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                    </li>
+    
+                                </ul>
+                                <a href="create-token/?tokenType=MintableBEP20" class="mt-1 block w-full bg-green-700 border border-green-800 rounded-b-sm py-4 text-sm font-semibold text-white text-center button ctaprice primary-btn raised"> Create MintableBEP20 </a>
+                            </div>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
+                            <div class="p-5 text-center">
+                                <h2 class="text-xl leading-6 font-normal text-gray-900"> CommonBEP20 </h2>
+                                <p class="mt-8 flex items-center justify-center">
+                                    <span class="line-through px-3 rounded text-base font-normal text-white mr-2 bg-red-500 strikethrough">1.25 BNB</span>
+                                    <span class="text-3xl font-normal text-green-600">0.15 <span class='text-base'>BNB</span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="text-base ">
+                                <ul class="divide-y">
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">BEP20 Compliant</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Verified Source Code</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Customizable Decimals</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Supply Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-green-500"> Capped </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Access Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-pink-500"> Ownable </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Burnable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Mintable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Operable (ERC1363)</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Recover</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Owner</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-green-500"> You </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Remove Copyright</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                    </li>
+                                </ul>
+                                <a href="create-token/?tokenType=CommonBEP20" class="mt-1 block w-full bg-green-700 border border-green-800 rounded-b-sm py-4 text-sm font-semibold text-white text-center button ctaprice primary-btn raised"> Create CommonBEP20 </a>
+                            </div>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
+                            <div class="p-5 text-center">
+                                <h2 class="text-xl leading-6 font-normal text-gray-900"> UnlimitedBEP20 </h2>
+                                <p class="mt-8 flex items-center justify-center">
+                                    <span class="line-through px-3 rounded text-base font-normal text-white mr-2 bg-red-500 strikethrough">1.5 BNB</span>
+                                    <span class="text-3xl font-normal text-green-600">0.3 <span class='text-base'>BNB</span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="text-base ">
+                                <ul class="divide-y">
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">BEP20 Compliant</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Verified Source Code</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Customizable Decimals</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Supply Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-pink-500"> Unlimited </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Access Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-green-500"> Role Based </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Burnable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Mintable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Operable (ERC1363)</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Recover</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-red-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Owner</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-green-500"> You </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Remove Copyright</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                    </li>
+                                </ul>
+                                <a href="create-token/?tokenType=UnlimitedBEP20" class="mt-1 block w-full bg-green-700 border border-green-800 rounded-b-sm py-4 text-sm font-semibold text-white text-center button ctaprice primary-btn raised"> Create UnlimitedBEP20 </a>
+                            </div>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200">
+                            <div class="p-5 text-center">
+                                <h2 class="text-xl leading-6 font-normal text-gray-900"> AmazingBEP20 </h2>
+                                <p class="mt-8 flex items-center justify-center">
+                                    <span class="line-through px-3 rounded text-base font-normal text-white mr-2 bg-red-500 strikethrough">2 BNB</span>
+                                    <span class="text-3xl font-normal text-green-600">0.5 <span class='text-base'>BNB</span>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="text-base ">
+                                <ul class="divide-y">
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">BEP20 Compliant</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Verified Source Code</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Customizable Decimals</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Supply Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-pink-500"> Unlimited </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Access Type</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-pink-500"> Ownable </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Burnable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Mintable</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Operable (ERC1363)</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Recover</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Token Owner</span>
+                                        <span class="px-2 text-sm rounded  text-white bg-green-500"> You </span>
+                                    </li>
+                                    <li class="py-2.5 px-5 flex space-x-3 items-center justify-between">
+                                        <span class="text-gray-500">Remove Copyright</span>
+                                        <span class="text-gray-500">
+                                            <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 text-green-500">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                    </li>
+                                </ul>
+                                <a href="create-token/?tokenType=AmazingBEP20" class="mt-1 w-full border border-green-800 text-sm font-semibold text-white text-center button ctaprice primary-btn raised"> Create AmazingBEP20 </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    
+    </section>
+    <!--
+    <section class="section is-medium"  id="pricing" >
+        <div class="container">
+            <div class="title-wrapper has-text-centered">
+                <h2 class="title is-2">Get Started</h2>
+                <h3 class="subtitle is-5 is-muted">Choose one of our plans</h3>
+                <div class="divider is-centered"></div>
+            </div>
+    
+            <div class="pricing-wrap">
+                <div class="feature-card is-pricing has-text-centered">
+                    <h3 class="plan-name">HelloBEP20</h3>
+                    <img src="/img/illustrations/pricing/1.svg" alt=""/>
+                    <div class="price">
+                        0
+                    </div>
+                    <p>Sign up, get some awesome features and get started now</p>
+                    <a class="button is-fullwidth is-bold">Get Started</a>
+                </div>
+                <div class="feature-card is-pricing has-text-centered">
+                    <h3 class="plan-name">Pro</h3>
+                    <img src="/img/illustrations/pricing/2.svg" alt=""/>
+                    <div class="price">
+                        15
+                    </div>
+    
+                              <svg width="30px" height="30px" float: "left" fill="none" stroke="#10b981" aria-hidden="true" class="h-6 w-6 text-green-500"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <pp>BEP20 Compliant</pp>
+                       <svg width="30px" height="30px" float: "left" fill="none" stroke="#10b981" aria-hidden="true" class="h-6 w-6 text-green-500"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <pp>Verified Source Code</pp>
+                        <svg width="30px" height="30px" float: "left" fill="none" stroke="#10b981" aria-hidden="true" class="h-6 w-6 text-green-500"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <pp>Detailed</pp><br>
+    
+    
+    
+    
+                    </div>
+    
+                    <a class="button is-fullwidth is-bold">Create</a>
+                </div>
+                <div class="feature-card is-pricing has-text-centered">
+                    <h3 class="plan-name">Business</h3>
+                    <img src="/img/illustrations/pricing/3.svg" alt=""/>
+                    <div class="price">
+                        30
+                    </div>
+                    <p>Sign up, get some awesome features and get started now</p>
+                    <a class="button is-fullwidth is-bold">Get Started</a>
+                </div>
+            </div>
+            
+    
+    
+            <div class="pricing-wrap">
+                <div class="feature-card is-pricing has-text-centered">
+                    <h3 class="plan-name">Starter</h3>
+                    <img src="/img/illustrations/pricing/1.svg" alt=""/>
+                    <div class="price">
+                        0
+                    </div>
+                    <p>Sign up, get some awesome features and get started now</p>
+                    <a class="button is-fullwidth is-bold">Get Started</a>
+                </div>
+                <div class="feature-card is-pricing has-text-centered">
+                    <h3 class="plan-name">Pro</h3>
+                    <img src="/img/illustrations/pricing/2.svg" alt=""/>
+                    <div class="price">
+                        15
+                    </div>
+                    <p>Sign up, get some awesome features and get started now</p>
+                    <a class="button is-fullwidth primary-btn raised is-bold">Get Started</a>
+                </div>
+                <div class="feature-card is-pricing has-text-centered">
+                    <h3 class="plan-name">Business</h3>
+                    <img src="/img/illustrations/pricing/3.svg" alt=""/>
+                    <div class="price">
+                        30
+                    </div>
+                    <p>Sign up, get some awesome features and get started now</p>
+                    <a class="button is-fullwidth is-bold">Get Started</a>
+                </div>
+            </div>
+    
+    
+    
+        </div>
+    </section>
+    
+    -->
+    
+    
+    
+    <section class="section section-light-grey is-medium">
+        <div class="container">
+            <div class="title-wrapper has-text-centered">
+                <h2 class="title is-2 is-spaced">Need a custom development?</h2>
+                <h3 class="subtitle is-5 is-muted">Open to getting in touch with awesome people and projects.</h3>
+                <div class="divider is-centered"></div>
+            </div>
+    
+            <div class="content-wrapper">
+                <div class="columns">
+                    <div class="column is-6 is-offset-3">
+                        <div class="column is-12">
+                            <div class="form-footer has-text-centered mt-10">
+                                <a class="button cta is-large primary-btn form-button raised is-clear" href="https://docs.google.com/forms/d/e/1FAIpQLScfsLa4mXu476eZg43GPJUcUx-RB_GzNuvYBpkP7E-YY7SXRA/viewform?usp=sf_link">Let us know</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer footer-dark">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="footer-logo">
+                        <img src="img/logo/fresh-white-alt.svg" alt="crypto-studio logo">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="footer-column">
+                        <div class="footer-header">
+                            <h3>Crypto Studio</h3>
+                        </div>
+                        <ul class="link-list">
+                            <li><a href="create-token/?tokenType=MintableBEP20">Mintable Token Maker</a></li>
+                            <li><a href="create-token/?tokenType=BurnableBEP20">Burnable Token Maker</a></li>
+                            <li><a href="create-token/?tokenType=StandardBEP20">Standard Token Maker</a></li>
+                            <li><a href="create-token/?tokenType=UnlimitedBEP20">Unlimited Token Maker</a></li>
+                            <li><a href="create-token/?tokenType=AmazingBEP20">Amazing Token Maker</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="footer-column">
+                        <div class="footer-header">
+                            <h3>Documentation</h3>
+                        </div>
+                        <ul class="link-list">
+                            <li><a href="https://bscscan.freshdesk.com/support/solutions/articles/67000221190-how-to-update-token-information-on-bscscan-">How to change Contract</a></li>
+                            <li><a href="#features">Feature List</a></li>
+                            <li><a href="https://academy.binance.com/en/articles/connecting-metamask-to-binance-smart-chain">Metamask Guide</a></li>
+                            <li><a href="https://crypto-studio.net/docs/">Token Documentation</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="footer-column">
+                        <div class="footer-header">
+                            <h3>Menu</h3>
+                        </div>
+                        <ul class="link-list">
+                            <li><a href="https://crypto-studio.net/docs/">Docs</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                            <li><a href="https://crypto-studio.net/create-token/">Crypto Generator</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="footer-column">
+                        <div class="footer-header">
+                        
+                            <img src="img/logo/fresh-white-alt.svg" alt="Copyright Crypto-Studio.net" width="148" height="24"><br>
+                            <a href="https://crypto-studio.net" target="_blank">
+                              <div>All rights reserved © 2022 Crypto-Studio.net </div> 
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Back To Top Button -->
+    <div x-data="initBackToTop()" x-on:scroll.window="scroll($event)" @click="goTop($event)" id="backtotop"><a href="javascript:" :class="{
+        'visible': scrolled,
+        '': !scrolled
+    }"></a></div>    <div x-data="initSidebar()" class="sidebar" :class="{
+            'is-active': $store.app.isSiderbarOpen,
+            '': !$store.app.isSiderbarOpen
+        }">
+        <div class="sidebar-header">
+            <img src="img/logo/fresh-square.svg" alt="crypto studio logo">
+            <a @click="closeSidebar()" class="sidebar-close" href="javascript:void(0);"><i data-feather="x"></i></a>
+        </div>
+        <div class="inner">
+            <ul class="sidebar-menu">
+                <li><span class="nav-section-title"></span></li>
+                <li @click="openSidebarMenu($event)" data-menu="sidebar-menu-1" class="have-children" :class="{
+                        'active': openedMenu === 'sidebar-menu-1',
+                        '': openedMenu != 'sidebar-menu-1'
+                    }">
+                <a href="#">
+                    <span class="material-icons">add_circle</span>
+                    <span>Create Token</span>
+                </a>
+                    <ul x-show.transition="openedMenu === 'sidebar-menu-1'">
+                        <li><a href="https://crypto-studio.net/create-token/">Binance Smart Chain Crypto</a></li>
+                        <li><a href="https://polybuilder.crypto-studio.net/">Polygon Crypto</a></li>
+                        <li><a href="#">Ethereum Crypto (soon)</a></li>
+                      
+                    </ul>
+                </li>
+                <li @click="openSidebarMenu($event)" data-menu="sidebar-menu-2"  :class="{
+                        'active': openedMenu === 'sidebar-menu-2',
+                        '': openedMenu != 'sidebar-menu-2'
+                    }">
+                    <a href="#pricing">
+                        <span class="material-icons">price_change</span>
+                        <span>Pricing</span>
+                    </a>
+                   
+                </li>
+                <li @click="openSidebarMenu($event)" data-menu="sidebar-menu-3"  :class="{
+                        'active': openedMenu === 'sidebar-menu-3',
+                        '': openedMenu != 'sidebar-menu-3'
+                    }">
+                    
+                    <a href="#features">
+                        <span class="material-icons">fact_check</span>
+                        <span>Features</span>
+                    </a>
+                   
+                </li>
+                <li @click="openSidebarMenu($event)" data-menu="sidebar-menu-4"  :class="{
+                        'active': openedMenu === 'sidebar-menu-4',
+                        '': openedMenu != 'sidebar-menu-4'
+                    }">
+                    <a href="docs">
+                        <span class="material-icons">article</span>
+                        <span>Docs</span>
+                    </a>
+                 
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="js/bundle.js"></script>
+
+</body>
+
 </html>
