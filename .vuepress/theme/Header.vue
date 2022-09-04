@@ -53,7 +53,6 @@
  // import WalletConnectProvider from '@walletconnect/web3-provider';
  import WalletConnectProvider  from '@walletconnect/web3-provider/dist/umd/index.min.js';
 
-
   export default {
     name: 'Header',
     mixins: [
@@ -99,7 +98,7 @@ let web3 = new Web3();
 
 const provider = new WalletConnectProvider({
             infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
-           
+
             rpc: {
               97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
               56: 'https://bsc-dataseed1.binance.org/',
@@ -118,7 +117,6 @@ const provider = new WalletConnectProvider({
         }
 else{
 
-
        this.web3.eth.net.getId().then(netId => {
           switch (netId) {
           case 1:
@@ -134,7 +132,7 @@ else{
 {
   const provider = new WalletConnectProvider({
             infuraId: 'bcd0880dd3d14b5abb743a63ce403e36',
-           
+
             rpc: {
               97: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
               56: 'https://bsc-dataseed1.binance.org/',

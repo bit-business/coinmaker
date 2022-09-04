@@ -93,7 +93,8 @@ export default {
         this.web3Account = (await this.web3.eth.getAccounts())[0];
         this.web3Chain = chainId;
         this.$emit('Web3Connect');
-      })   },
+      });
+    },
 
     async initWeb3 (network, checkWeb3) {
       if (global === undefined) {
@@ -108,8 +109,6 @@ export default {
       if (checkWeb3 && (typeof window.ethereum !== 'undefined') && (typeof window !== 'undefined') && (typeof global !== 'undefined')) {
         console.log('injected bsc'); // eslint-disable-line no-console
 
-
-        
         this.web3Provider = window.ethereum;
 
         this.web3 = new Web3(this.web3Provider);
