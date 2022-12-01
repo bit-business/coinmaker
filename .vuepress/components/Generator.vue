@@ -11,11 +11,21 @@
                        Welcome to your Crypto Coin Builder
                     </h1>
                     <h2 class="subtitle is-5 is-muted">Ready to create your new coin on Binance Smart Network? Type in token name, supply and features you want below! No coding! No login! You own it! </h2>
-                    <div class="button-wrap">
-                        <button class="button cta is-rounded secondary-btn raised" @click="connectmetamaskbutton" ref="btnToggle">
+                    <production-list v-if="!isMobile()">
+                      <div class="button-wrap">
+                        <button class="button cta is-rounded secondary-btn raised" @click="connectmetamaskbuttonsamometamask" ref="btnToggle">
                             <img height="40" width="130" src="/assets/images/metamask.svg">| Connect
                         </button>
                     </div>
+                    </production-list>
+                  <production-list-mobile v-else>
+                    <div class="button-wrap">
+                      <button class="button cta is-rounded secondary-btn raised" @click="connectmetamaskbutton" ref="btnToggle">
+                          <img height="40" width="130" src="/assets/images/metamask.svg">| Connect
+                      </button>
+                  </div>
+                  </production-list-mobile>
+
                 </div>
                 <div class="column is-5">
                     <figure class="image is-4by3">
@@ -770,6 +780,40 @@ const provider = new WalletConnectProvider({
           console.log(error);
         });   }     }
        },
+
+       async connectmetamaskbuttonsamometamask () {
+        try {
+          await this.web3Provider.request({ method: 'eth_requestAccounts' });
+        } catch (e) {
+          this.show = !this.show;
+          this.$refs.btnToggle.innerText = 'Connect';
+          // this.$refs.btnToggle.className = 'primary-btn';
+        }
+        if (!this.metamask.installed) {
+          this.makeToast(
+            'No Wallet',
+            'To create a Token you need to install MetaMask!',
+            'warning',
+          );
+          window.location.href = 'https://metamask.app.link/dapp/crypto-studio.net/create-token/';
+        } else {
+          if (this.metamask.netId === 56 || this.metamask.netId === 97) {
+            this.$refs.btnToggle.innerText = 'Connected';
+            this.$refs.btnToggle.className = 'button primary-btn';
+          } else {
+            this.makeToast(
+              'Warning',
+              `Your MetaMask in on the wrong network. Please switch on ${this.network.current.name} and try again!`,
+              'warning',
+            );
+            this.$refs.btnToggle.innerText = 'Connect';
+            //   this.$refs.btnToggle.className = 'btn btn-outline-warning';
+          }
+        }
+        ethereum.on('chainChanged', () => {
+          document.location.reload();
+        });
+      },
 
   async generateTokenprovjera () {
         if (typeof window !== 'undefined')
