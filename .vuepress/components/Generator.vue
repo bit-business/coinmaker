@@ -97,7 +97,7 @@
                               <br>
                               <img src="/assets/images/addtokeninfo.jpeg" alt="Adding token to Metamask info.">
                               <img src="/assets/images/addtokeninfo2.jpg" alt="Adding token to Metamask info2.">
-                              <div> <br>You can import token anywhere with your token address. Save your token address, so you can always have it (you wallet has this saved in transaction also).<br>You can now add liquidity of token (example PancakeSwap) or add it to public crypto chart trackers.<br></br>Your wallet address has all the control over token, so always use this wallet address for burning/minting/other functions. You can control your token on BscScan.<br>   </div>
+                              <div> <br>You can import token anywhere with your token address. Save your token address, so you can always have it (you wallet has this saved in transaction also).<br>You can now add liquidity of token (example PancakeSwap) or add it to public crypto chart trackers.<br>Your wallet address has all the control over token, so always use this wallet address for burning/minting/other functions. You can control your token on BscScan.<br>   </div>
                             </div>
                         </div>
                     </b-card>
