@@ -61,10 +61,56 @@ s0.parentNode.insertBefore(s1,s0);
 
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <style>
+.alert-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    margin: 20px;
+    position: relative;
+}
+
+.alert-box h3 {
+    margin-top: 0;
+    color: #363636;
+}
+
+.close-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #666;
+}
+</style>
 </head>
 
 <body>
-
+<div class="alert-overlay" id="alertOverlay">
+    <div class="alert-box">
+        <span class="close-btn" onclick="closeAlert()">&times;</span>
+        <h3>Page Retired</h3>
+        <p>We have retired this page. More information coming soon.</p>
+    </div>
+</div>
+    
     <div id="pageloader" class="pageloader"></div>
     <div id="infraloader" class="infraloader is-active"></div>    
     <section class="hero is-fullheight is-default is-bold">
@@ -1491,6 +1537,31 @@ s0.parentNode.insertBefore(s1,s0);
     <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
     <script src="js/bundle.js"></script>
 
+    <script>
+function showAlert(event) {
+    event.preventDefault();
+    document.getElementById('alertOverlay').style.display = 'flex';
+}
+
+function closeAlert() {
+    document.getElementById('alertOverlay').style.display = 'none';
+}
+
+// Add click handler to all Create Token buttons
+document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('a[href*="create-token"]');
+    buttons.forEach(button => {
+        button.addEventListener('click', showAlert);
+    });
+
+    // Close alert when clicking outside the alert box
+    document.getElementById('alertOverlay').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeAlert();
+        }
+    });
+});
+</script>
 </body>
 
 </html>
